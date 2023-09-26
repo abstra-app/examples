@@ -1,0 +1,8 @@
+{
+    "python.terminal.activateEnvironment": true,
+    "editor.formatOnPaste": false, // required 
+    "editor.formatOnType": false, // required
+    "editor.formatOnSave": true, // optional 
+    "editor.formatOnSaveMode": "file",
+    "python.analysis.typeCheckingMode": "basic", // required to format on save
+}
