@@ -4,5 +4,9 @@
     "editor.formatOnType": false, // required
     "editor.formatOnSave": true, // optional 
     "editor.formatOnSaveMode": "file",
-    "python.analysis.typeCheckingMode": "basic", // required to format on save
+    "python.analysis.typeCheckingMode": "basic",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none", // required to format on save
 }
