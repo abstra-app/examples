@@ -25,9 +25,23 @@
         "visible": false
       },
       {
-        "id": "new_form_MZxahOeNgL",
+        "id": "buying-intention-form",
+        "name": "Notify Buying intention",
+        "path": "buying-intention-form",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "customer-registration",
+        "name": "Customer registration",
+        "path": "customer-registration",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "new_form_DRaRZ6Smjk",
         "name": "Untitled Form",
-        "path": "new_form_MZxahOeNgL",
+        "path": "new_form_DRaRZ6Smjk",
         "type": "form",
         "visible": false
       }
@@ -118,6 +132,48 @@
       "start_button_text": null,
       "restart_button_text": null,
       "file": "buying_intention_form.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "customer-registration",
+      "path": "customer-registration",
+      "title": "Customer registration",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "customer_registration.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "error-handling",
+      "path": "error-handling",
+      "title": "Error handling",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "error_handling.py",
       "workflow_position": [
         0,
         0
