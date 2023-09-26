@@ -1,10 +1,11 @@
+
+# to migrate 
 - [ ] Add credits to workspace
 - [x] Cap table calculator
 - [ ] Certificate generator
 - [ ] Create Hubspot deals from Apollo leads
 - [ ] Create invoice from CRM
 - [ ] Customer checkout
-- [ ] Customer registration
 - [ ] Dev marketplace
 - [ ] Generate documents from spreadsheet
 - [ ] Insert saving incomes
@@ -20,7 +21,6 @@
 - [ ] Send customized emails from spreadsheet
 - [x] Simple quiz
 - [ ] SQL generator
-- [ ] Subscribe to a new feature
 - [ ] Tax calculator
 - [ ] Team registration
 - [ ] Travel registration
@@ -35,3 +35,9 @@
 - [ ] Get daily headlines via Telegram
 - [ ] Send KPIs to Slack
 - [ ] E2E Tests
+
+# coisas com problema
+## tables
+- [ ] Customer registration
+## api
+- [ ] Subscribe to a new feature
