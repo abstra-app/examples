@@ -1,3 +1,6 @@
+"""
+erro provavelmente esta no read_excel
+"""
 from abstra.forms import *
 import datetime
 import pandas as pd
