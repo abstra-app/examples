@@ -10,15 +10,18 @@ import os
 # This form uses an environment variable. To make it work properly, add a Slack API Key to your workspace's environment variables in the sidebar.
 token = os.environ.get("SLACK_BOT_TOKEN")
 
-if 'plan' in url_params:
-    plan = url_params['plan']
+if "plan" in url_params:
+    plan = url_params["plan"]
 else:
-    plan = 'standard'
+    plan = "standard"
 
-display("Thank you for showing interest in our " + plan +
-        " plan. We need some informations to get in touch.")
+display(
+    "Thank you for showing interest in our "
+    + plan
+    + " plan. We need some informations to get in touch."
+)
 name = read("Name")
-email = read_email('Email')
+email = read_email("Email")
 company = read("Company name")
 
 """

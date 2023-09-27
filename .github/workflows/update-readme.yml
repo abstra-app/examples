@@ -1,0 +1,13 @@
+name: Update hackerforms-lib README.md
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  call_endpoint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Call HTTP endpoint
+      run: curl -X POST https://hooks.abstra.cloud/internal/update-hackerforms-lib-readme -H "Content-Type: application/json" -d '{}'

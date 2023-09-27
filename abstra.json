@@ -46,16 +46,93 @@
         "visible": false
       },
       {
-        "id": "new_form_lVVR3ZdClR",
-        "name": "Untitled Form",
-        "path": "new_form_lVVR3ZdClR",
+        "id": "online-exam",
+        "name": "Online exam",
+        "path": "online-exam",
         "type": "form",
         "visible": false
       },
       {
-        "id": "online-exam",
-        "name": "Online exam",
-        "path": "online-exam",
+        "id": "tax-calculator",
+        "name": "Tax calculator",
+        "path": "tax-calculator",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "create-invoice-from-CRM",
+        "name": "Create invoice from CRM",
+        "path": "create-invoice-from-CRM",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "send-customized-emails-from-spreadsheet",
+        "name": "Send customized emails from spreadsheet",
+        "path": "send-customized-emails-from-spreadsheet",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "sql-generator",
+        "name": "Sql generator",
+        "path": "sql-generator",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "sub-to-new-feature",
+        "name": "Subscribe to a new feature",
+        "path": "sub-to-new-feature",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "virtual-class-timed-exam",
+        "name": "Virtual class timed exam",
+        "path": "virtual-class-timed-exam",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "recieve-new-entries-from-sheets",
+        "name": "Recieve new entries from sheets",
+        "path": "recieve-new-entries-from-sheets",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "hello-world",
+        "name": "Hello world",
+        "path": "hello-world",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "spreadsheet-access",
+        "name": "Spreadsheet access",
+        "path": "spreadsheet-access",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "certificate-generator",
+        "name": "Certificate generator ",
+        "path": "certificate-generator",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "generate-documents-from-spreadsheet",
+        "name": "Generate documents from spreadsheets",
+        "path": "generate-documents-from-spreadsheet",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "create-hubspot-deals-from-apollo-leads",
+        "name": "Create Hubspot deals from apollo leads",
+        "path": "create-hubspot-deals-from-apollo-leads",
         "type": "form",
         "visible": false
       }
@@ -82,7 +159,7 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "cap_table_calculator.py",
+      "file": "src/cap_table_calculator.py",
       "workflow_position": [
         0,
         0
@@ -103,7 +180,7 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "simple_quiz.py",
+      "file": "src/simple_quiz.py",
       "workflow_position": [
         0,
         0
@@ -124,7 +201,7 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "self_check_in.py",
+      "file": "src/self_check_in.py",
       "workflow_position": [
         0,
         0
@@ -145,7 +222,7 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "buying_intention_form.py",
+      "file": "src/buying_intention_form.py",
       "workflow_position": [
         0,
         0
@@ -166,7 +243,7 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "customer_registration.py",
+      "file": "src/customer_registration.tables.py",
       "workflow_position": [
         0,
         0
@@ -187,7 +264,7 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "error_handling.py",
+      "file": "src/error_handling.py",
       "workflow_position": [
         0,
         0
@@ -208,7 +285,7 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "online_exam.py",
+      "file": "src/online_exam.py",
       "workflow_position": [
         0,
         0
@@ -229,7 +306,238 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "tax_calculator.py",
+      "file": "src/tax_calculator.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "create-invoice-from-CRM",
+      "path": "create-invoice-from-CRM",
+      "title": "Create invoice from CRM",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/create_invoice_from_CRM.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "send-customized-emails-from-spreadsheet",
+      "path": "send-customized-emails-from-spreadsheet",
+      "title": "Send customized emails from spreadsheet",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/send_customized_emails_from_spreadsheet.real.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "sql-generator",
+      "path": "sql-generator",
+      "title": "Sql generator",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/sql_generator.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "sub-to-new-feature",
+      "path": "sub-to-new-feature",
+      "title": "Subscribe to a new feature",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/subscribe_to_a_new_feature.real.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "spreadsheet-access",
+      "path": "spreadsheet-access",
+      "title": "Spreadsheet access",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/spreadsheet_access.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "virtual-class-timed-exam",
+      "path": "virtual-class-timed-exam",
+      "title": "Virtual class timed exam",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/virtual_class_timed_exam.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "recieve-new-entries-from-sheets",
+      "path": "recieve-new-entries-from-sheets",
+      "title": "Recieve new entries from sheets",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/receive_new_entries_from_sheets.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "hello-world",
+      "path": "hello-world",
+      "title": "Hello world",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/hello_world.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "certificate-generator",
+      "path": "certificate-generator",
+      "title": "Certificate generator ",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/certificate_generator.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "generate-documents-from-spreadsheet",
+      "path": "generate-documents-from-spreadsheet",
+      "title": "Generate documents from spreadsheets",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/generate_documents_from_spreadsheet.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "create-hubspot-deals-from-apollo-leads",
+      "path": "create-hubspot-deals-from-apollo-leads",
+      "title": "Create Hubspot deals from apollo leads",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/create_hubspot_deals_from_apollo_leads.real.py",
       "workflow_position": [
         0,
         0
