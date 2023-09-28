@@ -8,7 +8,14 @@
 - [x] Simple quiz
 - [x] Tax calculator
 - [x] Notify buying intention
-
+- [x] Subscribe to a new feature
+- [x] Error handling (not on json)
+- [x] Hello world (not on json)
+- [x] spreadsheet access (not on json)
+- [x] Certificate generator
+- [x] Generate documents from spreadsheet
+- [x] Create Hubspot deals from Apollo leads
+- 
 # coisas com problema
 
 ## tables
@@ -22,8 +29,6 @@
 
 ## api
 
-- [ ] Subscribe to a new feature
-- [ ] Create Hubspot deals from Apollo leads
 - [ ] Customer checkout
 - [ ] Dev marketplace
 - [ ] Investor registration
@@ -40,21 +45,12 @@
 - [ ] Send customized emails from spreadsheet (requires sendgrid API KEY)
 - Generate script (not on json)
 
-## files
 
-- [ ] Certificate generator
-- [ ] Generate documents from spreadsheet
-- [ ] User-specific spreadsheet access
-- [ ] Virtual class with slides and timed exam *
 
-## Not on json
 
-- [x] Error handling
-- [x] Hello world
-- [ ] Input saving incomes
-- [ ] spreadsheet acess
 
-## problem in widget
 
-- [ ] Realtime exam with answer sheet *
-- [ ] Receive new entries from Sheets",
+
+
+
+
