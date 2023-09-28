@@ -8,28 +8,28 @@
         "name": "Cap table calculator",
         "path": "cap-table-calculator",
         "type": "form",
-        "visible": false
+        "visible": true
       },
       {
         "id": "Simple-quiz",
         "name": "Simple quiz",
         "path": "Simple-quiz",
         "type": "form",
-        "visible": false
+        "visible": true
       },
       {
         "id": "self-check-in",
         "name": "Self check-in",
         "path": "self-check-in",
         "type": "form",
-        "visible": false
+        "visible": true
       },
       {
         "id": "buying-intention-form",
         "name": "Notify Buying intention",
         "path": "buying-intention-form",
         "type": "form",
-        "visible": false
+        "visible": true
       },
       {
         "id": "customer-registration",
@@ -243,7 +243,7 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "src/customer_registration.tables.py",
+      "file": "src/customer_registration.py",
       "workflow_position": [
         0,
         0
@@ -548,5 +548,6 @@
   ],
   "dashes": [],
   "hooks": [],
-  "jobs": []
+  "jobs": [],
+  "scripts": []
 }

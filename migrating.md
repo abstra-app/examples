@@ -15,37 +15,38 @@
 - [x] Certificate generator
 - [x] Generate documents from spreadsheet
 - [x] Create Hubspot deals from Apollo leads
-- 
+- [x] Customer registration
+
 # coisas com problema
 
 ## tables
 
-- [ ] Customer registration
 - [ ] Invoice factoring calculator
 - [ ] Purchase requester
 - [ ] Receivables
 - [ ] Team registration
 - [ ] Travel registration
+- [ ] Investor registration
 
 ## api
 
-- [ ] Customer checkout
-- [ ] Dev marketplace
-- [ ] Investor registration
-- [ ] Lead gen form
-- [ ] Schedule calendar events
+- [ ] Lead gen form (Needs sendgrid API)
+- [ ] Customer checkout (Needs stripe API)
+- [ ] Dev marketplace 
+- [ ] Schedule calendar events (requires google applications API)
 - [ ] Send Stripe payment confirmation to Slack
 - [ ] Send raw data to S3 data lake
 - [ ] SQL generator (requires openai API KEY)
-- [ ] Vacation approval
 - [ ] ETL from PostgreSQL
 - [ ] Get daily headlines via Telegram
 - [ ] Send KPIs to Slack
 - [ ] E2E Tests
 - [ ] Send customized emails from spreadsheet (requires sendgrid API KEY)
-- Generate script (not on json)
+- [ ] Generate script (requires openai API KEY)
 
+## connectors 
 
+- [ ] Vacation approval 
 
 
 
