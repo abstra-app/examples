@@ -16,17 +16,14 @@
 - [x] Generate documents from spreadsheet
 - [x] Create Hubspot deals from Apollo leads
 - [x] Customer registration
+- [x] Receivables (Some alterations were made because the last code was completely wrong, check it please SABOYA)
+- [x] Travel registration
+- [ ] Invoice factoring calculator
+- [ ] Purchase requester (Environmenrt variables)
+- [x] Team registration
+- [x] Investor registration
 
 # coisas com problema
-
-## tables
-
-- [ ] Invoice factoring calculator (Environmenrt variables)
-- [ ] Purchase requester (Environmenrt variables)
-- [ ] Receivables
-- [x] Team registration
-- [ ] Travel registration
-- [x] Investor registration
 
 ## api
 
