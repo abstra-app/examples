@@ -11,7 +11,7 @@ from datetime import datetime
 def add_member(
     name,
     email,
-    created_at,
+    start_date,
     position,
     birth_date,
     phone_number,
@@ -42,7 +42,7 @@ def add_member(
     shirt_size,
 ):
     sql = """
-        INSERT INTO members (name, email, created_at, position, birth_date, phone_number, id_number,\
+        INSERT INTO members (name, email, start_date, position, birth_date, phone_number, id_number,\
      id_emited_by, id_taxpayer, company_email, country, state, city, address, number_address, complement_address,\
      district, zip_code, bank_name, bank_account_number, bank_branch_code, legal_entity_number, name_company,\
      state_company, city_company, company_address, company_number_address, company_complement_address, company_district,\
@@ -56,7 +56,7 @@ def add_member(
     params = [
         name,
         email,
-        created_at,
+        start_date,
         position,
         birth_date,
         phone_number,
@@ -90,9 +90,8 @@ def add_member(
 
 
 def update_member(
-    name,
     email,
-    created_at,
+    start_date,
     position,
     birth_date,
     phone_number,
@@ -124,18 +123,17 @@ def update_member(
 ):
     sql = """
         UPDATE members
-        SET name = $1, email = $2, created_at = $3, position = $4, birth_date = $5, phone_number = $6, id_number = $7,\
-            id_emited_by = $8, id_taxpayer = $9, company_email = $10, country = $11, state = $12, city = $13, address = $14,\
-            number_address = $15, complement_address = $16, district = $17, zip_code = $18, bank_name = $19, bank_account_number = $20,\
-            bank_branch_code = $21, legal_entity_number = $22, name_company = $23, state_company = $24, city_company = $25,\
-            company_address = $26, company_number_address = $27, company_complement_address = $28, company_district = $29,\
-            company_zip_code = $30, shirt_size = $31
-        WHERE id = $32;
+        SET email = $1, start_date = $2, position = $3, birth_date = $4, phone_number = $5, id_number = $6,\
+        id_emited_by = $7, id_taxpayer = $8, company_email = $9, country = $10, state = $11, city = $12, address = $13,\
+        number_address = $14, complement_address = $15, district = $16, zip_code = $17, bank_name = $18,\
+        bank_account_number = $19, bank_branch_code = $20, legal_entity_number = $21, name_company = $22,\
+        state_company = $23, city_company = $24, company_address = $25, company_number_address = $26,\
+        company_complement_address = $27, company_district = $28, company_zip_code = $29, shirt_size = $30
+        WHERE id = $31;
     """
     params = [
-        name,
         email,
-        created_at,
+        start_date,
         position,
         birth_date,
         phone_number,
@@ -194,7 +192,7 @@ registration = read_multiple_choice(
 
 def get_member_data(member_id):
     sql = """
-        SELECT name, personal_email, start_date, position, birth_date, phone_number, id_number,\
+        SELECT name, email, start_date, position, birth_date, phone_number, id_number,\
      id_emited_by, id_taxpayer, company_email, country, state, city, address, number_address,\
      complement_address, district, zip_code, bank_name, bank_account_number, bank_branch_code, legal_entity_number,\
      name_company, state_company, city_company, company_address, company_number_address,\
@@ -289,38 +287,39 @@ if registration == "new_member":
     phone_number = phone_number.raw
 
     add_member(
-        name=name,
-        email=email,
-        created_at=start_date,
-        position=position,
-        birth_date=birth_date,
-        phone_number=phone_number,
-        id_number=id_number,
-        id_emited_by=id_emited_by,
-        id_taxpayer=id_taxpayer,
-        company_email=company_email,
-        country=country,
-        state=state,
-        city=city,
-        address=address,
-        number_address=number_address,
-        complement_address=complement_address,
-        district=district,
-        zip_code=zip_code,
-        bank_name=bank_name,
-        bank_account_number=bank_account_number,
-        bank_branch_code=bank_branch_code,
-        legal_entity_number=legal_entity_number,
-        name_company=name_company,
-        state_company=state_company,
-        city_company=city_company,
-        company_address=company_address,
-        company_number_address=company_number_address,
-        company_complement_address=company_complement_address,
-        company_district=company_district,
-        company_zip_code=company_zip_code,
-        shirt_size=shirt_size,
+        name,
+        email,
+        start_date,
+        position,
+        birth_date,
+        phone_number,
+        id_number,
+        id_emited_by,
+        id_taxpayer,
+        company_email,
+        country,
+        state,
+        city,
+        address,
+        number_address,
+        complement_address,
+        district,
+        zip_code,
+        bank_name,
+        bank_account_number,
+        bank_branch_code,
+        legal_entity_number,
+        name_company,
+        state_company,
+        city_company,
+        company_address,
+        company_number_address,
+        company_complement_address,
+        company_district,
+        company_zip_code,
+        shirt_size,
     )
+
     display(
         "Congrats on the new team member! Their info has added to your database.",
         button_text="See you next time",
@@ -329,7 +328,7 @@ if registration == "new_member":
     # Here you'll need to set your database's query statement in order to properly update it
     # We'll continue this example without doing so to keep the data stable
     # team_statement = tables.statement(id="your_statement_id")
-    # result = team_statement.run(params={"name": name, "email": personal_email, "created_at": start_date,\
+    # result = team_statement.run(params={"name": name, "email": personal_email, "start_date": start_date,\
     #                                     "position": position, "birth_date": birth_date, "phone_number": phone_number,\
     #                                     "id_number": id_number, "id_emited_by": id_emited_by,\
     #                                     "taxpayer_id": id_taxpayer, "company_email": company_email, "country": country,\
@@ -392,7 +391,6 @@ elif registration == "update_member":
         .read("Company district", required=False)
         .read("Company zip code", required=False)
         .read("Shirt size", required=False)
-        .read_date("Departure date", required=False)
         .run("Send")
     )
 
@@ -427,19 +425,50 @@ elif registration == "update_member":
         company_district,
         company_zip_code,
         shirt_size,
-        departure_date,
     ) = member.values()
 
     start_date = preprocessing_date(start_date)
     birth_date = preprocessing_date(birth_date)
     if phone_number != None:
         phone_number = phone_number.raw
-    departure_date = preprocessing_date(departure_date)
+
+    update_member(
+        email,
+        start_date,
+        position,
+        birth_date,
+        phone_number,
+        id_number,
+        id_emited_by,
+        id_taxpayer,
+        company_email,
+        country,
+        state,
+        city,
+        address,
+        number_address,
+        complement_address,
+        district,
+        zip_code,
+        bank_name,
+        bank_account_number,
+        bank_branch_code,
+        legal_entity_number,
+        name_company,
+        state_company,
+        city_company,
+        company_address,
+        company_number_address,
+        company_complement_address,
+        company_district,
+        company_zip_code,
+        shirt_size,
+    )
 
     # Here you'll need to set your database's query statement in order to properly update it
     # We'll continue this example without doing so to keep the data stable
     # statement = tables.statement(id="your_statement_id")
-    # result = statement.run(params={"email": personal_email, "created_at": start_date, "position": position,\
+    # result = statement.run(params={"email": personal_email, "start_date": start_date, "position": position,\
     #                                "birth_date": birth_date, "phone_number": phone_number, "id_number": id_number,\
     #                                "id_emited_by": id_emited_by, "taxpayer_id": id_taxpayer, "company_email": company_email,\
     #                                "country": country, "state": state, "city": city, "address": address,\

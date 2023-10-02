@@ -24,7 +24,7 @@
 - [ ] Invoice factoring calculator (Environmenrt variables)
 - [ ] Purchase requester (Environmenrt variables)
 - [ ] Receivables
-- [ ] Team registration
+- [x] Team registration
 - [ ] Travel registration
 - [x] Investor registration
 
