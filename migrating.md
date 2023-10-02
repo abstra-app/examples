@@ -26,7 +26,7 @@
 - [ ] Receivables
 - [ ] Team registration
 - [ ] Travel registration
-- [ ] Investor registration
+- [x] Investor registration
 
 ## api
 
