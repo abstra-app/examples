@@ -135,6 +135,34 @@
         "path": "create-hubspot-deals-from-apollo-leads",
         "type": "form",
         "visible": false
+      },
+      {
+        "id": "team-registration",
+        "name": "team registration",
+        "path": "team-registration",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "new_form_bgCrP8aI5u",
+        "name": "Untitled Form",
+        "path": "new_form_bgCrP8aI5u",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "new_form_3kk9uGRkrU",
+        "name": "Untitled Form",
+        "path": "new_form_3kk9uGRkrU",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "new_form_v6sLAkL1xZ",
+        "name": "Untitled Form",
+        "path": "new_form_v6sLAkL1xZ",
+        "type": "form",
+        "visible": false
       }
     ],
     "root": null,
@@ -161,8 +189,8 @@
       "restart_button_text": null,
       "file": "src/cap_table_calculator.py",
       "workflow_position": [
-        0,
-        0
+        -29.427792915531313,
+        -161.85286103542234
       ],
       "is_initial": true,
       "transitions": []
@@ -182,8 +210,8 @@
       "restart_button_text": null,
       "file": "src/simple_quiz.py",
       "workflow_position": [
-        0,
-        0
+        23.705722070844672,
+        156.9482288828338
       ],
       "is_initial": true,
       "transitions": []
@@ -204,7 +232,7 @@
       "file": "src/self_check_in.py",
       "workflow_position": [
         0,
-        0
+        -0.8174386920981078
       ],
       "is_initial": true,
       "transitions": []
@@ -538,6 +566,90 @@
       "start_button_text": null,
       "restart_button_text": null,
       "file": "src/create_hubspot_deals_from_apollo_leads.real.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "team-registration",
+      "path": "team-registration",
+      "title": "team registration",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/team_registration.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "new_form_bgCrP8aI5u",
+      "path": "new_form_bgCrP8aI5u",
+      "title": "Untitled Form",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "new_form_bgCrP8aI5u.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "new_form_3kk9uGRkrU",
+      "path": "new_form_3kk9uGRkrU",
+      "title": "Untitled Form",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "new_form_3kk9uGRkrU.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "Investor-registration",
+      "path": "Investor-registration",
+      "title": "Investor registration",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/investor_registration.py",
       "workflow_position": [
         0,
         0
