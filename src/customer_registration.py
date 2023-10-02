@@ -69,10 +69,6 @@ def preprocessing_date(date):
         date = date.strftime("%Y/%m/%d, %H:%M:%S")
     return date
 
-
-def replace_empty_list(data):
-    return tuple(map(lambda x: x if x else None, data))
-
 registration = read_multiple_choice(
     "Hello! Before continuing, what would you like to do?",
     [
@@ -111,10 +107,6 @@ if registration == "first_time":
     ) = customer.values()
 
     created_data = preprocessing_date(created_data)
-
-    payment_frequency, payment_method = replace_empty_list(
-        [payment_frequency, payment_method]
-    )
 
     add_customer(
         name=name,

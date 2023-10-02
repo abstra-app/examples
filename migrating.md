@@ -21,8 +21,8 @@
 
 ## tables
 
-- [ ] Invoice factoring calculator
-- [ ] Purchase requester
+- [ ] Invoice factoring calculator (Environmenrt variables)
+- [ ] Purchase requester (Environmenrt variables)
 - [ ] Receivables
 - [ ] Team registration
 - [ ] Travel registration

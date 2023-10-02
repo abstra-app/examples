@@ -137,6 +137,27 @@
         "visible": false
       },
       {
+        "id": "invoice-factoring-calculator ",
+        "name": "Invoice factoring calculator",
+        "path": "invoice-factoring-calculator ",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "receivables",
+        "name": "Receivables",
+        "path": "receivables",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "new_form_KOGJeWvaQy",
+        "name": "Untitled Form",
+        "path": "new_form_KOGJeWvaQy",
+        "type": "form",
+        "visible": false
+      },
+      {
         "id": "team-registration",
         "name": "team registration",
         "path": "team-registration",
@@ -566,6 +587,69 @@
       "start_button_text": null,
       "restart_button_text": null,
       "file": "src/create_hubspot_deals_from_apollo_leads.real.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "invoice-factoring-calculator ",
+      "path": "invoice-factoring-calculator ",
+      "title": "Invoice factoring calculator",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "invoice_factoring_calculator.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "receivables",
+      "path": "receivables",
+      "title": "Receivables",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/receivables.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "travel-registration",
+      "path": "travel-registration",
+      "title": "Travel registration",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "src/travel_registration.py",
       "workflow_position": [
         0,
         0
