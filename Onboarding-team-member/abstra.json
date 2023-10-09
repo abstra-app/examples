@@ -1,0 +1,355 @@
+{
+  "version": "0.1",
+  "workspace": {
+    "name": "Untitled Workspace",
+    "sidebar": [
+      {
+        "id": "team-registration",
+        "name": "Personal Information Registration",
+        "path": "team-registration",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "abstra-team-registration",
+        "name": "Team Registration - By Abstra",
+        "path": "abstra-team-registration",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "send-contract",
+        "name": "Generate Contract",
+        "path": "send-contract",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "contract-approval",
+        "name": "Contract Approval",
+        "path": "contract-approval",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "contract-review",
+        "name": "Contract Review",
+        "path": "contract-review",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "update-team",
+        "name": "Update Personal data",
+        "path": "update-team",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "get-team-info",
+        "name": "Team Info",
+        "path": "get-team-info",
+        "type": "dash",
+        "visible": false
+      },
+      {
+        "id": "teste",
+        "name": "Teste",
+        "path": "teste",
+        "type": "form",
+        "visible": false
+      }
+    ],
+    "root": null,
+    "theme": "#FFFFFF",
+    "logo_url": "https://abstra-cloud-assets.s3.amazonaws.com/2c3b9441-c125-4e09-a497-ed4d33f66e48/logo-large-1396-px.png",
+    "brand_name": "Abstra",
+    "main_color": "#d14056",
+    "font_family": "DM Sans",
+    "font_color": null
+  },
+  "jobs": [],
+  "hooks": [],
+  "forms": [
+    {
+      "id": "team-registration",
+      "path": "team-registration",
+      "title": "Personal Information Registration",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "team_registration.py",
+      "workflow_position": [
+        -534.2799188640975,
+        71.80527383367138
+      ],
+      "transitions": [
+        {
+          "target_path": "abstra-team-registration",
+          "target_type": "forms",
+          "label": "",
+          "id": "3hXHRR6XnZ"
+        }
+      ]
+    },
+    {
+      "id": "abstra-team-registration",
+      "path": "abstra-team-registration",
+      "title": "Team Registration - By Abstra",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": "Add information for a new member's registration to the Abstra team",
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "team_registration_by_company.py",
+      "workflow_position": [
+        -531.8458417849901,
+        247.05882352941174
+      ],
+      "transitions": [
+        {
+          "target_path": "send-contract",
+          "target_type": "forms",
+          "label": "",
+          "id": "30Tj5STiCI"
+        }
+      ]
+    },
+    {
+      "id": "send-contract",
+      "path": "send-contract",
+      "title": "Generate Contract",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": "Generate team member's contract",
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "contract_generator.py",
+      "workflow_position": [
+        -124.1379310344829,
+        247.05882352941177
+      ],
+      "transitions": [
+        {
+          "target_path": "contract-approval",
+          "target_type": "forms",
+          "label": "",
+          "id": "JsTHZEJN9M"
+        }
+      ]
+    },
+    {
+      "id": "contract-approval",
+      "path": "contract-approval",
+      "title": "Contract Approval",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "contract_approval.py",
+      "workflow_position": [
+        245.84178498985818,
+        239.75659229208918
+      ],
+      "transitions": [
+        {
+          "target_path": "contract-review",
+          "target_type": "forms",
+          "label": "",
+          "id": "dtfT8csZ8Y"
+        },
+        {
+          "target_path": "update-team",
+          "target_type": "forms",
+          "label": "",
+          "id": "t8iw0p6frpf"
+        },
+        {
+          "target_path": "qd3a67kfle",
+          "target_type": "scripts",
+          "label": "",
+          "id": "san6upsnmeg"
+        }
+      ]
+    },
+    {
+      "id": "contract-review",
+      "path": "contract-review",
+      "title": "Contract Review",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "contract_review.py",
+      "workflow_position": [
+        376.0649087221095,
+        63.28600405679521
+      ],
+      "transitions": [
+        {
+          "target_path": "contract-approval",
+          "target_type": "forms",
+          "label": "",
+          "id": "7AG0Fl0Fzz"
+        }
+      ]
+    },
+    {
+      "id": "update-team",
+      "path": "update-team",
+      "title": "Update Personal data",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "update_team.py",
+      "workflow_position": [
+        -15.821501014198816,
+        66.93711967545642
+      ],
+      "transitions": [
+        {
+          "target_path": "send-contract",
+          "target_type": "forms",
+          "label": "",
+          "id": "m8xt9qrs3ko"
+        }
+      ]
+    }
+  ],
+  "dashes": [
+    {
+      "path": "get-team-info",
+      "title": "Team Info",
+      "layout": {
+        "props": {},
+        "version": "0.2",
+        "slot": {
+          "01f02e3f-8062-496e-b69c-ec7199446dc1": {
+            "id": "01f02e3f-8062-496e-b69c-ec7199446dc1",
+            "type": "dropdown-input",
+            "colStart": 0,
+            "colEnd": 4,
+            "rowStart": 3,
+            "rowEnd": 6,
+            "props": {
+              "label": "\"Select a team member\"",
+              "multiple": "",
+              "options": "team"
+            },
+            "events": {},
+            "variable": "team_member"
+          },
+          "81cb458d-b475-4aca-9232-079708205e8a": {
+            "id": "81cb458d-b475-4aca-9232-079708205e8a",
+            "type": "pandas-output",
+            "colStart": 0,
+            "colEnd": 11,
+            "rowStart": 9,
+            "rowEnd": 16,
+            "props": {
+              "df": "read_team_member_info(team_member)"
+            },
+            "events": {},
+            "variable": null
+          },
+          "89d70a5b-7377-426b-bf97-47e03849ca07": {
+            "id": "89d70a5b-7377-426b-bf97-47e03849ca07",
+            "type": "text-output",
+            "colStart": 0,
+            "colEnd": 4,
+            "rowStart": 17,
+            "rowEnd": 18,
+            "props": {
+              "text": "\"Team Member's Company Information:\""
+            },
+            "events": {},
+            "variable": null
+          },
+          "de736298-32a7-4a2f-b8e0-9d646eb0d633": {
+            "id": "de736298-32a7-4a2f-b8e0-9d646eb0d633",
+            "type": "pandas-output",
+            "colStart": 0,
+            "colEnd": 11,
+            "rowStart": 19,
+            "rowEnd": 26,
+            "props": {
+              "df": "read_team_member_company_info(team_member)"
+            },
+            "events": {},
+            "variable": null
+          },
+          "f190cc7b-26ce-4149-8d1e-dcea67f38d54": {
+            "id": "f190cc7b-26ce-4149-8d1e-dcea67f38d54",
+            "type": "text-output",
+            "colStart": 0,
+            "colEnd": 5,
+            "rowStart": 7,
+            "rowEnd": 8,
+            "props": {
+              "text": "\"Team Member's Personal Information:\""
+            },
+            "events": {},
+            "variable": null
+          },
+          "f711bd87-7f86-4764-96fb-9c4f30b53592": {
+            "id": "f711bd87-7f86-4764-96fb-9c4f30b53592",
+            "type": "markdown-output",
+            "colStart": 0,
+            "colEnd": 5,
+            "rowStart": 0,
+            "rowEnd": 2,
+            "props": {
+              "text": "\"### Overall Team Information \""
+            },
+            "events": {},
+            "variable": null
+          }
+        }
+      },
+      "file": "get_team_info.py"
+    }
+  ],
+  "scripts": [
+    {
+      "id": "qd3a67kfle",
+      "file": "send_contract_to_sign.py",
+      "path": "qd3a67kfle",
+      "title": "Contract Signature",
+      "workflow_position": [
+        458.4936706666772,
+        378.49898580121703
+      ],
+      "transitions": []
+    }
+  ]
+}
