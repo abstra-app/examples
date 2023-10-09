@@ -172,9 +172,23 @@
         "visible": false
       },
       {
-        "id": "new_form_tBpBLhSWpr",
-        "name": "Untitled Form",
-        "path": "new_form_tBpBLhSWpr",
+        "id": "travel-registration",
+        "name": "Travel registration",
+        "path": "travel-registration",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "Investor-registration",
+        "name": "Investor registration",
+        "path": "Investor-registration",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "Purchase-request",
+        "name": "Purchase request",
+        "path": "Purchase-request",
         "type": "form",
         "visible": false
       }
@@ -187,6 +201,8 @@
     "font_family": null,
     "font_color": null
   },
+  "jobs": [],
+  "hooks": [],
   "forms": [
     {
       "id": "cap-table-calculator",
@@ -692,30 +708,49 @@
       "is_initial": true,
       "transitions": []
     },
-    {
-      "id": "invoice-factoring-calculator",
-      "path": "invoice-factoring-calculator",
-      "title": "Invoice Factoring Calculator",
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "file": "src/invoice_factoring_calculator.py",
-      "workflow_position": [
-        0,
-        0
-      ],
-      "is_initial": true,
-      "transitions": []
-    }
+  {
+    "id": "Purchase-request",
+    "path": "Purchase-request",
+    "title": "Purchase request",
+    "auto_start": false,
+    "allow_restart": false,
+    "end_message": null,
+    "start_message": null,
+    "error_message": null,
+    "welcome_title": null,
+    "timeout_message": null,
+    "start_button_text": null,
+    "restart_button_text": null,
+    "file": "src/purchase_request.py",
+    "workflow_position": [
+      0,
+      0
+    ],
+    "is_initial": true,
+    "transitions": []
+  },
+  {
+    "id": "invoice-factoring-calculator",
+    "path": "invoice-factoring-calculator",
+    "title": "Invoice Factoring Calculator",
+    "auto_start": false,
+    "allow_restart": false,
+    "end_message": null,
+    "start_message": null,
+    "error_message": null,
+    "welcome_title": null,
+    "timeout_message": null,
+    "start_button_text": null,
+    "restart_button_text": null,
+    "file": "src/invoice_factoring_calculator.py",
+    "workflow_position": [
+      0,
+      0
+    ],
+    "is_initial": true,
+    "transitions": []
+  }
   ],
   "dashes": [],
-  "hooks": [],
-  "jobs": [],
   "scripts": []
 }
