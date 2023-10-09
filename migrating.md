@@ -19,7 +19,7 @@
 - [x] Receivables (Some alterations were made because the last code was completely wrong, check it please SABOYA)
 - [x] Travel registration
 - [ ] Invoice factoring calculator
-- [ ] Purchase requester (Environmenrt variables)
+- [ ] Purchase requester 
 - [x] Team registration
 - [x] Investor registration
 
