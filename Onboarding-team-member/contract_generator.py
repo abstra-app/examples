@@ -84,7 +84,7 @@ def generate_document(file_response, team_member_name, contract_folder, contract
     response = page.run()
     response_list = list(response.values())
 
-    tags_response = dict(zip(new_tags_original, response_list))
+    tags_response = dicpaget(zip(new_tags_original, response_list))
 
     tags_response.update(contract_data)
 

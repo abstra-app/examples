@@ -53,9 +53,16 @@
         "visible": false
       },
       {
-        "id": "teste",
-        "name": "Teste",
-        "path": "teste",
+        "id": "new_form_NHysHY24le",
+        "name": "Untitled Form",
+        "path": "new_form_NHysHY24le",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "new_form_vD3mZ5nLiS",
+        "name": "Untitled Form",
+        "path": "new_form_vD3mZ5nLiS",
         "type": "form",
         "visible": false
       }
@@ -89,6 +96,7 @@
         -534.2799188640975,
         71.80527383367138
       ],
+      "is_initial": true,
       "transitions": [
         {
           "target_path": "abstra-team-registration",
@@ -116,6 +124,7 @@
         -531.8458417849901,
         247.05882352941174
       ],
+      "is_initial": true,
       "transitions": [
         {
           "target_path": "send-contract",
@@ -143,6 +152,7 @@
         -124.1379310344829,
         247.05882352941177
       ],
+      "is_initial": true,
       "transitions": [
         {
           "target_path": "contract-approval",
@@ -170,6 +180,7 @@
         245.84178498985818,
         239.75659229208918
       ],
+      "is_initial": true,
       "transitions": [
         {
           "target_path": "contract-review",
@@ -209,6 +220,7 @@
         376.0649087221095,
         63.28600405679521
       ],
+      "is_initial": true,
       "transitions": [
         {
           "target_path": "contract-approval",
@@ -236,6 +248,7 @@
         -15.821501014198816,
         66.93711967545642
       ],
+      "is_initial": true,
       "transitions": [
         {
           "target_path": "send-contract",
@@ -244,6 +257,69 @@
           "id": "m8xt9qrs3ko"
         }
       ]
+    },
+    {
+      "id": "new_form_NHysHY24le",
+      "path": "new_form_NHysHY24le",
+      "title": "Untitled Form",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "new_form_NHysHY24le.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "new_form_vD3mZ5nLiS",
+      "path": "new_form_vD3mZ5nLiS",
+      "title": "Untitled Form",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "new_form_vD3mZ5nLiS.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "new_form_s4SLCc9XeJ",
+      "path": "new_form_s4SLCc9XeJ",
+      "title": "Untitled Form",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "new_form_s4SLCc9XeJ.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
     }
   ],
   "dashes": [
