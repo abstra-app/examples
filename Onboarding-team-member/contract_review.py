@@ -18,11 +18,18 @@ if comments == None:
     comments = "There are no comments."
 
 
-contract_review = Page().display(f"Document Review - {document_filename}", size="large")\
-    .display(f'Please thoroughly review the comments made on the document "{document_filename}" and make the necessary modifications.')\
-    .display(f"Comments \n \n {comments}", key="comments")\
-    .display_file(output_filepath_review, download_text="Click here to download the document")\
+contract_review = (
+    Page()
+    .display(f"Document Review - {document_filename}", size="large")
+    .display(
+        f'Please thoroughly review the comments made on the document "{document_filename}" and make the necessary modifications.'
+    )
+    .display(f"Comments \n \n {comments}", key="comments")
+    .display_file(
+        output_filepath_review, download_text="Click here to download the document"
+    )
     .run()
+)
 
 contract = read_file("Upload your changed contract")
 
@@ -30,9 +37,18 @@ contract = read_file("Upload your changed contract")
 shutil.copy(contract.file.name, output_filepath)
 
 
-aw.next_stage([{
-    "assignee": email,
-    "data": {"id": team_id, "name": name,
-             "email": email, "output_filepath": output_filepath,
-             "document_filename": document_filename, "id_taxpayer": id_taxpayer},
-}])
+aw.next_stage(
+    [
+        {
+            "assignee": email,
+            "data": {
+                "id": team_id,
+                "name": name,
+                "email": email,
+                "output_filepath": output_filepath,
+                "document_filename": document_filename,
+                "id_taxpayer": id_taxpayer,
+            },
+        }
+    ]
+)
