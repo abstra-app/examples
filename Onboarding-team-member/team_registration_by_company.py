@@ -1,5 +1,4 @@
 from abstra.forms import *
-from run_finance import *
 import abstra.workflows as aw
 from datetime import datetime
 from abstra.tables import update
@@ -40,14 +39,12 @@ start_abstra_at, position, abstra_email = member.values()
 start_abstra_at = preprocessing_date(start_abstra_at)
 
 # Here we update the team member table with the info we got from the form above
-result = run_finance(
-    update(
-        "team",
-        {
-            "created_at": start_abstra_at,
-            "position": position,
-            "abstra_email": abstra_email,
-        },
-        {"id": team_member_id},
-    )
+result = update(
+    "team_company_info",
+    {
+        "created_at": start_abstra_at,
+        "position": position,
+        "abstra_email": abstra_email,
+    },
+    {"id": team_member_id},
 )

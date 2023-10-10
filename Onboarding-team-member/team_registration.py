@@ -101,7 +101,7 @@ adding_member = insert(
         "bank_name": bank_name,
         "bank_account_number": bank_account_number,
         "bank_branch_code": bank_branch_code,
-    }
+    },
 )
 
 # result = run(
