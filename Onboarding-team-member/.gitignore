@@ -1,3 +1,4 @@
 .abstra
 __pycache__/
+.env
 ```

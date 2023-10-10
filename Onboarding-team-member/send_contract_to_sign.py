@@ -10,19 +10,19 @@ dotenv.load_dotenv()
 
 def create_signer(signer_data, cs_token, cs_subdomain):
     create_signer_response = requests.post(
-        f'https://{cs_subdomain}.clicksign.com/api/v1/signers?access_token={cs_token}',
+        f"https://{cs_subdomain}.clicksign.com/api/v1/signers?access_token={cs_token}",
         headers=headers,
-        json=signer_data)
+        json=signer_data,
+    )
 
-    signer_key = create_signer_response.json()['signer']['key']
+    signer_key = create_signer_response.json()["signer"]["key"]
     return signer_key
 
 
-def add_signer_to_document(document_key, signer_key, cs_token, cs_subdomain, sign_as="sign"):
-    headers = {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-    }
+def add_signer_to_document(
+    document_key, signer_key, cs_token, cs_subdomain, sign_as="sign"
+):
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
 
     body = {
         "list": {
@@ -38,18 +38,22 @@ def add_signer_to_document(document_key, signer_key, cs_token, cs_subdomain, sig
     add_signer_response = requests.post(
         f"https://{cs_subdomain}.clicksign.com/api/v1/lists?access_token={cs_token}",
         headers=headers,
-        json=body)
+        json=body,
+    )
 
     # Send notification to signer
     notification_body = {
-        "request_signature_key": add_signer_response.json()['list']['request_signature_key'],
-        "message": "Prezado/a, siga para a Assinatura do Contrato. \n\n Em caso de dúvidas, entrar em contato com admin@abstra.app."
+        "request_signature_key": add_signer_response.json()["list"][
+            "request_signature_key"
+        ],
+        "message": "Prezado/a, siga para a Assinatura do Contrato. \n\n Em caso de dúvidas, entrar em contato com admin@abstra.app.",
     }
 
     add_signer_notification = requests.post(
         f"https://{cs_subdomain}.clicksign.com/api/v1/notifications?access_token={cs_token}",
         headers=headers,
-        json=notification_body)
+        json=notification_body,
+    )
 
     return add_signer_response.json()
 
@@ -62,25 +66,21 @@ name = stage["name"]
 id_taxpayer = stage["id_taxpayer"]
 email = stage["email"]
 
-cs_token = os.getenv('CLICKSIGN_TOKEN')
+cs_token = os.getenv("CLICKSIGN_TOKEN")
 # cs_subdomain = 'sandbox' if os.getenv(
 #    "ABSTRA_ENVIRONMENT") != "production" else 'app'
-cs_subdomain = 'app'
+cs_subdomain = "app"
 
 # signers = requests.get(
 #    f'https://{cs_subdomain}.clicksign.com/api/v1/signers?access_token={cs_token}')
 
-deadline = (datetime.now() + timedelta(days=89)
-            ).strftime('%Y-%m-%dT%H:%M:%S-03:00')
+deadline = (datetime.now() + timedelta(days=89)).strftime("%Y-%m-%dT%H:%M:%S-03:00")
 
-headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json"
-}
+headers = {"Content-Type": "application/json", "Accept": "application/json"}
 
 
 with open(filepath, "rb") as docx_file:
-    base64_encoded = base64.b64encode(docx_file.read()).decode('utf-8')
+    base64_encoded = base64.b64encode(docx_file.read()).decode("utf-8")
 
 # Create document object
 document_data = {
@@ -92,7 +92,7 @@ document_data = {
         "locale": "pt-BR",
         "sequence_enabled": False,
         "remind_interval": 7,
-        "block_after_refusal": False
+        "block_after_refusal": False,
     }
 }
 
@@ -100,19 +100,18 @@ document_data = {
 upload_document_response = requests.post(
     f"https://{cs_subdomain}.clicksign.com/api/v1/documents?access_token={cs_token}",
     headers=headers,
-    json=document_data)
+    json=document_data,
+)
 
 
-document_key = upload_document_response.json()['document']['key']
+document_key = upload_document_response.json()["document"]["key"]
 
 
 # Create signer object
 signer_data = {
     "signer": {
         "email": email,
-        "auths": [
-            "email"
-        ],
+        "auths": ["email"],
         "name": name,
         "documentation": id_taxpayer,
         "birthday": "",
@@ -123,16 +122,17 @@ signer_data = {
         "handwritten_enabled": False,
         "official_document_enabled": False,
         "liveness_enabled": False,
-        "facial_biometrics_enabled": False
+        "facial_biometrics_enabled": False,
     }
 }
 
 
-signer_data = {"key": create_signer(
-    signer_data, cs_token, cs_subdomain), "sign_as": "contractee"}
+signer_data = {
+    "key": create_signer(signer_data, cs_token, cs_subdomain),
+    "sign_as": "contractee",
+}
 
-abstra_signer_data = {
-    "key": os.getenv('ADM_CLICKSIGN_KEY'), "sign_as": "administrator"}
+abstra_signer_data = {"key": os.getenv("ADM_CLICKSIGN_KEY"), "sign_as": "administrator"}
 
 signers = [signer_data, abstra_signer_data]
 
@@ -140,4 +140,5 @@ signers = [signer_data, abstra_signer_data]
 # Add signer to document
 for signer in signers:
     add_signer_to_document(
-        document_key, signer["key"], cs_token, cs_subdomain, signer["sign_as"])
+        document_key, signer["key"], cs_token, cs_subdomain, signer["sign_as"]
+    )
