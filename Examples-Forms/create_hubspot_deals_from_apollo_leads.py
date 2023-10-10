@@ -5,13 +5,21 @@ import pandas as pd
 from datetime import datetime, date, timezone
 import json
 
-apollo_token = os.getenv('APOLLO_API_KEY')
-hubspot_token = os.getenv('HUBSPOT_API_KEY')
+apollo_token = os.getenv("APOLLO_API_KEY")
+hubspot_token = os.getenv("HUBSPOT_API_KEY")
 
-ans = Page().display_markdown("""
-## Hello! This form receives a list of Apollo contacts and populates them into your Hubspot Sales Pipeline.""")\
-        .read_file("Just export an Apollo list with your leads as a .csv and upload it below:", key="contact_file")\
-        .run()
+ans = (
+    Page()
+    .display_markdown(
+        """
+## Hello! This form receives a list of Apollo contacts and populates them into your Hubspot Sales Pipeline."""
+    )
+    .read_file(
+        "Just export an Apollo list with your leads as a .csv and upload it below:",
+        key="contact_file",
+    )
+    .run()
+)
 
 
 # We had to comment the integrations due to API policy!
@@ -58,7 +66,7 @@ ans = Page().display_markdown("""
 #                'last_name': contact_data['last_name'],\
 #                'company': contact_data['organization_name']}
 #     print(contact) #add to list e display_pandas da tabela
-#     if contact['last_name'] != None: 
+#     if contact['last_name'] != None:
 #         last_name = contact['last_name']
 #     else:
 #         last_name = ''
@@ -81,7 +89,7 @@ ans = Page().display_markdown("""
 #         "hubspot_owner_id": "117155623", #Hubspot owner profile's id
 #         "pipeline": "11412235" #Hubspot deal pipeline id
 #     }}
-    
+
 #     deal_response = requests.post(create_deal_url, data=json.dumps(data), headers=headers)
 #     deal_id = deal_response.json()['id']
 #     df_contacts.loc[i, "Hubspot deal id"] = deal_id
@@ -97,8 +105,8 @@ ans = Page().display_markdown("""
 #             "definitionId": 4
 #             }
 #     associate_response = requests.put(associate_deal_url, data=json.dumps(data), headers=headers)
-    
-# dir_path =  "./apollo" 
+
+# dir_path =  "./apollo"
 # os.makedirs(dir_path, exist_ok=True)
 # filename = datetime.today().strftime("%Y%m%d-%H-%M-%S") + "_deals.csv"
 # df_contacts.to_csv(dir_path + '/' +filename)

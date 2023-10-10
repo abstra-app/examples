@@ -4,7 +4,7 @@ import os
 import json
 
 # This form uses an environment variable. To make it work properly, add a Hubspot API Key to your workspace's environment variables in the sidebar.
-api_key = os.getenv("HUBSPOT_API_KEY","HUBSPOT_API_KEY")
+api_key = os.getenv("HUBSPOT_API_KEY", "HUBSPOT_API_KEY")
 
 display("Hi there. Thanks for your interest in our upcoming features!")
 

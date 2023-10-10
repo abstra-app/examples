@@ -28,11 +28,13 @@ def add_customer(name, email, legal_entity, payment_frequency, payment_method, c
     ]
     return run(sql, params)
 
+
 def list_customers():
     sql = """
         SELECT id, name, email FROM customers;
     """
     return run(sql)
+
 
 def get_customer_data(customer_id):
     sql = """
@@ -43,7 +45,10 @@ def get_customer_data(customer_id):
     params = [customer_id]
     return run(sql, params)[0]
 
-def update_customer(name, email, legal_entity, payment_frequency, payment_method, country, churn_at, id):
+
+def update_customer(
+    name, email, legal_entity, payment_frequency, payment_method, country, churn_at, id
+):
     sql = """
         UPDATE customers
         SET name = $1, email = $2, legal_entity = $3, payment_frequency = $4, payment_method = $5, country = $6, churn_at = $7
@@ -57,7 +62,7 @@ def update_customer(name, email, legal_entity, payment_frequency, payment_method
         payment_method,
         country,
         churn_at,
-        id
+        id,
     ]
     return run(sql, params)
 
@@ -68,6 +73,7 @@ def preprocessing_date(date):
         date = date.replace(tzinfo=None)
         date = date.strftime("%Y/%m/%d, %H:%M:%S")
     return date
+
 
 registration = read_multiple_choice(
     "Hello! Before continuing, what would you like to do?",
@@ -122,14 +128,13 @@ if registration == "first_time":
         button_text="See you next time",
     )
 
-
 else:
-    customers_database = list_customers() # [{ id, name, email }]
+    customers_database = list_customers()  # [{ id, name, email }]
 
     customers = [
         {"label": f'{customer["name"]} ({customer["email"]})', "value": customer["id"]}
         for customer in customers_database
-    ] # [{ label, value }]
+    ]  # [{ label, value }]
 
     customer_id = read_dropdown("Which customer do you want to update data", customers)
 
@@ -138,7 +143,9 @@ else:
     updated_customer = (
         Page()
         .read("Name", required=False, initial_value=customer_data["name"], key="name")
-        .read_email("Email", required=False, initial_value=customer_data["email"], key="email")
+        .read_email(
+            "Email", required=False, initial_value=customer_data["email"], key="email"
+        )
         .read_dropdown(
             "Legal entity",
             [
@@ -149,12 +156,32 @@ else:
             key="legal_entity",
             initial_value=customer_data["legal_entity"],
         )
-        .read_dropdown("Payment Frequency", ["Monthly", "Annual"], required=False, initial_value=customer_data["payment_frequency"], key="payment_frequency")
         .read_dropdown(
-            "Payment Method", ["Credit card", "Wire Transfer"], required=False, initial_value=customer_data["payment_method"], key="payment_method"
+            "Payment Frequency",
+            ["Monthly", "Annual"],
+            required=False,
+            initial_value=customer_data["payment_frequency"],
+            key="payment_frequency",
         )
-        .read("Country", required=False, initial_value=customer_data["country"], key="country")
-        .read_date("Churn date", required=False, initial_value=customer_data["churn_at"], key="churn_date")
+        .read_dropdown(
+            "Payment Method",
+            ["Credit card", "Wire Transfer"],
+            required=False,
+            initial_value=customer_data["payment_method"],
+            key="payment_method",
+        )
+        .read(
+            "Country",
+            required=False,
+            initial_value=customer_data["country"],
+            key="country",
+        )
+        .read_date(
+            "Churn date",
+            required=False,
+            initial_value=customer_data["churn_at"],
+            key="churn_date",
+        )
         .run("Send")
     )
 

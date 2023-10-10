@@ -22,7 +22,9 @@ file = read_file("Upload the completed spreadsheet here:")
 doc = DocxTemplate("src/files/invoice_template.docx")
 df = pd.read_excel(file.file)
 selection = read_pandas_row_selection(
-    df, hint="Select which customers you'd like to generate an invoice to.", multiple=True
+    df,
+    hint="Select which customers you'd like to generate an invoice to.",
+    multiple=True,
 )
 
 for item in selection:
@@ -45,7 +47,7 @@ for item in selection:
     with open(filename, "rb") as f:
         data = f.read()
         f.close()
-        
+
     encoded_file = base64.b64encode(data).decode()
     attachedFile = Attachment(
         FileContent(encoded_file),

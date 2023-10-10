@@ -1,13 +1,14 @@
 from abstra.forms import *
 from abstra import *
 from datetime import datetime
-from abstra.tables import run,api
+from abstra.tables import run, api
 
-#Here you can add your company's authentication.
-#user = get_user()
+# Here you can add your company's authentication.
+# user = get_user()
 
-#if not user.email.endswith('@mycompany.com'):
-  #exit()
+# if not user.email.endswith('@mycompany.com'):
+# exit()
+
 
 def preprocessing_date(date):
     if date != None:
@@ -16,21 +17,27 @@ def preprocessing_date(date):
         date = date.strftime("%Y/%m/%d, %H:%M:%S")
     return date
 
+
 def get_receivable():
-    entities = [{"label": "Physical", "value": "physical"},
-                {"label": "Juridical", "value": "juridical"}]
-    currencies =  [{"label": "USD", "value": "usd"},
-                   {"label": "BRL", "value": "brl"}]
-    receivables = Page().display("Hello. To insert a receivable, please fill in the information below:")\
-                       .read("Description", key="description")\
-                       .read_number("Amount", key="amount")\
-                       .read_dropdown("Currency", currencies, key= "")\
-                       .read("Customer")\
-                       .read_dropdown("Legal entity", entities)\
-                       .read_date("Receivable date")\
-                       .run("Send")
+    entities = [
+        {"label": "Physical", "value": "physical"},
+        {"label": "Juridical", "value": "juridical"},
+    ]
+    currencies = [{"label": "USD", "value": "usd"}, {"label": "BRL", "value": "brl"}]
+    receivables = (
+        Page()
+        .display("Hello. To insert a receivable, please fill in the information below:")
+        .read("Description", key="description")
+        .read_number("Amount", key="amount")
+        .read_dropdown("Currency", currencies, key="")
+        .read("Customer")
+        .read_dropdown("Legal entity", entities)
+        .read_date("Receivable date")
+        .run("Send")
+    )
 
     return receivables
+
 
 def insert_receivables_db():
     receivable = get_receivable()
@@ -49,5 +56,6 @@ def insert_receivables_db():
     ]
     return run(sql, params)
 
+
 insert_receivables_db()
-display("All clear, boss. Receivable added to your database.", button_text = "👍")
+display("All clear, boss. Receivable added to your database.", button_text="👍")

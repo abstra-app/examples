@@ -21,7 +21,9 @@ file = read_file("Upload the completed spreadsheet here:")
 
 df = pd.read_excel(file.file)
 selection = read_pandas_row_selection(
-    df, hint="Select which customers you'd like to generate an invoice to.", multiple=True
+    df,
+    hint="Select which customers you'd like to generate an invoice to.",
+    multiple=True,
 )
 
 doc = DocxTemplate("src/files/invoice_template.docx")
@@ -61,9 +63,7 @@ encoded_file = base64.b64encode(data).decode()
 attachedFile = Attachment(
     FileContent(encoded_file),
     FileName(filename),
-    FileType(
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-    ),
+    FileType("application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
     Disposition("attachment"),
 )
 message.attachment = attachedFile

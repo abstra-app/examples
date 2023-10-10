@@ -103,7 +103,7 @@ else:
 
 hospitalized = read_multiple_choice(
     "Have you ever been hospitalized or had a major injury?",
-    ["yes","no"],
+    ["yes", "no"],
 )
 
 if hospitalized == "yes":
@@ -113,7 +113,7 @@ else:
 
 medicated = read_multiple_choice(
     "Are you taking any medication?",
-    ["yes","no"],
+    ["yes", "no"],
 )
 
 if medicated == "yes":
@@ -125,7 +125,7 @@ else:
 
 diet = read_multiple_choice(
     "Are you on a special diet?",
-    ["yes","no"],
+    ["yes", "no"],
 )
 
 if diet == "yes":
@@ -133,18 +133,16 @@ if diet == "yes":
 else:
     reason_diet = ""
 
-smoker = read_multiple_choice(
-    "Do you smoke?", ["yes","no"]
-)
+smoker = read_multiple_choice("Do you smoke?", ["yes", "no"])
 
 drinker = read_multiple_choice(
     "Do you consume alcohol regularly?",
-    ["yes","no"],
+    ["yes", "no"],
 )
 
 pregnant_trying = read_multiple_choice(
     "Are you pregnant or trying to get pregnant?",
-    ["yes","no"],
+    ["yes", "no"],
 )
 
 allergies = read_multiple_choice(
