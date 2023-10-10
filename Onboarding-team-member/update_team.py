@@ -1,5 +1,4 @@
 from abstra.forms import *
-from run_finance import *
 import abstra.workflows as aw
 from datetime import datetime
 import pycountry
@@ -145,44 +144,41 @@ legal_entity_number = (
 )
 
 # Insert personal data
-result = run_finance(
-    update(
-        "team",
-        {"id": team_id},
-        {
-            "name": name,
-            "email": personal_email,
-            "birth_date": birth_date,
-            "phone_number": phone_number,
-            "identification_number": id_number,
-            "id_emited_by": id_emited_by,
-            "taxpayer_id": id_taxpayer,
-            "country": country,
-            "state": state,
-            "city": city,
-            "address": address,
-            "number_address": number_address,
-            "complement_address": complement_address,
-            "district": district,
-            "zip_code": zip_code,
-            "shirt_size": shirt_size,
-            "dietary_restrictions": dietary_restrictions,
-        },
-    )
+result = update(
+    "team",
+    {"id": team_id},
+    {
+        "name": name,
+        "email": personal_email,
+        "birth_date": birth_date,
+        "phone_number": phone_number,
+        "identification_number": id_number,
+        "id_emited_by": id_emited_by,
+        "taxpayer_id": id_taxpayer,
+        "country": country,
+        "state": state,
+        "city": city,
+        "address": address,
+        "number_address": number_address,
+        "complement_address": complement_address,
+        "district": district,
+        "zip_code": zip_code,
+        "shirt_size": shirt_size,
+        "dietary_restrictions": dietary_restrictions,
+    },
 )
 
 
 # Insert bank account data
-run_finance(
-    update(
-        "team_bank_account",
-        {"team_id": team_id},
-        {
-            "name": bank_name,
-            "number": bank_account_number,
-            "branch_code": bank_branch_code,
-        },
-    )
+
+update(
+    "team_bank_account",
+    {"team_id": team_id},
+    {
+        "name": bank_name,
+        "number": bank_account_number,
+        "branch_code": bank_branch_code,
+    },
 )
 
 name, id, email, id_taxpayer = name, team_id, personal_email, id_taxpayer
