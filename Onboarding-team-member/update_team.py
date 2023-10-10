@@ -3,8 +3,9 @@ from run_finance import *
 import abstra.workflows as aw
 from datetime import datetime
 import pycountry
+from abstra.tables import update
 
-
+# Here we define a function to preprocess the data we want to insert into the database, if you are working with dates, you can use this function to convert the date to the format you want to insert into the database.
 def preprocessing_date(date):
     if date != None:
         date = datetime(date.year, date.month, date.day)
@@ -12,11 +13,12 @@ def preprocessing_date(date):
         date = date.strftime("%Y/%m/%d, %H:%M:%S")
     return date
 
-
+# We use this method bellow to get a information of the stage that is running
 stage = aw.get_stage()
 team_id = stage["id"]
 countries = [c.name for c in list(pycountry.countries)]
 
+# Here we define a form to get some additional info from the team member
 member = (Page().display("Personal Data", size='large')
                 .read("Full name", required=False, key="name")
                 .read_email("Email", required=False, key="personal_email")
@@ -97,6 +99,8 @@ result = run_finance(
     params=[name, personal_email, birth_date, phone_number, id_number, id_emited_by,
             id_taxpayer, country, state, city, address, number_address, complement_address,
             district, zip_code, shirt_size, dietary_restrictions, team_id])
+
+update("team",{'name':name,'email':personal_email,'birth_date'},)
 
 
 # Insert bank account data
