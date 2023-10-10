@@ -74,7 +74,7 @@ if contract_approval.action == "Reject":
         new_stage_contract = aw.next_stage(
             [
                 {
-                    "assignee": "catarina@abstra.app",
+                    "assignee": "foo@company.co",
                     "data": {
                         "id": team_id,
                         "comments": comments,
