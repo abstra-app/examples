@@ -1,13 +1,7 @@
 .venv
 .vscode
-<<<<<<< HEAD
-.abstra
-.env
-migrating.md
-.tests
-=======
-migrating.md
+migrate.md
 *.abstra
 *.DS_Store
 *.env
->>>>>>> 9c097c02a797541b5feabbce8713e3930f292b6a
+.tests
