@@ -48,6 +48,5 @@
 # Workflow Example
 
 - [x] team_registration_by_company
-- [] update_team 
-
-
+- [x] update_team 
+- [] 

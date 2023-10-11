@@ -1,5 +1,4 @@
 from abstra.forms import *
-from run_finance import *
 import abstra.workflows as aw
 from datetime import datetime, date
 import os
@@ -19,6 +18,8 @@ if not user.email.endswith("@abstra.app"):
 DATA_WORKSHEET = "Data"
 FILES_BASE_PATH = "/tmp/fill_my_docs"
 REGEX = r"\{\{(.*?)\}\}"
+
+# Cria um dicionário com (variável, novo valor) para cada variável do contrato
 
 
 def transform_tags(tags):
@@ -92,7 +93,7 @@ def generate_document(
     response = page.run()
     response_list = list(response.values())
 
-    tags_response = dicpaget(zip(new_tags_original, response_list))
+    tags_response = dict(zip(new_tags_original, response_list))
 
     tags_response.update(contract_data)
 

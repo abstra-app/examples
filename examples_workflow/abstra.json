@@ -281,8 +281,8 @@
       "is_initial": true,
       "file": "new_form_NHysHY24le.py",
       "workflow_position": [
-        0,
-        0
+        -73.44398340248938,
+        -169.29460580912865
       ],
       "transitions": []
     },
@@ -302,8 +302,8 @@
       "is_initial": true,
       "file": "new_form_vD3mZ5nLiS.py",
       "workflow_position": [
-        0,
-        0
+        131.95020746887963,
+        -171.78423236514521
       ],
       "transitions": []
     },
@@ -323,8 +323,8 @@
       "is_initial": true,
       "file": "new_form_s4SLCc9XeJ.py",
       "workflow_position": [
-        0,
-        0
+        342.3236514522821,
+        -175.51867219917014
       ],
       "transitions": []
     }
