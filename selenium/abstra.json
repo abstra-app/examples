@@ -1,0 +1,110 @@
+{
+  "version": "0.1",
+  "workspace": {
+    "name": "Untitled Workspace",
+    "sidebar": [
+      {
+        "id": "form-inicial",
+        "name": "Form Inicial",
+        "path": "form-inicial",
+        "type": "form",
+        "visible": false
+      }
+    ],
+    "root": null,
+    "theme": null,
+    "logo_url": null,
+    "brand_name": null,
+    "main_color": null,
+    "font_family": null,
+    "font_color": null
+  },
+  "jobs": [],
+  "hooks": [],
+  "forms": [
+    {
+      "id": "form-inicial",
+      "path": "form-inicial",
+      "title": "Form Inicial",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "form-inicial.py",
+      "workflow_position": [
+        -40.370713654483865,
+        -139.79518905788677
+      ],
+      "transitions": [
+        {
+          "target_path": "s4eb1opthg",
+          "target_type": "scripts",
+          "label": "",
+          "id": "nrd6a0s6jh"
+        },
+        {
+          "target_path": "yo6a4zucu5o",
+          "target_type": "scripts",
+          "label": "",
+          "id": "hkccwogbslj"
+        }
+      ]
+    }
+  ],
+  "dashes": [],
+  "scripts": [
+    {
+      "id": "s4eb1opthg",
+      "file": "news.py",
+      "path": "s4eb1opthg",
+      "title": "News",
+      "workflow_position": [
+        347.27629117470735,
+        -191.38043139622002
+      ],
+      "transitions": [
+        {
+          "target_path": "ppj5gcvhuz",
+          "target_type": "scripts",
+          "label": "",
+          "id": "ltulu8v0pq"
+        }
+      ]
+    },
+    {
+      "id": "yo6a4zucu5o",
+      "file": "stocks.py",
+      "path": "yo6a4zucu5o",
+      "title": "Stocks",
+      "workflow_position": [
+        362.76169054156594,
+        -27.758007088755818
+      ],
+      "transitions": [
+        {
+          "target_path": "ppj5gcvhuz",
+          "target_type": "scripts",
+          "label": "",
+          "id": "urrwsdwzxsh"
+        }
+      ]
+    },
+    {
+      "id": "ppj5gcvhuz",
+      "file": "results.py",
+      "path": "ppj5gcvhuz",
+      "title": "Results",
+      "workflow_position": [
+        739.6662176256267,
+        -136.79435013254005
+      ],
+      "transitions": []
+    }
+  ]
+}
