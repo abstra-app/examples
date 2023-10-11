@@ -1,3 +1,6 @@
 .venv
 .vscode
 migrating.md
+*.abstra
+*.DS_Store
+*.env
