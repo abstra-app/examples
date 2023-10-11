@@ -1,5 +1,5 @@
 from abstra.forms import *
-from run_finance import *
+from abstra.tables import run
 import abstra.workflows as aw
 from datetime import datetime, date
 import os
@@ -92,7 +92,7 @@ def generate_document(
     response = page.run()
     response_list = list(response.values())
 
-    tags_response = dicpaget(zip(new_tags_original, response_list))
+    tags_response = dict(zip(new_tags_original, response_list))
 
     tags_response.update(contract_data)
 
@@ -144,17 +144,14 @@ name = stage["name"]
 email = stage["email"]
 id_taxpayer = stage["id_taxpayer"]
 # team_id = 31
-# name = "catarina@abstra.app"
+# name = "example@example.com"
 # email = "Gabriel Saboya Nogueira Lima"
 
-team_info = run_finance(
-    'SELECT t.created_at, t.name, t.position, t.email, t.birth_date, t.identification_number, \
-                    t.id_emited_by, t.address, t.number_address, t.complement_address, t.city, t.state,  t.district,\
-                    t.zip_code, t.country, t.taxpayer_id, te.name as company_name, te.entity_number, te.district as company_district,\
-                    te.state as company_state, te.number_address as company_number_address, te.complement_address as company_complement_address,\
-                    te.address as company_address, te.zip_code as company_zip_code, te.city as company_city, tb.name as bank_name,\
-                    tb.number as bank_number_account, tb.branch_code FROM "team" t LEFT JOIN "team_entity_informations" te\
-                    ON t.id = te.team_id LEFT JOIN "team_bank_account" tb ON te.team_id = tb.team_id WHERE t.id = $1',
+team_info = run(
+    'SELECT started_at, name, position, email, birth_date, identification_number, \
+                    id_emited_by, address, number_address, complement_address, district,\
+                    zip_code, country, taxpayer_id, bank_name,\
+                    bank_number_account, branch_code FROM "team" WHERE id = $1',
     params=[team_id],
 )[0]
 
