@@ -51,8 +51,7 @@ def create_new_doc_with_tags(tags_values_dict, filepath, filename):
         doc.render(context)
     except Exception as e:
         problematic_tags = [k for k in context.keys() if k in str(e)]
-        display(
-            f"Error: {e}. Please check the following tags: {problematic_tags}")
+        display(f"Error: {e}. Please check the following tags: {problematic_tags}")
     doc.save(filepath)
     output_filepath = os.getcwd() + "/" + filepath
     return output_filepath
@@ -99,8 +98,7 @@ def generate_document(
     response_list = list(response.values())
     tags_response = dict(zip(new_tags_original, response_list))
     tags_response.update(contract_data)
-    output_filepath = create_new_doc_with_tags(
-        tags_response, filepath, filename)
+    output_filepath = create_new_doc_with_tags(tags_response, filepath, filename)
     display_file(
         output_filepath, download_text="Click here to download the filled document"
     )
@@ -193,8 +191,7 @@ else:
     print(started_at)
     start_abstra_at = datetime.strptime(started_at, "%Y-%m-%dT%H:%M:%S.000Z")
     document_filename = "Contrato de Trabalho"
-    contract = open(
-        f"contract_models/individual_contract_ptbr.docx", "rb").read()
+    contract = open(f"contract_models/individual_contract_ptbr.docx", "rb").read()
     contract_data = {
         "nome_completo_contratado": name,
         "nacionalidade_contratado": country,
@@ -222,8 +219,7 @@ else:
         "data_assinatura_contratado": f"{start_abstra_at.day} de {months[start_abstra_at.month - 1]} de {start_abstra_at.year}",
     }
     document_filename = "Contrato de Prestação de Serviços e Outras Avenças"
-    output_filepath = generate_document(
-        contract, name, contract_folder, contract_data)
+    output_filepath = generate_document(contract, name, contract_folder, contract_data)
 aw.next_stage(
     [
         {

@@ -1,7 +1,7 @@
 from abstra.forms import *
+from abstra.tables import *
 import abstra.workflows as aw
 from datetime import datetime
-import pycountry
 from abstra.tables import update
 
 
@@ -17,7 +17,6 @@ def preprocessing_date(date):
 # We use this method bellow to get a information of the stage that is running
 stage = aw.get_stage()
 team_id = stage["id"]
-countries = [c.name for c in list(pycountry.countries)]
 # Here we define a form to get some additional info from the team member
 member_page = (
     Page()
@@ -31,7 +30,7 @@ member_page = (
     .read_cpf(
         "Individual Taxpayer Registration (CPF)", required=False, key="id_taxpayer"
     )
-    .read_dropdown("Country", countries, required=False, key="country")
+    .read("Country", required=False, key="country")
     .read("Address (without number)", required=False, key="address")
     .read("Address number", required=False, key="number_address")
     .read("Address Complement", required=False, key="complement_address")
@@ -48,9 +47,7 @@ member_page = (
 bank_info_member_page = (
     Page()
     .display("Bank Account Data", size="large")
-    .display(
-        "Please enter your bank account data. If you're subscribed to a company, please enter the company's bank account data."
-    )
+    .display("Please enter your bank account data.")
     .read("Bank name", placeholder="Inter", required=False, key="bank_name")
     .read(
         "Bank account number",
@@ -62,10 +59,7 @@ bank_info_member_page = (
         "Bank branch code", placeholder="0001", required=False, key="bank_branch_code"
     )
 )
-step_run = run_steps(
-    [member_page, bank_info_member_page]
-)  # doing the forms in diferent steps
-member = step_run[0]
+member = run_steps([member_page, bank_info_member_page])
 (
     name,
     personal_email,
@@ -84,15 +78,6 @@ member = step_run[0]
     bank_name,
     bank_account_number,
     bank_branch_code,
-    legal_entity_number,
-    name_company,
-    state_company,
-    city_company,
-    company_address,
-    company_number_address,
-    company_complement_address,
-    company_district,
-    company_zip_code,
 ) = (
     member["name"],
     member["email"],
@@ -115,9 +100,6 @@ member = step_run[0]
 birth_date = preprocessing_date(birth_date)
 phone_number = phone_number.raw
 id_taxpayer = id_taxpayer.replace(".", "").replace("-", "")
-legal_entity_number = (
-    legal_entity_number.replace(".", "").replace("-", "").replace("/", "")
-)
 # Insert personal data
 result = update(
     "team",
