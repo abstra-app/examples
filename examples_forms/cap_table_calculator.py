@@ -80,7 +80,7 @@ if data_sent == "Manually":
 else:
     Page().display(
         "Download the spreadsheet below and fill it with your investors' info:"
-    ).display_file("src/files/investors_data_template.xlsx").run()
+    ).display_file("files/investors_data_template.xlsx").run()
 
     rounds_file = read_file("Upload your spreadsheet with the investors' list:")
 

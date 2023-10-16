@@ -7,7 +7,7 @@ from docxtpl import DocxTemplate
 
 Page().display(
     "Hey there! Download the spreadsheet below and fill it with your customers' info."
-).display_file("src/files/customer_data_template.xlsx").run()
+).display_file("files/customer_data_template.xlsx").run()
 
 uploaded_file = read_file("Upload the completed spreadsheet below:")
 file_content = uploaded_file.content
@@ -20,7 +20,7 @@ selection = read_pandas_row_selection(
     multiple=True,
 )
 
-doc = DocxTemplate("src/files/invoice_template.docx")
+doc = DocxTemplate("files/invoice_template.docx")
 
 list = []
 print(selection)

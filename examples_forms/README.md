@@ -1,10 +1,14 @@
-# Smart Forms
-Launch interactive Python scripts as beautiful form-like apps
+# Set-up
+
+- Install the project: `pip install -e .`
+- Install the project requirements: `pip install -r requirements.txt`
+
+
+# Smart Forms 
+
 
 ![alt text]("C:\Users\gabry\Downloads\ezgif.com-video-to-gif.gif")
 
-No HTML, CSS, JS... With single line commands, get data from users and display info to them.
 
 
-# Examples 
 

@@ -6,7 +6,7 @@ def get_cell(info):
     return df.loc[df["Email"] == email, info].item()
 
 
-df = pd.read_excel("src/files/mock_data.xlsx")
+df = pd.read_excel("files/mock_data.xlsx")
 
 # Here you can add your user authentication:
 # user = get_user()
@@ -23,7 +23,7 @@ if email in result.values:
     points = get_cell("Points")
     redeem_date = get_cell("Redeem date")
 
-    new_df = result.transpose(display_index=True)
+    new_df = result.transpose()
     outfile = "/tmp/output.xlsx"
     output = new_df.to_excel(outfile)
 
@@ -33,7 +33,7 @@ if email in result.values:
 So far you've accumulated **{points}** points.
 They can be reedemed from =={redeem_date}== onwards."""
     ).display("Here is your info in spreadsheet format.").display_pandas(
-        new_df
+        new_df, show_index=True
     ).display_file(
         outfile, download_text="Download it here"
     ).run()

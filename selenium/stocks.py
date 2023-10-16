@@ -8,22 +8,24 @@ load_dotenv()
 
 stage = get_stage()
 
+
 def get_stocks():
     url = "https://twelve-data1.p.rapidapi.com/stocks"
 
-    querystring = {"exchange":"NASDAQ","format":"json"}
+    querystring = {"exchange": "NASDAQ", "format": "json"}
 
     headers = {
-        "X-RapidAPI-Key": getenv('RAPIDAPI_KEY'),
-        "X-RapidAPI-Host": getenv('RAPIDAPI_HOST')
+        "X-RapidAPI-Key": getenv("RAPIDAPI_KEY"),
+        "X-RapidAPI-Host": getenv("RAPIDAPI_HOST"),
     }
 
     stocks_raw = requests.get(url, headers=headers, params=querystring)
 
     stocks = stocks_raw.json()
-    df = pd.DataFrame(stocks['data'])
+    df = pd.DataFrame(stocks["data"])
 
     return df
 
+
 df = get_stocks()
-stage['stocks_df'] = df.to_dict()
+stage["stocks_df"] = df.to_dict()

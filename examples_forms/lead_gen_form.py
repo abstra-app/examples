@@ -46,7 +46,7 @@ display(
 auth = get_user()
 email = auth.email
 
-doc = DocxTemplate("src/files/onboarding_template.docx")
+doc = DocxTemplate("files/onboarding_template.docx")
 doc.render(context)
 doc.save(onb_filename)
 

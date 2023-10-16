@@ -267,7 +267,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/self_check_in.py",
+      "file": "self_check_in.py",
       "workflow_position": [
         0,
         -0.8174386920981078
@@ -288,7 +288,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/buying_intention_form.py",
+      "file": "buying_intention_form.py",
       "workflow_position": [
         0,
         0
@@ -309,7 +309,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/customer_registration.py",
+      "file": "customer_registration.py",
       "workflow_position": [
         0,
         0
@@ -330,7 +330,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/error_handling.py",
+      "file": "error_handling.py",
       "workflow_position": [
         0,
         0
@@ -351,7 +351,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/online_exam.py",
+      "file": "online_exam.py",
       "workflow_position": [
         0,
         0
@@ -372,7 +372,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/tax_calculator.py",
+      "file": "tax_calculator.py",
       "workflow_position": [
         0,
         0
@@ -393,7 +393,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/create_invoice_from_CRM.py",
+      "file": "create_invoice_from_CRM.py",
       "workflow_position": [
         0,
         0
@@ -414,7 +414,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/send_customized_emails_from_spreadsheet.real.py",
+      "file": "send_customized_emails_from_spreadsheet.real.py",
       "workflow_position": [
         0,
         0
@@ -435,7 +435,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/sql_generator.py",
+      "file": "sql_generator.py",
       "workflow_position": [
         0,
         0
@@ -456,7 +456,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/subscribe_to_a_new_feature.real.py",
+      "file": "subscribe_to_a_new_feature.real.py",
       "workflow_position": [
         0,
         0
@@ -477,7 +477,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/spreadsheet_access.py",
+      "file": "spreadsheet_access.py",
       "workflow_position": [
         0,
         0
@@ -498,7 +498,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/virtual_class_timed_exam.py",
+      "file": "virtual_class_timed_exam.py",
       "workflow_position": [
         0,
         0
@@ -519,7 +519,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/receive_new_entries_from_sheets.py",
+      "file": "receive_new_entries_from_sheets.py",
       "workflow_position": [
         0,
         0
@@ -540,7 +540,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/hello_world.py",
+      "file": "hello_world.py",
       "workflow_position": [
         0,
         0
@@ -561,7 +561,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/certificate_generator.py",
+      "file": "certificate_generator.py",
       "workflow_position": [
         0,
         0
@@ -582,7 +582,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/generate_documents_from_spreadsheet.py",
+      "file": "generate_documents_from_spreadsheet.py",
       "workflow_position": [
         0,
         0
@@ -603,7 +603,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/create_hubspot_deals_from_apollo_leads.real.py",
+      "file": "create_hubspot_deals_from_apollo_leads.real.py",
       "workflow_position": [
         0,
         0
@@ -645,7 +645,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/receivables.py",
+      "file": "receivables.py",
       "workflow_position": [
         0,
         0
@@ -666,7 +666,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/travel_registration.py",
+      "file": "travel_registration.py",
       "workflow_position": [
         0,
         0
@@ -687,7 +687,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/team_registration.py",
+      "file": "team_registration.py",
       "workflow_position": [
         0,
         0
@@ -708,7 +708,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/investor_registration.py",
+      "file": "investor_registration.py",
       "workflow_position": [
         0,
         0
@@ -729,7 +729,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/purchase_request.py",
+      "file": "purchase_request.py",
       "workflow_position": [
         0,
         0
@@ -750,7 +750,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": true,
-      "file": "src/invoice_factoring_calculator.py",
+      "file": "invoice_factoring_calculator.py",
       "workflow_position": [
         0,
         0

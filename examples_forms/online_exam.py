@@ -18,7 +18,7 @@ name = start["name"]
 n = datetime.datetime.now
 n1 = n()
 
-exam = pd.read_excel("src/files/Simulado-Exemplo.xlsx")
+exam = pd.read_excel("files/Simulado-Exemplo.xlsx")
 questions = exam["Question"].tolist()
 optionA = exam["a)"].tolist()
 optionB = exam["b)"].tolist()

@@ -15,7 +15,7 @@ from sendgrid.helpers.mail import (
 
 Page().display(
     "Hey there! Download the spreadsheet below and fill it with your customers' info."
-).display_file("src/files/customer_data_template.xlsx").run()
+).display_file("files/customer_data_template.xlsx").run()
 
 file = read_file("Upload the completed spreadsheet here:")
 
@@ -26,7 +26,7 @@ selection = read_pandas_row_selection(
     multiple=True,
 )
 
-doc = DocxTemplate("src/files/invoice_template.docx")
+doc = DocxTemplate("files/invoice_template.docx")
 
 ## Remove the following steps when copying the example for real use!
 display(

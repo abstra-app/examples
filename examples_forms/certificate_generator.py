@@ -6,7 +6,7 @@ from zipfile import ZipFile
 from docxtpl import DocxTemplate
 
 # This form tries to access files in this workspace's file system. To make this form work, add a file with this name to your workspace's file system in the sidebar.
-doc = DocxTemplate("src/files/certificate.docx")
+doc = DocxTemplate("files/certificate.docx")
 
 display("Welcome to our Certificate Maker!", button_text="Let's get started")
 
@@ -35,7 +35,7 @@ if multiple == "Single":
     )
 else:
     # This form tries to access files in this workspace's file system. To make this form work, add a file with this name to your workspace's file system in the sidebar.
-    f = open("src/files/certificates_template.xlsx", "rb")
+    f = open("files/certificates_template.xlsx", "rb")
     Page().display(
         "Ok! Start by downloading and filling out this spreadsheet with the details."
     ).display_file(f).run("Send")
