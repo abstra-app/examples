@@ -18,9 +18,8 @@ def preprocessing_date(date):
 stage = aw.get_stage()
 team_id = stage["id"]
 countries = [c.name for c in list(pycountry.countries)]
-
 # Here we define a form to get some additional info from the team member
-member = (
+member_page = (
     Page()
     .display("Personal Data", size="large")
     .read("Full name", required=False, key="name")
@@ -44,11 +43,9 @@ member = (
         required=False,
         key="zip_code",
     )
-    .read("Shirt size", placeholder="M", required=False, key="shirt_size")
 )
-
 # Here we define a form to get bank account data from the team member
-bank_info_member = (
+bank_info_member_page = (
     Page()
     .display("Bank Account Data", size="large")
     .display(
@@ -65,10 +62,10 @@ bank_info_member = (
         "Bank branch code", placeholder="0001", required=False, key="bank_branch_code"
     )
 )
-
-
-member = run_steps([member, bank_info_member])
-
+step_run = run_steps(
+    [member_page, bank_info_member_page]
+)  # doing the forms in diferent steps
+member = step_run[0]
 (
     name,
     personal_email,
@@ -78,42 +75,15 @@ member = run_steps([member, bank_info_member])
     id_emited_by,
     id_taxpayer,
     country,
-    state,
-    city,
     address,
     number_address,
     complement_address,
     district,
     zip_code,
     shirt_size,
-    dietary_restrictions,
-) = (
-    member["name"],
-    member["personal_email"],
-    member["birth_date"],
-    member["phone_number"],
-    member["id_number"],
-    member["id_emited_by"],
-    member["id_taxpayer"],
-    member["country"],
-    member["state"],
-    member["city"],
-    member["address"],
-    member["number_address"],
-    member["complement_address"],
-    member["district"],
-    member["zip_code"],
-    member["shirt_size"],
-    member["dietary_restrictions"],
-)
-
-bank_name, bank_account_number, bank_branch_code = (
-    member["bank_name"],
-    member["bank_account_number"],
-    member["bank_branch_code"],
-)
-
-(
+    bank_name,
+    bank_account_number,
+    bank_branch_code,
     legal_entity_number,
     name_company,
     state_company,
@@ -124,25 +94,30 @@ bank_name, bank_account_number, bank_branch_code = (
     company_district,
     company_zip_code,
 ) = (
-    member["legal_entity_number"],
-    member["name_company"],
-    member["state_company"],
-    member["city_company"],
-    member["company_address"],
-    member["company_number_address"],
-    member["company_complement_address"],
-    member["company_district"],
-    member["company_zip_code"],
+    member["name"],
+    member["email"],
+    member["birth_date"],
+    member["phone_number"],
+    member["id"],
+    member["id_emited_by"],
+    member["taxpayer_id"],
+    member["country"],
+    member["address"],
+    member["number_address"],
+    member["complement_address"],
+    member["district"],
+    member["zip_code"],
+    member["shirt_size"],
+    member["bank_name"],
+    member["bank_account_number"],
+    member["bank_branch_code"],
 )
-
-
 birth_date = preprocessing_date(birth_date)
 phone_number = phone_number.raw
 id_taxpayer = id_taxpayer.replace(".", "").replace("-", "")
 legal_entity_number = (
     legal_entity_number.replace(".", "").replace("-", "").replace("/", "")
 )
-
 # Insert personal data
 result = update(
     "team",
@@ -156,34 +131,19 @@ result = update(
         "id_emited_by": id_emited_by,
         "taxpayer_id": id_taxpayer,
         "country": country,
-        "state": state,
-        "city": city,
         "address": address,
         "number_address": number_address,
         "complement_address": complement_address,
         "district": district,
         "zip_code": zip_code,
         "shirt_size": shirt_size,
-        "dietary_restrictions": dietary_restrictions,
+        "bank_name": bank_name,
+        "bank_account_number": bank_account_number,
+        "bank_branch_code": bank_branch_code,
     },
 )
-
-
-# Insert bank account data
-
-update(
-    "team_bank_account",
-    {"team_id": team_id},
-    {
-        "name": bank_name,
-        "number": bank_account_number,
-        "branch_code": bank_branch_code,
-    },
-)
-
 name, id, email, id_taxpayer = name, team_id, personal_email, id_taxpayer
 # name, id, email = name, 4, personal_email
-
 aw.next_stage(
     [
         {

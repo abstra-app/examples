@@ -136,8 +136,8 @@
       "is_initial": false,
       "file": "contract_generator.py",
       "workflow_position": [
-        -122.89311775647457,
-        247.05882352941177
+        -125.92736202996355,
+        244.0245792559228
       ],
       "transitions": [
         {
@@ -232,8 +232,8 @@
       "is_initial": false,
       "file": "update_team.py",
       "workflow_position": [
-        45.174349608207876,
-        54.48898689537344
+        64.89693738588562,
+        56.00610903211788
       ],
       "transitions": [
         {
