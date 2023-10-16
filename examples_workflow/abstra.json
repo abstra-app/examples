@@ -53,9 +53,16 @@
         "visible": false
       },
       {
-        "id": "new_form_s4SLCc9XeJ",
+        "id": "new_form_4CwvnOrjnr",
         "name": "Untitled Form",
-        "path": "new_form_s4SLCc9XeJ",
+        "path": "new_form_4CwvnOrjnr",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "new_form_H68vf6fTuP",
+        "name": "Untitled Form",
+        "path": "new_form_H68vf6fTuP",
         "type": "form",
         "visible": false
       }
@@ -250,6 +257,48 @@
           "id": "m8xt9qrs3ko"
         }
       ]
+    },
+    {
+      "id": "new_form_4CwvnOrjnr",
+      "path": "new_form_4CwvnOrjnr",
+      "title": "Untitled Form",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "new_form_4CwvnOrjnr.py",
+      "workflow_position": [
+        -176.7634854771784,
+        -149.37759336099586
+      ],
+      "transitions": []
+    },
+    {
+      "id": "new_form_H68vf6fTuP",
+      "path": "new_form_H68vf6fTuP",
+      "title": "Untitled Form",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "new_form_H68vf6fTuP.py",
+      "workflow_position": [
+        -8.713692946058131,
+        -158.09128630705393
+      ],
+      "transitions": []
     }
   ],
   "dashes": [
@@ -351,6 +400,7 @@
       "file": "send_contract_to_sign.py",
       "path": "qd3a67kfle",
       "title": "Contract Signature",
+      "is_initial": false,
       "workflow_position": [
         458.4936706666772,
         378.49898580121703

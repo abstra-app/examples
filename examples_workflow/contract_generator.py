@@ -8,6 +8,7 @@ from docxtpl import DocxTemplate
 import re
 from docx import Document
 import pathlib
+
 # Checking the email domain
 user = get_user()
 if not user.email.endswith("@abstra.app"):
@@ -20,10 +21,14 @@ if not user.email.endswith("@abstra.app"):
 DATA_WORKSHEET = "Data"
 FILES_BASE_PATH = "/tmp/fill_my_docs"
 REGEX = r"\{\{(.*?)\}\}"
+
+
 def get_team_info(team_id):
     sql = "SELECT salary, complement_address, position, bank_account_number, id_emited_by, taxpayer_id, address, birth_date, zip_code, bank_name, email, number_address, phone_number, abstra_email, name, bank_branch_code, started_at, district, country, identification_number FROM team WHERE id = $1;"
     params = [team_id]
     return run(sql, params)[0]
+
+
 # the tag cant contain " " so whe have to replace it with "_"
 # and after the user fills the tag, we have to replace it again with " "
 def transform_tags(tags):
@@ -36,6 +41,8 @@ def transform_tags(tags):
             }
         )
     return transformed
+
+
 def create_new_doc_with_tags(tags_values_dict, filepath, filename):
     print("filepath", filepath)
     doc = DocxTemplate(filepath)
@@ -44,14 +51,19 @@ def create_new_doc_with_tags(tags_values_dict, filepath, filename):
         doc.render(context)
     except Exception as e:
         problematic_tags = [k for k in context.keys() if k in str(e)]
-        display(f"Error: {e}. Please check the following tags: {problematic_tags}")
+        display(
+            f"Error: {e}. Please check the following tags: {problematic_tags}")
     doc.save(filepath)
     output_filepath = os.getcwd() + "/" + filepath
     return output_filepath
+
+
 def render(partial):
     if len(partial) != 0:
         if partial.get("existing_contract") == "New Contract":
             return Page().read_file("Upload your contract", key="contract")
+
+
 def generate_document(
     file_response, team_member_name, contract_folder, contract_data={}
 ):
@@ -87,11 +99,31 @@ def generate_document(
     response_list = list(response.values())
     tags_response = dict(zip(new_tags_original, response_list))
     tags_response.update(contract_data)
-    output_filepath = create_new_doc_with_tags(tags_response, filepath, filename)
+    output_filepath = create_new_doc_with_tags(
+        tags_response, filepath, filename)
     display_file(
         output_filepath, download_text="Click here to download the filled document"
     )
     return output_filepath
+
+
+contract_type = [
+    {"label": "Individual", "value": "individual"},
+    {"label": "Individual Freelancer", "value": "individual_freelancer"},
+    {"label": "Company", "value": "company"},
+]
+
+
+def render(partial):
+    if len(partial) != 0:
+        if partial["existing_contract"] == "New Contract":
+            return Page().read_file("Upload your contract", key="contract")
+        else:
+            return Page().read_dropdown(
+                "Contract Type", contract_type, key="contract_type"
+            )
+
+
 contract = (
     Page()
     .read_dropdown(
@@ -99,7 +131,8 @@ contract = (
         ["New Contract", "Individual"],
         key="existing_contract",
     )
-    .reactive(render)  # Will render depending of what answer you give in the dropdown
+    # Will render depending of what answer you give in the dropdown
+    .reactive(render)
     .run()
 )
 folder = pathlib.Path(os.environ.get("ABSTRA_FILES_FOLDER", "./"))
@@ -160,7 +193,8 @@ else:
     print(started_at)
     start_abstra_at = datetime.strptime(started_at, "%Y-%m-%dT%H:%M:%S.000Z")
     document_filename = "Contrato de Trabalho"
-    contract = open(f"contract_models/individual_contract_ptbr.docx", "rb").read()
+    contract = open(
+        f"contract_models/individual_contract_ptbr.docx", "rb").read()
     contract_data = {
         "nome_completo_contratado": name,
         "nacionalidade_contratado": country,
@@ -188,7 +222,8 @@ else:
         "data_assinatura_contratado": f"{start_abstra_at.day} de {months[start_abstra_at.month - 1]} de {start_abstra_at.year}",
     }
     document_filename = "Contrato de Prestação de Serviços e Outras Avenças"
-    output_filepath = generate_document(contract, name, contract_folder, contract_data)
+    output_filepath = generate_document(
+        contract, name, contract_folder, contract_data)
 aw.next_stage(
     [
         {
