@@ -7,7 +7,7 @@
 # Smart Forms 
 
 
-![alt text]("C:\Users\gabry\Downloads\ezgif.com-video-to-gif.gif")
+![Alt text](ezgif.com-video-to-gif.gif)
 
 
 

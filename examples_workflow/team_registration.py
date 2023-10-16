@@ -104,25 +104,15 @@ adding_member = insert(
     },
 )
 
-# result = run(
-#     'INSERT INTO "team"(name, email, birth_date, phone_number,\
-#   identification_number, id_emited_by, taxpayer_id, country,\
-#   address, number_address, complement_address, district, zip_code, shirt_size,)\
-#   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13,\
-#   $14) RETURNING id',
-#     params=[name, personal_email, birth_date, phone_number, id_number,
-#             id_emited_by, id_taxpayer, country,address, number_address,
-#             complement_address, district, zip_code, shirt_size]
-# )
 # # Insert bank account data
 # run('INSERT INTO "team_bank_account" (name, number, branch_code, team_id) VALUES($1, $2, $3, $4)',
 #             params=[bank_name, bank_account_number,
 #                     bank_branch_code, result[0]["id"]]
 #             )
 
-# name, id, email = name, result[0]["id"], personal_email
+name, id, email = name, adding_member["id"], personal_email
 
-name, id, email, id_taxpayer = name, 31, personal_email, id_taxpayer
+# name, id, email, id_taxpayer = name, 31, personal_email, id_taxpayer
 
 aw.next_stage(
     [

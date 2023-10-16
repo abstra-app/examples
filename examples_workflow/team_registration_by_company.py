@@ -31,20 +31,22 @@ member = (
     .read_date("Start abstra at")
     .read("Position")
     .read_email("Abstra Email")
+    .read_number("Salary", placeholder="R$ 0,00")
     .run()
 )
 
-start_abstra_at, position, abstra_email = member.values()
+start_abstra_at, position, abstra_email, salary = member.values()
 
 start_abstra_at = preprocessing_date(start_abstra_at)
 
 # Here we update the team member table with the info we got from the form above
 result = update(
-    "team_company_info",
+    "team",
     {
-        "created_at": start_abstra_at,
+        "started_at": start_abstra_at,
         "position": position,
         "abstra_email": abstra_email,
+        "salary": salary,
     },
     {"id": team_member_id},
 )

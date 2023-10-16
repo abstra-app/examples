@@ -87,7 +87,7 @@
       "is_initial": true,
       "file": "team_registration.py",
       "workflow_position": [
-        -534.2799188640975,
+        -535.0973575561956,
         71.80527383367138
       ],
       "transitions": [
@@ -115,8 +115,8 @@
       "is_initial": false,
       "file": "team_registration_by_company.py",
       "workflow_position": [
-        -533.0906550629984,
-        247.0588235294118
+        -534.7255324471946,
+        247.05882352941185
       ],
       "transitions": [
         {
