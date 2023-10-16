@@ -5,8 +5,8 @@ stage = get_stage()
 
 # Get user information
 
-name = read("Qual seu nome?")
-email = read("Qual seu email?")
+name = read("Insert your name?")
+email = read("Insert your email?")
 
 stage["name"] = name
 stage["email"] = email
@@ -14,15 +14,15 @@ stage["email"] = email
 # Get user choice
 
 selected_option = read_multiple_choice(
-    "Qual informação você deseja visualizar?",
-    ["Lista das principais manchetes do dia", "Índices das bolsa de valores"],
+    "Witch information would you like to visualize?",
+    ["Main headlines of the day", "Stock exchange indexes"],
 )
 
 stage["selected_option"] = selected_option
 
 # Define next stage based on user choice
 
-if selected_option == "Lista das principais manchetes do dia":
+if selected_option == "Main headlines of the day":
     new_stage = next_stage([{"stage": "News"}])
-elif selected_option == "Índices das bolsa de valores":
+elif selected_option == "Stock exchange indexes":
     new_stage = next_stage([{"stage": "Stocks"}])
