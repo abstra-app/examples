@@ -51,20 +51,6 @@
         "path": "get-team-info",
         "type": "dash",
         "visible": false
-      },
-      {
-        "id": "new_form_4CwvnOrjnr",
-        "name": "Untitled Form",
-        "path": "new_form_4CwvnOrjnr",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "new_form_H68vf6fTuP",
-        "name": "Untitled Form",
-        "path": "new_form_H68vf6fTuP",
-        "type": "form",
-        "visible": false
       }
     ],
     "root": null,
@@ -95,7 +81,7 @@
       "file": "team_registration.py",
       "workflow_position": [
         -535.0973575561956,
-        71.80527383367138
+        56.86751449757179
       ],
       "transitions": [
         {
@@ -150,7 +136,7 @@
       "is_initial": false,
       "file": "contract_generator.py",
       "workflow_position": [
-        -124.1379310344829,
+        -122.89311775647457,
         247.05882352941177
       ],
       "transitions": [
@@ -218,8 +204,8 @@
       "is_initial": false,
       "file": "contract_review.py",
       "workflow_position": [
-        376.0649087221095,
-        63.28600405679521
+        598.8864854855951,
+        57.06193766675369
       ],
       "transitions": [
         {
@@ -246,8 +232,8 @@
       "is_initial": false,
       "file": "update_team.py",
       "workflow_position": [
-        -15.821501014198816,
-        66.93711967545642
+        45.174349608207876,
+        54.48898689537344
       ],
       "transitions": [
         {
@@ -257,48 +243,6 @@
           "id": "m8xt9qrs3ko"
         }
       ]
-    },
-    {
-      "id": "new_form_4CwvnOrjnr",
-      "path": "new_form_4CwvnOrjnr",
-      "title": "Untitled Form",
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "is_initial": true,
-      "file": "new_form_4CwvnOrjnr.py",
-      "workflow_position": [
-        -176.7634854771784,
-        -149.37759336099586
-      ],
-      "transitions": []
-    },
-    {
-      "id": "new_form_H68vf6fTuP",
-      "path": "new_form_H68vf6fTuP",
-      "title": "Untitled Form",
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "is_initial": true,
-      "file": "new_form_H68vf6fTuP.py",
-      "workflow_position": [
-        -8.713692946058131,
-        -158.09128630705393
-      ],
-      "transitions": []
     }
   ],
   "dashes": [
@@ -402,8 +346,8 @@
       "title": "Contract Signature",
       "is_initial": false,
       "workflow_position": [
-        458.4936706666772,
-        378.49898580121703
+        620.3193968077562,
+        402.15043808337464
       ],
       "transitions": []
     }
