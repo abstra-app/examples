@@ -17,18 +17,20 @@ def preprocessing_date(date):
 # We use this method bellow to get a information of the stage that is running
 stage = aw.get_stage()
 team_id = stage["id"]
+email = stage["email"]
+name = stage["name"]
 # Here we define a form to get some additional info from the team member
 member_page = (
     Page()
     .display("Personal Data", size="large")
     .read("Full name", required=False, key="name")
-    .read_email("Email", required=False, key="personal_email")
+    .read_email("Email", required=False, key="email")
     .read_date("Birth date", required=False, key="birth_date")
     .read_phone("Phone Number", required=False, key="phone_number")
     .read("National ID number (RG)", required=False, key="id_number")
     .read("ID number issued by", required=False, key="id_emited_by")
     .read_cpf(
-        "Individual Taxpayer Registration (CPF)", required=False, key="id_taxpayer"
+        "Individual Taxpayer Registration (CPF)", required=False, key="taxpayer_id"
     )
     .read("Country", required=False, key="country")
     .read("Address (without number)", required=False, key="address")
@@ -42,6 +44,7 @@ member_page = (
         required=False,
         key="zip_code",
     )
+    .read("Shirt size", required=False, key="shirt_size")
 )
 # Here we define a form to get bank account data from the team member
 bank_info_member_page = (
@@ -62,12 +65,12 @@ bank_info_member_page = (
 member = run_steps([member_page, bank_info_member_page])
 (
     name,
-    personal_email,
+    email,
     birth_date,
     phone_number,
     id_number,
     id_emited_by,
-    id_taxpayer,
+    taxpayer_id,
     country,
     address,
     number_address,
@@ -83,7 +86,7 @@ member = run_steps([member_page, bank_info_member_page])
     member["email"],
     member["birth_date"],
     member["phone_number"],
-    member["id"],
+    member["id_number"],
     member["id_emited_by"],
     member["taxpayer_id"],
     member["country"],
@@ -99,19 +102,19 @@ member = run_steps([member_page, bank_info_member_page])
 )
 birth_date = preprocessing_date(birth_date)
 phone_number = phone_number.raw
-id_taxpayer = id_taxpayer.replace(".", "").replace("-", "")
+taxpayer_id = taxpayer_id.replace(".", "").replace("-", "")
 # Insert personal data
 result = update(
     "team",
     {"id": team_id},
     {
         "name": name,
-        "email": personal_email,
+        "email": email,
         "birth_date": birth_date,
         "phone_number": phone_number,
         "identification_number": id_number,
         "id_emited_by": id_emited_by,
-        "taxpayer_id": id_taxpayer,
+        "taxpayer_id": taxpayer_id,
         "country": country,
         "address": address,
         "number_address": number_address,
@@ -124,18 +127,22 @@ result = update(
         "bank_branch_code": bank_branch_code,
     },
 )
-name, id, email, id_taxpayer = name, team_id, personal_email, id_taxpayer
-# name, id, email = name, 4, personal_email
+name, id, email, taxpayer_id = name, team_id, email, taxpayer_id
+# name, id, email = name, 4, email
 aw.next_stage(
     [
         {
-            "assignee": personal_email,
+            "assignee": email,
             "data": {
                 "id": team_id,
                 "name": name,
                 "email": email,
-                "id_taxpayer": id_taxpayer,
+                "taxpayer_id": taxpayer_id,
             },
+            "stage": "send-contract",
         }
     ]
 )
+
+print("email", email)
+print("name", name)
