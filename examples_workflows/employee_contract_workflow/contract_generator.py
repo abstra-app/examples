@@ -104,22 +104,11 @@ def generate_document(
     )
     return output_filepath
 
-
-contract_type = [
-    {"label": "Individual", "value": "individual"},
-    {"label": "Individual Freelancer", "value": "individual_freelancer"},
-    {"label": "Company", "value": "company"},
-]
-
-
 def render(partial):
     if len(partial) != 0:
         if partial["existing_contract"] == "New Contract":
             return Page().read_file("Upload your contract", key="contract")
-        else:
-            return Page().read_dropdown(
-                "Contract Type", contract_type, key="contract_type"
-            )
+
 
 
 contract = (

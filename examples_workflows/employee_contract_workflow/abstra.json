@@ -44,6 +44,13 @@
         "path": "get-team-info",
         "type": "dash",
         "visible": false
+      },
+      {
+        "id": "update-team",
+        "name": "Update Personal data",
+        "path": "update-team",
+        "type": "form",
+        "visible": false
       }
     ],
     "root": null,
@@ -101,8 +108,8 @@
       "is_initial": false,
       "file": "team_registration_by_company.py",
       "workflow_position": [
-        -534.9693382715976,
-        242.01984547037242
+        -536.6311270816091,
+        237.8653734453437
       ],
       "transitions": [
         {
@@ -157,7 +164,7 @@
       "is_initial": false,
       "file": "contract_approval.py",
       "workflow_position": [
-        245.84178498985818,
+        244.9157500041266,
         238.8761283115154
       ],
       "transitions": [
@@ -223,7 +230,7 @@
       "start_button_text": null,
       "restart_button_text": null,
       "is_initial": false,
-      "file": "update_team.py",
+      "file": "update_team_member.py",
       "workflow_position": [
         19.112810396050236,
         50.72332514867534
@@ -343,6 +350,7 @@
       "file": "send_contract_to_sign.py",
       "path": "qd3a67kfle",
       "title": "Contract Signature",
+      "is_initial": false,
       "workflow_position": [
         693.5064310912428,
         240.17913270188765

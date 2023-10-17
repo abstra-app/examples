@@ -36,12 +36,6 @@ contract_approval = (
     .run(actions=["Approve", "Reject"])
 )
 
-reject_reasons = [
-    {"label": "Personal Data Issues", "value": "personal_issues"},
-    {"label": "Contract Data Issues", "value": "contract_issues"},
-]
-
-
 if contract_approval.action == "Reject":
     contract_reject = (
         Page()
@@ -50,12 +44,6 @@ if contract_approval.action == "Reject":
             [{"label":"Yes","value":True}, {"label":"No","value":False}],
             key="is_personal_data_problem",
             multiple=False,
-        )
-        .read_textarea(
-            "Comments",
-            required=False,
-            placeholder="Put here your comments about the problems",
-            key="comments",
         )
         .reactive(render)
         .run("Send")
@@ -93,7 +81,6 @@ if contract_approval.action == "Reject":
                     "output_filepath": output_filepath,
                     "document_filename": document_filename,
                     "taxpayer_id": taxpayer_id,
-                    "reject_reason": contract_reject["reject_reason"],
                 },
                 "stage": "contract-review",
             }
