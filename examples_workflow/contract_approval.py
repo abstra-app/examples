@@ -14,10 +14,15 @@ id_taxpayer = stage["id_taxpayer"]
 # Now we create a function to render a new form if the user rejects the document
 def render(partial):
     if len(partial) != 0:
-        if partial["reject_reason"][0] == "Contract Data Issues":
+        if partial["is_personal_data_problem"][0] == False:
             return Page().read_file(
                 "Upload your changed contract", required=False, key="contract"
-            )
+            ).read_textarea(
+            "Comments",
+            required=False,
+            placeholder="Put here your comments about the problems",
+            key="comments",
+        )
 
 
 # Down here we discuss the approval or rejection of the document:
@@ -35,9 +40,10 @@ if contract_approval.action == "Reject":
     contract_reject = (
         Page()
         .read_checklist(
-            "Please select the reason for rejection",
-            ["Personal Data Issues", "Contract Data Issues"],
-            key="reject_reason",
+            "Does the contract have any personal data?",
+            [{"label":"Yes","value":True}, {"label":"No","value":False}],
+            key="is_personal_data_problem",
+            multiple=False,
         )
         .read_textarea(
             "Comments",
@@ -51,7 +57,7 @@ if contract_approval.action == "Reject":
 
     contract_reject_list = [c for c in contract_reject.values()]
 
-    if "Personal Data Issues" in contract_reject["reject_reason"]:
+    if contract_reject["is_personal_data_problem"][0]:
         new_stage = aw.next_stage(
             [
                 {
@@ -62,7 +68,7 @@ if contract_approval.action == "Reject":
             ]
         )
 
-    if "Contract Data Issues" in contract_reject["reject_reason"]:
+    if contract_reject["is_personal_data_problem"][0] == False:
         if contract_reject["contract"]:
             contract_filepath = contract_reject["contract"].file.name
             new_output_filepath = contract_filepath

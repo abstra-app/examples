@@ -108,8 +108,8 @@
       "is_initial": false,
       "file": "team_registration_by_company.py",
       "workflow_position": [
-        -533.2084103104502,
-        245.54170139266742
+        -534.9693382715976,
+        242.01984547037242
       ],
       "transitions": [
         {
@@ -136,8 +136,8 @@
       "is_initial": false,
       "file": "contract_generator.py",
       "workflow_position": [
-        -127.44448416670787,
-        242.50745711917835
+        -133.60773203072415,
+        238.9856011968833
       ],
       "transitions": [
         {
@@ -165,7 +165,7 @@
       "file": "contract_approval.py",
       "workflow_position": [
         245.84178498985818,
-        239.75659229208918
+        238.8761283115154
       ],
       "transitions": [
         {
@@ -175,16 +175,16 @@
           "id": "dtfT8csZ8Y"
         },
         {
-          "target_path": "update-team",
-          "target_type": "forms",
-          "label": "",
-          "id": "t8iw0p6frpf"
-        },
-        {
           "target_path": "qd3a67kfle",
           "target_type": "scripts",
           "label": "",
           "id": "san6upsnmeg"
+        },
+        {
+          "target_path": "update-team",
+          "target_type": "forms",
+          "label": "",
+          "id": "s6nmt6ivppl"
         }
       ]
     },
@@ -204,8 +204,8 @@
       "is_initial": false,
       "file": "contract_review.py",
       "workflow_position": [
-        598.8864854855951,
-        57.06193766675369
+        529.3298310202683,
+        55.301009705606134
       ],
       "transitions": [
         {
@@ -232,8 +232,8 @@
       "is_initial": false,
       "file": "update_team.py",
       "workflow_position": [
-        64.89693738588562,
-        56.00610903211788
+        19.112810396050236,
+        50.72332514867534
       ],
       "transitions": [
         {
@@ -344,7 +344,6 @@
       "file": "send_contract_to_sign.py",
       "path": "qd3a67kfle",
       "title": "Contract Signature",
-      "is_initial": false,
       "workflow_position": [
         620.3193968077562,
         402.15043808337464
