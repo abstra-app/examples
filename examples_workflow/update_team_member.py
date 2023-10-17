@@ -143,6 +143,3 @@ aw.next_stage(
         }
     ]
 )
-
-print("email", email)
-print("name", name)

@@ -8,7 +8,7 @@ stage = aw.get_stage()
 output_filepath = stage["output_filepath"]
 document_filename = stage["document_filename"]
 team_id = stage["id"]
-id_taxpayer = stage["id_taxpayer"]
+taxpayer_id = stage["taxpayer_id"]
 
 
 # Now we create a function to render a new form if the user rejects the document
@@ -35,6 +35,12 @@ contract_approval = (
     .display_file(output_filepath, download_text="Click here to download the document")
     .run(actions=["Approve", "Reject"])
 )
+
+reject_reasons = [
+    {"label": "Personal Data Issues", "value": "personal_issues"},
+    {"label": "Contract Data Issues", "value": "contract_issues"},
+]
+
 
 if contract_approval.action == "Reject":
     contract_reject = (
@@ -74,25 +80,25 @@ if contract_approval.action == "Reject":
             new_output_filepath = contract_filepath
         else:
             new_output_filepath = output_filepath
-
         comments = contract_reject["comments"]
-
-        new_stage_contract = aw.next_stage(
-            [
-                {
-                    "assignee": "foo@company.co",
-                    "data": {
-                        "id": team_id,
-                        "comments": comments,
-                        "new_output_filepath": new_output_filepath,
-                        "output_filepath": output_filepath,
-                        "document_filename": document_filename,
-                        "id_taxpayer": id_taxpayer,
-                    },
-                    "stage": "contract-review",
-                }
-            ]
-        )
+    
+    new_stage_contract = aw.next_stage(
+        [
+            {
+                "assignee": "foo@company.co",
+                "data": {
+                    "id": team_id,
+                    "comments": comments,
+                    "new_output_filepath": new_output_filepath,
+                    "output_filepath": output_filepath,
+                    "document_filename": document_filename,
+                    "taxpayer_id": taxpayer_id,
+                    "reject_reason": contract_reject["reject_reason"],
+                },
+                "stage": "contract-review",
+            }
+        ]
+    )
 
 else:
     new_stage = aw.next_stage(
@@ -103,7 +109,7 @@ else:
                     "id": team_id,
                     "document_filename": document_filename,
                     "output_filepath": output_filepath,
-                    id_taxpayer: "id_taxpayer",
+                    taxpayer_id: "taxpayer_id",
                 },
                 "stage": "qd3a67kfle",  # contract-signature
             }

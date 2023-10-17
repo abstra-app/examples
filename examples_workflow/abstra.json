@@ -39,13 +39,6 @@
         "visible": false
       },
       {
-        "id": "update-team",
-        "name": "Update Personal data",
-        "path": "update-team",
-        "type": "form",
-        "visible": false
-      },
-      {
         "id": "get-team-info",
         "name": "Team Info",
         "path": "get-team-info",
@@ -240,7 +233,13 @@
           "target_path": "send-contract",
           "target_type": "forms",
           "label": "",
-          "id": "m8xt9qrs3ko"
+          "id": "nfjspaz2gd"
+        },
+        {
+          "target_path": "contract-approval",
+          "target_type": "forms",
+          "label": "",
+          "id": "cfxpui7dtuc"
         }
       ]
     }
@@ -345,8 +344,8 @@
       "path": "qd3a67kfle",
       "title": "Contract Signature",
       "workflow_position": [
-        620.3193968077562,
-        402.15043808337464
+        693.5064310912428,
+        240.17913270188765
       ],
       "transitions": []
     }
