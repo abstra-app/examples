@@ -108,8 +108,8 @@
       "is_initial": false,
       "file": "team_registration_by_company.py",
       "workflow_position": [
-        -536.6311270816091,
-        237.8653734453437
+        -537.5571620673408,
+        236.01330347388043
       ],
       "transitions": [
         {
@@ -136,8 +136,8 @@
       "is_initial": false,
       "file": "contract_generator.py",
       "workflow_position": [
-        -133.60773203072415,
-        238.9856011968833
+        -140.08997693084518,
+        236.20749623968857
       ],
       "transitions": [
         {
@@ -232,8 +232,8 @@
       "is_initial": false,
       "file": "update_team_member.py",
       "workflow_position": [
-        19.112810396050236,
-        50.72332514867534
+        16.334705438855508,
+        48.87125517721219
       ],
       "transitions": [
         {
