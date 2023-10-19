@@ -1,26 +1,9 @@
 from abstra.forms import *
-from abstra.tables import run
+from abstra.tables import run, insert
 from datetime import datetime
 
 
 display("Hi! Welcome to our Purchase Requester.", button_text="Let's get started")
-
-
-def add_expense(name, description, type, value, recurring_monthly, due):
-    sql = """
-        INSERT INTO expenses (name, description, type, value, recurring_monthly, due)
-        VALUES ($1, $2, $3, $4, $5, $6)
-        RETURNING id;
-    """
-    params = [
-        name,
-        description,
-        type,
-        value,
-        recurring_monthly,
-        due,
-    ]
-    return run(sql, params)
 
 
 def preprocessing_date(date):
@@ -83,7 +66,17 @@ if value <= budget:
     due = read_date("When is this expense due?")
     due = preprocessing_date(due)
 
-    add_expense(title, description, type, value, recurring, due)
+    insert(
+        "expenses",
+        {
+            "name": title,
+            "description": description,
+            "type": type,
+            "value": value,
+            "recurring_monthly": recurring,
+            "due": due,
+        },
+    )
 
     update_budget()
 

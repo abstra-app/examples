@@ -1,21 +1,6 @@
 from abstra.forms import *
-from abstra.tables import run
+from abstra.tables import run, insert, update
 from datetime import datetime
-
-
-def add_investor(email, name, from_us, signature_date):
-    sql = """
-        INSERT INTO investors (email, name, from_us, signature_date)
-        VALUES ($1, $2, $3, $4)
-        RETURNING id;
-    """
-    params = [
-        email,
-        name,
-        from_us,
-        signature_date,
-    ]
-    return run(sql, params)
 
 
 def list_investors():
@@ -33,16 +18,6 @@ def get_investor_data(investor_id):
     """
     params = [investor_id]
     return run(sql, params)[0]
-
-
-def update_investor(email, name, from_us, signature_date, id):
-    sql = """
-        UPDATE investors
-        SET email = $1, name = $2, from_us = $3, signature_date = $4
-        WHERE id = $5;
-    """
-    params = [email, name, from_us, signature_date, id]
-    return run(sql, params)
 
 
 def preprocessing_date(date):
@@ -81,7 +56,15 @@ if registration == "first_time":
 
     signature_date = preprocessing_date(signature_date)
 
-    add_investor(email=email, name=name, from_us=from_us, signature_date=signature_date)
+    insert(
+        "investors",
+        {
+            "email": email,
+            "name": name,
+            "from_us": from_us,
+            "signature_date": signature_date,
+        },
+    )
 
     display("New investor has been registered! See you later.")
 
@@ -103,14 +86,27 @@ else:
         Page()
         .read("name", required=False)
         .read_email("email", required=False)
+        .read_multiple_choice(
+            "From US?",
+            [
+                {"label": "yes", "value": "yes"},
+                {"label": "no", "value": "no"},
+            ],
+            required=False,
+            key="from_us",
+        )
+        .read_date("Signature date", required=False, key="signature_date")
         .run("Send")
     )
 
-    update_investor(
-        email=updated_investor["email"] or investor["email"],
-        name=updated_investor["name"] or investor["name"],
-        from_us=investor["from_us"],
-        signature_date=investor["signature_date"],
-        id=investor_id,
+    update(
+        "investors",
+        {
+            "email": updated_investor["email"],
+            "name": updated_investor["name"],
+            "from_us": updated_investor["from_us"],
+            "signature_date": preprocessing_date(updated_investor["signature_date"]),
+        },
+        {"id": investor_id},
     )
     display("Investor data has been updated! See you later.")

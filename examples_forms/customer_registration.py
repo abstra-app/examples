@@ -12,25 +12,6 @@ from abstra.tables import run, insert, update
 from datetime import datetime
 
 
-def add_customer(
-    name, email, legal_entity, payment_frequency, payment_method, country, churn_at
-):
-    sql = """
-        INSERT INTO customers (name, email, legal_entity, payment_frequency, payment_method, country,)
-        VALUES ($1, $2, $3, $4, $5, $6)
-        RETURNING id;
-    """
-    params = [
-        name,
-        email,
-        legal_entity,
-        payment_frequency,
-        payment_method,
-        country,
-    ]
-    return run(sql, params)
-
-
 def list_customers():
     sql = """
         SELECT id, name, email FROM customers;
@@ -46,27 +27,6 @@ def get_customer_data(customer_id):
     """
     params = [customer_id]
     return run(sql, params)[0]
-
-
-def update_customer(
-    name, email, legal_entity, payment_frequency, payment_method, country, churn_at, id
-):
-    sql = """
-        UPDATE customers
-        SET name = $1, email = $2, legal_entity = $3, payment_frequency = $4, payment_method = $5, country = $6, churn_at = $7
-        WHERE id = $8;
-    """
-    params = [
-        name,
-        email,
-        legal_entity,
-        payment_frequency,
-        payment_method,
-        country,
-        churn_at,
-        id,
-    ]
-    return run(sql, params)
 
 
 def preprocessing_date(date):
@@ -190,6 +150,8 @@ else:
         )
         .run("Send")
     )
+
+    updated_customer["churn_date"] = preprocessing_date(updated_customer["churn_date"])
 
     update(
         "customers",

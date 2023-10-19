@@ -1,6 +1,6 @@
 from abstra.forms import *
 from datetime import datetime
-from abstra.tables import run
+from abstra.tables import run, insert
 
 # Here you can add your company's authentication.
 # user = get_user()
@@ -28,26 +28,19 @@ def get_travel():
         .read("City of travel", key="city")
         .run("Send")
     )
-    return travel.values()
+    return travel
 
 
-def insert_travel_db():
-    purpose, travel_date, country, city = get_travel()
-    travel_date = preprocessing_date(travel_date)
+travel = get_travel()
 
-    sql = """
-        INSERT INTO travel (purpose, date, country, city)
-        VALUES ($1, $2, $3, $4)
-        RETURNING id;
-    """
-    params = [
-        purpose,
-        travel_date,
-        country,
-        city,
-    ]
-    return run(sql, params)
+insert(
+    "travel",
+    {
+        "purpose": travel["purpose"],
+        "date": preprocessing_date(travel["date"]),
+        "country": travel["country"],
+        "city": travel["city"],
+    },
+)
 
-
-insert_travel_db()
 display("All good! Your travel has been registered.")
