@@ -1,9 +1,6 @@
 name: Deploy Workspace Environment and Files
 
 on:
-  push:
-    branches:
-      - master
   workflow_dispatch:
 
 jobs:

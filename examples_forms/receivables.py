@@ -1,7 +1,7 @@
 from abstra.forms import *
 from abstra import *
 from datetime import datetime
-from abstra.tables import run, api
+from abstra.tables import run, insert
 
 # Here you can add your company's authentication.
 # user = get_user()
@@ -29,33 +29,28 @@ def get_receivable():
         .display("Hello. To insert a receivable, please fill in the information below:")
         .read("Description", key="description")
         .read_number("Amount", key="amount")
-        .read_dropdown("Currency", currencies, key="")
-        .read("Customer")
-        .read_dropdown("Legal entity", entities)
-        .read_date("Receivable date")
+        .read_dropdown("Currency", currencies, key="currency")
+        .read("Customer", key="customer")
+        .read_dropdown("Legal entity", entities, key="legal_entity")
+        .read_date("Receivable date", key="receivable_date")
         .run("Send")
     )
 
     return receivables
 
 
-def insert_receivables_db():
-    receivable = get_receivable()
-    sql = """
-        INSERT INTO receivables (description, amount, currency, customer, legal_entity, receivable_date)
-        VALUES ($1, $2, $3, $4, $5, $6)
-        RETURNING id;
-    """
-    params = [
-        receivable["description"],
-        float(receivable["amount"]),
-        receivable["currency"],
-        receivable["customer"],
-        receivable["legal_entity"],
-        preprocessing_date(receivable["receivable_date"]),
-    ]
-    return run(sql, params)
+receivable = get_receivable()
 
+insert(
+    "receivables",
+    {
+        "description": receivable["description"],
+        "amount": float(receivable["amount"]),
+        "currency": receivable["currency"],
+        "customer": receivable["customer"],
+        "legal_entity": receivable["legal_entity"],
+        "receivable_date": preprocessing_date(receivable["receivable_date"]),
+    },
+)
 
-insert_receivables_db()
 display("All clear, boss. Receivable added to your database.", button_text="👍")

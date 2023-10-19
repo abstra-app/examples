@@ -1,169 +1,11 @@
 from abstra.forms import *
-from abstra.tables import run
+from abstra.tables import run, insert, update
 from datetime import datetime
 
 # Here you can add your company's authentication.
 # user = get_user()
 # if not user.email.endswith('@mycompany.com'):
 # exit()
-
-
-def add_member(
-    name,
-    email,
-    start_date,
-    position,
-    birth_date,
-    phone_number,
-    id_number,
-    id_emited_by,
-    id_taxpayer,
-    company_email,
-    country,
-    state,
-    city,
-    address,
-    number_address,
-    complement_address,
-    district,
-    zip_code,
-    bank_name,
-    bank_account_number,
-    bank_branch_code,
-    legal_entity_number,
-    name_company,
-    state_company,
-    city_company,
-    company_address,
-    company_number_address,
-    company_complement_address,
-    company_district,
-    company_zip_code,
-    shirt_size,
-):
-    sql = """
-        INSERT INTO members (name, email, start_date, position, birth_date, phone_number, id_number,\
-     id_emited_by, id_taxpayer, company_email, country, state, city, address, number_address, complement_address,\
-     district, zip_code, bank_name, bank_account_number, bank_branch_code, legal_entity_number, name_company,\
-     state_company, city_company, company_address, company_number_address, company_complement_address, company_district,\
-     company_zip_code, shirt_size)
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10,\
-                $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,\
-                $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,\
-                $31)
-        RETURNING id;
-    """
-    params = [
-        name,
-        email,
-        start_date,
-        position,
-        birth_date,
-        phone_number,
-        id_number,
-        id_emited_by,
-        id_taxpayer,
-        company_email,
-        country,
-        state,
-        city,
-        address,
-        number_address,
-        complement_address,
-        district,
-        zip_code,
-        bank_name,
-        bank_account_number,
-        bank_branch_code,
-        legal_entity_number,
-        name_company,
-        state_company,
-        city_company,
-        company_address,
-        company_number_address,
-        company_complement_address,
-        company_district,
-        company_zip_code,
-        shirt_size,
-    ]
-    return run(sql, params)
-
-
-def update_member(
-    email,
-    start_date,
-    position,
-    birth_date,
-    phone_number,
-    id_number,
-    id_emited_by,
-    id_taxpayer,
-    company_email,
-    country,
-    state,
-    city,
-    address,
-    number_address,
-    complement_address,
-    district,
-    zip_code,
-    bank_name,
-    bank_account_number,
-    bank_branch_code,
-    legal_entity_number,
-    name_company,
-    state_company,
-    city_company,
-    company_address,
-    company_number_address,
-    company_complement_address,
-    company_district,
-    company_zip_code,
-    shirt_size,
-):
-    sql = """
-        UPDATE members
-        SET email = $1, start_date = $2, position = $3, birth_date = $4, phone_number = $5, id_number = $6,\
-        id_emited_by = $7, id_taxpayer = $8, company_email = $9, country = $10, state = $11, city = $12, address = $13,\
-        number_address = $14, complement_address = $15, district = $16, zip_code = $17, bank_name = $18,\
-        bank_account_number = $19, bank_branch_code = $20, legal_entity_number = $21, name_company = $22,\
-        state_company = $23, city_company = $24, company_address = $25, company_number_address = $26,\
-        company_complement_address = $27, company_district = $28, company_zip_code = $29, shirt_size = $30
-        WHERE id = $31;
-    """
-    params = [
-        email,
-        start_date,
-        position,
-        birth_date,
-        phone_number,
-        id_number,
-        id_emited_by,
-        id_taxpayer,
-        company_email,
-        country,
-        state,
-        city,
-        address,
-        number_address,
-        complement_address,
-        district,
-        zip_code,
-        bank_name,
-        bank_account_number,
-        bank_branch_code,
-        legal_entity_number,
-        name_company,
-        state_company,
-        city_company,
-        company_address,
-        company_number_address,
-        company_complement_address,
-        company_district,
-        company_zip_code,
-        shirt_size,
-    ]
-    return run(sql, params)
 
 
 def list_member():
@@ -221,30 +63,30 @@ if registration == "new_member":
         .read_date("Birth date")
         .read_phone("Phone Number")
         .read("National ID number")
-        .read("ID number emited by")
-        .read("Social Security/ Individual Taxpayer Registration")
-        .read_email("Company email")
-        .read("Country")
-        .read("State")
-        .read("City")
-        .read("Address")
-        .read("Address number")
-        .read("Address Complement", required=False)
-        .read("District")
-        .read("Zip code")
-        .read("Bank Name")
-        .read("Bank account number")
-        .read("Bank branch code")
-        .read("Legal entities number", required=False)
-        .read("Company name", required=False)
-        .read("Company state", required=False)
-        .read("Company city", required=False)
-        .read("Company address", required=False)
-        .read("Company address number", required=False)
-        .read("Company address complement", required=False)
-        .read("Company district", required=False)
-        .read("Company zip code", required=False)
-        .read("Shirt size")
+        # .read("ID number emited by")
+        # .read("Social Security/ Individual Taxpayer Registration")
+        # .read_email("Company email")
+        # .read("Country")
+        # .read("State")
+        # .read("City")
+        # .read("Address")
+        # .read("Address number")
+        # .read("Address Complement", required=False)
+        # .read("District")
+        # .read("Zip code")
+        # .read("Bank Name")
+        # .read("Bank account number")
+        # .read("Bank branch code")
+        # .read("Legal entities number", required=False)
+        # .read("Company name", required=False)
+        # .read("Company state", required=False)
+        # .read("Company city", required=False)
+        # .read("Company address", required=False)
+        # .read("Company address number", required=False)
+        # .read("Company address complement", required=False)
+        # .read("Company district", required=False)
+        # .read("Company zip code", required=False)
+        # .read("Shirt size")
         .run("Send")
     )
 
@@ -256,68 +98,72 @@ if registration == "new_member":
         birth_date,
         phone_number,
         id_number,
-        id_emited_by,
-        id_taxpayer,
-        company_email,
-        country,
-        state,
-        city,
-        address,
-        number_address,
-        complement_address,
-        district,
-        zip_code,
-        bank_name,
-        bank_account_number,
-        bank_branch_code,
-        legal_entity_number,
-        name_company,
-        state_company,
-        city_company,
-        company_address,
-        company_number_address,
-        company_complement_address,
-        company_district,
-        company_zip_code,
-        shirt_size,
+        # id_emited_by,
+        # id_taxpayer,
+        # company_email,
+        # country,
+        # state,
+        # city,
+        # address,
+        # number_address,
+        # complement_address,
+        # district,
+        # zip_code,
+        # bank_name,
+        # bank_account_number,
+        # bank_branch_code,
+        # legal_entity_number,
+        # name_company,
+        # state_company,
+        # city_company,
+        # company_address,
+        # company_number_address,
+        # company_complement_address,
+        # company_district,
+        # company_zip_code,
+        # shirt_size,
     ) = member.values()
 
     start_date = preprocessing_date(start_date)
     birth_date = preprocessing_date(birth_date)
     phone_number = phone_number.raw
 
-    add_member(
-        name,
-        email,
-        start_date,
-        position,
-        birth_date,
-        phone_number,
-        id_number,
-        id_emited_by,
-        id_taxpayer,
-        company_email,
-        country,
-        state,
-        city,
-        address,
-        number_address,
-        complement_address,
-        district,
-        zip_code,
-        bank_name,
-        bank_account_number,
-        bank_branch_code,
-        legal_entity_number,
-        name_company,
-        state_company,
-        city_company,
-        company_address,
-        company_number_address,
-        company_complement_address,
-        company_district,
-        company_zip_code,
-        shirt_size,
+    # now we are going to insert the member info in the members table using the insert (str,dict) function
+    insert(
+        "members",
+        {
+            "name": name,
+            "email": email,
+            "start_date": start_date,
+            "position": position,
+            "birth_date": birth_date,
+            "phone_number": phone_number,
+            "id_number": id_number,
+            # "id_emited_by": id_emited_by,
+            # "id_taxpayer": id_taxpayer,
+            # "company_email": company_email,
+            # "country": country,
+            # "state": state,
+            # "city": city,
+            # "address": address,
+            # "number_address": number_address,
+            # "complement_address": complement_address,
+            # "district": district,
+            # "zip_code": zip_code,
+            # "bank_name": bank_name,
+            # "bank_account_number": bank_account_number,
+            # "bank_branch_code": bank_branch_code,
+            # "legal_entity_number": legal_entity_number,
+            # "name_company": name_company,
+            # "state_company": state_company,
+            # "city_company": city_company,
+            # "company_address": company_address,
+            # "company_number_address": company_number_address,
+            # "company_complement_address": company_complement_address,
+            # "company_district": company_district,
+            # "company_zip_code": company_zip_code,
+            # "shirt_size": shirt_size,
+        },
     )
 
     display(
@@ -367,30 +213,30 @@ elif registration == "update_member":
         .read_date("Birth date", required=False)
         .read_phone("Phone Number", required=False)
         .read("National ID number", required=False)
-        .read("ID number emited by", required=False)
-        .read("Social Security/ Individual Taxpayer Registration", required=False)
-        .read_email("Company email", required=False)
-        .read("Country", required=False)
-        .read("State", required=False)
-        .read("City", required=False)
-        .read("Address", required=False)
-        .read("Address number", required=False)
-        .read("Address Complement", required=False)
-        .read("District", required=False)
-        .read("Zip code", required=False)
-        .read("Bank Name", required=False)
-        .read("Bank account number", required=False)
-        .read("Bank branch code", required=False)
-        .read("Legal entities number", required=False)
-        .read("Company name", required=False)
-        .read("Company state", required=False)
-        .read("Company city", required=False)
-        .read("Company address", required=False)
-        .read("Company address number", required=False)
-        .read("Company address Complement", required=False)
-        .read("Company district", required=False)
-        .read("Company zip code", required=False)
-        .read("Shirt size", required=False)
+        # .read("ID number emited by", required=False)
+        # .read("Social Security/ Individual Taxpayer Registration", required=False)
+        # .read_email("Company email", required=False)
+        # .read("Country", required=False)
+        # .read("State", required=False)
+        # .read("City", required=False)
+        # .read("Address", required=False)
+        # .read("Address number", required=False)
+        # .read("Address Complement", required=False)
+        # .read("District", required=False)
+        # .read("Zip code", required=False)
+        # .read("Bank Name", required=False)
+        # .read("Bank account number", required=False)
+        # .read("Bank branch code", required=False)
+        # .read("Legal entities number", required=False)
+        # .read("Company name", required=False)
+        # .read("Company state", required=False)
+        # .read("Company city", required=False)
+        # .read("Company address", required=False)
+        # .read("Company address number", required=False)
+        # .read("Company address Complement", required=False)
+        # .read("Company district", required=False)
+        # .read("Company zip code", required=False)
+        # .read("Shirt size", required=False)
         .run("Send")
     )
 
@@ -401,30 +247,30 @@ elif registration == "update_member":
         birth_date,
         phone_number,
         id_number,
-        id_emited_by,
-        id_taxpayer,
-        company_email,
-        country,
-        state,
-        city,
-        address,
-        number_address,
-        complement_address,
-        district,
-        zip_code,
-        bank_name,
-        bank_account_number,
-        bank_branch_code,
-        legal_entity_number,
-        name_company,
-        state_company,
-        city_company,
-        company_address,
-        company_number_address,
-        company_complement_address,
-        company_district,
-        company_zip_code,
-        shirt_size,
+        # id_emited_by,
+        # id_taxpayer,
+        # company_email,
+        # country,
+        # state,
+        # city,
+        # address,
+        # number_address,
+        # complement_address,
+        # district,
+        # zip_code,
+        # bank_name,
+        # bank_account_number,
+        # bank_branch_code,
+        # legal_entity_number,
+        # name_company,
+        # state_company,
+        # city_company,
+        # company_address,
+        # company_number_address,
+        # company_complement_address,
+        # company_district,
+        # company_zip_code,
+        # shirt_size,
     ) = member.values()
 
     start_date = preprocessing_date(start_date)
@@ -432,37 +278,42 @@ elif registration == "update_member":
     if phone_number != None:
         phone_number = phone_number.raw
 
-    update_member(
-        email,
-        start_date,
-        position,
-        birth_date,
-        phone_number,
-        id_number,
-        id_emited_by,
-        id_taxpayer,
-        company_email,
-        country,
-        state,
-        city,
-        address,
-        number_address,
-        complement_address,
-        district,
-        zip_code,
-        bank_name,
-        bank_account_number,
-        bank_branch_code,
-        legal_entity_number,
-        name_company,
-        state_company,
-        city_company,
-        company_address,
-        company_number_address,
-        company_complement_address,
-        company_district,
-        company_zip_code,
-        shirt_size,
+    # now we are going to update the member info in the members table using the update (str,dict) function
+    update(
+        "members",
+        {
+            "email": email,
+            "start_date": start_date,
+            "position": position,
+            "birth_date": birth_date,
+            "phone_number": phone_number,
+            "id_number": id_number,
+            # "id_emited_by": id_emited_by,
+            # "id_taxpayer": id_taxpayer,
+            # "company_email": company_email,
+            # "country": country,
+            # "state": state,
+            # "city": city,
+            # "address": address,
+            # "number_address": number_address,
+            # "complement_address": complement_address,
+            # "district": district,
+            # "zip_code": zip_code,
+            # "bank_name": bank_name,
+            # "bank_account_number": bank_account_number,
+            # "bank_branch_code": bank_branch_code,
+            # "legal_entity_number": legal_entity_number,
+            # "name_company": name_company,
+            # "state_company": state_company,
+            # "city_company": city_company,
+            # "company_address": company_address,
+            # "company_number_address": company_number_address,
+            # "company_complement_address": company_complement_address,
+            # "company_district": company_district,
+            # "company_zip_code": company_zip_code,
+            # "shirt_size": shirt_size,
+        },
+        {"id": customer_id},
     )
 
     # Here you'll need to set your database's query statement in order to properly update it
