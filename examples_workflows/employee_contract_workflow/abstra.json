@@ -51,6 +51,13 @@
         "path": "update-team",
         "type": "form",
         "visible": false
+      },
+      {
+        "id": "2jtdb3x4ewy",
+        "name": "New form",
+        "path": "2jtdb3x4ewy",
+        "type": "form",
+        "visible": false
       }
     ],
     "root": null,
@@ -80,8 +87,8 @@
       "is_initial": true,
       "file": "team_registration.py",
       "workflow_position": [
-        -535.0973575561956,
-        56.86751449757179
+        -546.2097773849746,
+        51.31130458318222
       ],
       "transitions": [
         {
@@ -108,8 +115,8 @@
       "is_initial": false,
       "file": "team_registration_by_company.py",
       "workflow_position": [
-        -537.5571620673408,
-        236.01330347388043
+        -544.9654419531935,
+        232.30916353095412
       ],
       "transitions": [
         {
@@ -136,8 +143,8 @@
       "is_initial": false,
       "file": "contract_generator.py",
       "workflow_position": [
-        -140.08997693084518,
-        236.20749623968857
+        -147.49825681669802,
+        232.50335629676238
       ],
       "transitions": [
         {
@@ -164,8 +171,8 @@
       "is_initial": false,
       "file": "contract_approval.py",
       "workflow_position": [
-        244.9157500041266,
-        238.8761283115154
+        232.87729518961578,
+        231.46784842566257
       ],
       "transitions": [
         {
@@ -232,8 +239,8 @@
       "is_initial": false,
       "file": "update_team_member.py",
       "workflow_position": [
-        16.334705438855508,
-        48.87125517721219
+        14.482635467392356,
+        48.87125517721225
       ],
       "transitions": [
         {

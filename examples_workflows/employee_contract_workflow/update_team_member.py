@@ -21,34 +21,11 @@ name = stage["name"]
 
 # We need to get the old team member info before updating the table
 def get_team_info(team_id):
-    sql = "SELECT salary, complement_address, position, bank_account_number, id_emited_by, taxpayer_id, address, birth_date, zip_code, bank_name, email, number_address, phone_number, abstra_email, name, bank_branch_code, started_at, district, country, identification_number FROM team WHERE id = $1;"
+    sql = "SELECT name, email, birth_date, phone_number, identification_number, id_emited_by, taxpayer_id, country, address, number_address, complement_address, district, zip_code, shirt_size, bank_name, bank_account_number, bank_branch_code FROM team WHERE id = $1;"
     params = [team_id]
     return run(sql, params)[0]
 
 old_team_info = get_team_info(team_id)
-
-(
-    salary_old,
-    complement_address_old,
-    position_old,
-    bank_account_number_old,
-    id_emited_by_old,
-    taxpayer_id_old,
-    address_old,
-    birth_date_old,
-    zip_code_old,
-    bank_name_old,
-    email_old,
-    number_address_old,
-    phone_number_old,
-    abstra_email_old,
-    name_old,
-    bank_branch_code_old,
-    started_at_old,
-    district_old,
-    country_old,
-    identification_number_old,
-) = old_team_info.values()
 
 # Here we define a form to get some additional info from the team member
 member_page = (
@@ -94,6 +71,7 @@ bank_info_member_page = (
     )
 )
 member = run_steps([member_page, bank_info_member_page])
+print(member)
 (
     name,
     email,
@@ -136,11 +114,10 @@ phone_number = phone_number.raw
 taxpayer_id = taxpayer_id.replace(".", "").replace("-", "")
 # Insert personal data
 
-def updating_team_info(dict info):
-    for key, value in info.items():
-        if value == "":
-            info[key] = value_old
-    return info
+for key in old_team_info.keys():
+    if (member[key] == "" or member[key] == "+"):
+        member[key] = old_team_info[key]
+
 
 result = update(
     "team",
