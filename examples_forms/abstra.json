@@ -4,6 +4,13 @@
     "name": "Untitled Workspace",
     "sidebar": [
       {
+        "id": "buying-intention-form",
+        "name": "Notify Buying intention",
+        "path": "buying-intention-form",
+        "type": "form",
+        "visible": true
+      },
+      {
         "id": "cap-table-calculator",
         "name": "Cap table calculator",
         "path": "cap-table-calculator",
@@ -11,9 +18,86 @@
         "visible": true
       },
       {
-        "id": "Simple-quiz",
-        "name": "Simple quiz",
-        "path": "Simple-quiz",
+        "id": "certificate-generator",
+        "name": "Certificate generator ",
+        "path": "certificate-generator",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "create-hubspot-deals-from-apollo-leads",
+        "name": "Create Hubspot deals from apollo leads",
+        "path": "create-hubspot-deals-from-apollo-leads",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "create-invoice-from-CRM",
+        "name": "Create invoice from CRM",
+        "path": "create-invoice-from-CRM",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "customer-registration",
+        "name": "Customer registration",
+        "path": "customer-registration",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "error-handling",
+        "name": "Error handling",
+        "path": "error-handling",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "generate-documents-from-spreadsheet",
+        "name": "Generate documents from spreadsheets",
+        "path": "generate-documents-from-spreadsheet",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "hello-world",
+        "name": "Hello world",
+        "path": "hello-world",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "Investor-registration",
+        "name": "Investor registration",
+        "path": "Investor-registration",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "invoice-factoring-calculator ",
+        "name": "Invoice factoring calculator",
+        "path": "invoice-factoring-calculator ",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "online-exam",
+        "name": "Online exam",
+        "path": "online-exam",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "Purchase-request",
+        "name": "Purchase request",
+        "path": "Purchase-request",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "receivables",
+        "name": "Receivables",
+        "path": "receivables",
         "type": "form",
         "visible": true
       },
@@ -25,137 +109,74 @@
         "visible": true
       },
       {
-        "id": "buying-intention-form",
-        "name": "Notify Buying intention",
-        "path": "buying-intention-form",
-        "type": "form",
-        "visible": true
-      },
-      {
-        "id": "customer-registration",
-        "name": "Customer registration",
-        "path": "customer-registration",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "error-handling",
-        "name": "Error handling",
-        "path": "error-handling",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "online-exam",
-        "name": "Online exam",
-        "path": "online-exam",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "tax-calculator",
-        "name": "Tax calculator",
-        "path": "tax-calculator",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "create-invoice-from-CRM",
-        "name": "Create invoice from CRM",
-        "path": "create-invoice-from-CRM",
-        "type": "form",
-        "visible": false
-      },
-      {
         "id": "send-customized-emails-from-spreadsheet",
         "name": "Send customized emails from spreadsheet",
         "path": "send-customized-emails-from-spreadsheet",
         "type": "form",
-        "visible": false
+        "visible": true
       },
       {
-        "id": "sql-generator",
-        "name": "Sql generator",
-        "path": "sql-generator",
+        "id": "Simple-quiz",
+        "name": "Simple quiz",
+        "path": "Simple-quiz",
         "type": "form",
-        "visible": false
-      },
-      {
-        "id": "sub-to-new-feature",
-        "name": "Subscribe to a new feature",
-        "path": "sub-to-new-feature",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "virtual-class-timed-exam",
-        "name": "Virtual class timed exam",
-        "path": "virtual-class-timed-exam",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "recieve-new-entries-from-sheets",
-        "name": "Recieve new entries from sheets",
-        "path": "recieve-new-entries-from-sheets",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "hello-world",
-        "name": "Hello world",
-        "path": "hello-world",
-        "type": "form",
-        "visible": false
+        "visible": true
       },
       {
         "id": "spreadsheet-access",
         "name": "Spreadsheet access",
         "path": "spreadsheet-access",
         "type": "form",
-        "visible": false
+        "visible": true
       },
       {
-        "id": "certificate-generator",
-        "name": "Certificate generator ",
-        "path": "certificate-generator",
+        "id": "sql-generator",
+        "name": "Sql generator",
+        "path": "sql-generator",
         "type": "form",
-        "visible": false
+        "visible": true
       },
       {
-        "id": "generate-documents-from-spreadsheet",
-        "name": "Generate documents from spreadsheets",
-        "path": "generate-documents-from-spreadsheet",
+        "id": "sub-to-new-feature",
+        "name": "Subscribe to a new feature",
+        "path": "sub-to-new-feature",
         "type": "form",
-        "visible": false
+        "visible": true
       },
       {
-        "id": "create-hubspot-deals-from-apollo-leads",
-        "name": "Create Hubspot deals from apollo leads",
-        "path": "create-hubspot-deals-from-apollo-leads",
+        "id": "tax-calculator",
+        "name": "Tax calculator",
+        "path": "tax-calculator",
         "type": "form",
-        "visible": false
-      },
-      {
-        "id": "invoice-factoring-calculator ",
-        "name": "Invoice factoring calculator",
-        "path": "invoice-factoring-calculator ",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "receivables",
-        "name": "Receivables",
-        "path": "receivables",
-        "type": "form",
-        "visible": false
+        "visible": true
       },
       {
         "id": "team-registration",
         "name": "team registration",
         "path": "team-registration",
         "type": "form",
-        "visible": false
+        "visible": true
+      },
+      {
+        "id": "travel-registration",
+        "name": "Travel registration",
+        "path": "travel-registration",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "virtual-class-timed-exam",
+        "name": "Virtual class timed exam",
+        "path": "virtual-class-timed-exam",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "recieve-new-entries-from-sheets",
+        "name": "Recieve new entries from sheets",
+        "path": "recieve-new-entries-from-sheets",
+        "type": "form",
+        "visible": true
       },
       {
         "id": "travel-registration",
@@ -168,27 +189,6 @@
         "id": "Investor-registration",
         "name": "Investor registration",
         "path": "Investor-registration",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "travel-registration",
-        "name": "Travel registration",
-        "path": "travel-registration",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "Investor-registration",
-        "name": "Investor registration",
-        "path": "Investor-registration",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "Purchase-request",
-        "name": "Purchase request",
-        "path": "Purchase-request",
         "type": "form",
         "visible": false
       },

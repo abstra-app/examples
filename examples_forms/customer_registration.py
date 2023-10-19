@@ -8,13 +8,15 @@ We've set up this form (and Abstra's ERP) using Tables, our Postgres db service.
 """
 
 from abstra.forms import *
-from abstra.tables import run
+from abstra.tables import run, insert, update
 from datetime import datetime
 
 
-def add_customer(name, email, legal_entity, payment_frequency, payment_method, country):
+def add_customer(
+    name, email, legal_entity, payment_frequency, payment_method, country, churn_at
+):
     sql = """
-        INSERT INTO customers (name, email, legal_entity, payment_frequency, payment_method, country)
+        INSERT INTO customers (name, email, legal_entity, payment_frequency, payment_method, country,)
         VALUES ($1, $2, $3, $4, $5, $6)
         RETURNING id;
     """
@@ -109,18 +111,22 @@ if registration == "first_time":
         payment_frequency,
         payment_method,
         country,
-        created_data,
+        churn_at,
     ) = customer.values()
 
-    created_data = preprocessing_date(created_data)
+    churn_at = preprocessing_date(churn_at)
 
-    add_customer(
-        name=name,
-        email=email,
-        legal_entity=legal_entity,
-        payment_frequency=payment_frequency,
-        payment_method=payment_method,
-        country=country,
+    insert(
+        "customers",
+        {
+            "name": name,
+            "email": email,
+            "legal_entity": legal_entity,
+            "payment_frequency": payment_frequency,
+            "payment_method": payment_method,
+            "country": country,
+            "churn_at": churn_at,
+        },
     )
 
     display(
@@ -185,15 +191,18 @@ else:
         .run("Send")
     )
 
-    update_customer(
-        name=updated_customer["name"],
-        email=updated_customer["email"],
-        legal_entity=updated_customer["legal_entity"],
-        payment_frequency=updated_customer["payment_frequency"],
-        payment_method=updated_customer["payment_method"],
-        country=updated_customer["country"],
-        churn_at=updated_customer["churn_date"],
-        id=customer_id,
+    update(
+        "customers",
+        {
+            "name": updated_customer["name"],
+            "email": updated_customer["email"],
+            "legal_entity": updated_customer["legal_entity"],
+            "payment_frequency": updated_customer["payment_frequency"],
+            "payment_method": updated_customer["payment_method"],
+            "country": updated_customer["country"],
+            "churn_at": updated_customer["churn_date"],
+        },
+        {"id": customer_id},
     )
 
     display(
