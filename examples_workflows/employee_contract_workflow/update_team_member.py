@@ -13,12 +13,43 @@ def preprocessing_date(date):
         date = date.strftime("%Y/%m/%d, %H:%M:%S")
     return date
 
-
 # We use this method bellow to get a information of the stage that is running
 stage = aw.get_stage()
 team_id = stage["id"]
 email = stage["email"]
 name = stage["name"]
+
+# We need to get the old team member info before updating the table
+def get_team_info(team_id):
+    sql = "SELECT salary, complement_address, position, bank_account_number, id_emited_by, taxpayer_id, address, birth_date, zip_code, bank_name, email, number_address, phone_number, abstra_email, name, bank_branch_code, started_at, district, country, identification_number FROM team WHERE id = $1;"
+    params = [team_id]
+    return run(sql, params)[0]
+
+old_team_info = get_team_info(team_id)
+
+(
+    salary_old,
+    complement_address_old,
+    position_old,
+    bank_account_number_old,
+    id_emited_by_old,
+    taxpayer_id_old,
+    address_old,
+    birth_date_old,
+    zip_code_old,
+    bank_name_old,
+    email_old,
+    number_address_old,
+    phone_number_old,
+    abstra_email_old,
+    name_old,
+    bank_branch_code_old,
+    started_at_old,
+    district_old,
+    country_old,
+    identification_number_old,
+) = old_team_info.values()
+
 # Here we define a form to get some additional info from the team member
 member_page = (
     Page()
@@ -104,6 +135,13 @@ birth_date = preprocessing_date(birth_date)
 phone_number = phone_number.raw
 taxpayer_id = taxpayer_id.replace(".", "").replace("-", "")
 # Insert personal data
+
+def updating_team_info(dict info):
+    for key, value in info.items():
+        if value == "":
+            info[key] = value_old
+    return info
+
 result = update(
     "team",
     {"id": team_id},

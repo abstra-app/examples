@@ -110,7 +110,6 @@ def render(partial):
             return Page().read_file("Upload your contract", key="contract")
 
 
-
 contract = (
     Page()
     .read_dropdown(
