@@ -104,6 +104,7 @@ def generate_document(
     )
     return output_filepath
 
+
 def render(partial):
     if len(partial) != 0:
         if partial["existing_contract"] == "New Contract":

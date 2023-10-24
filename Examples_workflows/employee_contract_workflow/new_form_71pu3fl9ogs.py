@@ -6,14 +6,13 @@ email = "1@1.co"
 name = "1"
 
 aw.next_stage(
-        [
-            {
-                "data": {
-                    "id" : team_id,
-                    "email" : email,
-                    "name" : name,
-                },
-            }
-        ]
-    )
-
+    [
+        {
+            "data": {
+                "id": team_id,
+                "email": email,
+                "name": name,
+            },
+        }
+    ]
+)

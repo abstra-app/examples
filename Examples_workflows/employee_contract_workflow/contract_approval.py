@@ -15,14 +15,18 @@ taxpayer_id = stage["taxpayer_id"]
 def render(partial):
     if len(partial) != 0:
         if partial.get("is_personal_data_problem") == [False]:
-            return Page().read_file(
-                "Upload your changed contract", required=False, key="contract"
-            ).read_textarea(
-            "Comments",
-            required=False,
-            placeholder="Put here your comments about the problems",
-            key="comments",
-        )
+            return (
+                Page()
+                .read_file(
+                    "Upload your changed contract", required=False, key="contract"
+                )
+                .read_textarea(
+                    "Comments",
+                    required=False,
+                    placeholder="Put here your comments about the problems",
+                    key="comments",
+                )
+            )
 
 
 # Down here we discuss the approval or rejection of the document:
@@ -41,7 +45,7 @@ if contract_approval.action == "Reject":
         Page()
         .read_checklist(
             "Does the contract have any personal data error?",
-            [{"label":"Yes","value":True}, {"label":"No","value":False}],
+            [{"label": "Yes", "value": True}, {"label": "No", "value": False}],
             key="is_personal_data_problem",
             multiple=False,
         )
@@ -69,7 +73,7 @@ if contract_approval.action == "Reject":
         else:
             new_output_filepath = output_filepath
         comments = contract_reject["comments"]
-    
+
     new_stage_contract = aw.next_stage(
         [
             {

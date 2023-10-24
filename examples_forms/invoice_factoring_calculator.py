@@ -11,18 +11,20 @@ display(
 
 # Here we are selecting the assignor form our db:
 
+
 def list_assignor():
     sql = """
         SELECT id, name, supplier FROM invoicecalculator;
     """
     return run(sql)
 
+
 def get_assignor(id):
     sql = """SELECT name, monthly_interest_rate, credit_limit, supplier, notes
                  FROM invoicecalculator 
                  WHERE id = $1"""
     params = [id]
-    return run(sql,params)[0]
+    return run(sql, params)[0]
 
 
 assignors_db = list_assignor()
@@ -31,9 +33,9 @@ assignors_db = list_assignor()
 id_assignor = read_multiple_choice(
     "Please choose from the list of example assignors:",
     [
-    {"label": f'{assignor["name"]}', "value": assignor["id"]}
-    for assignor in assignors_db
-],
+        {"label": f'{assignor["name"]}', "value": assignor["id"]}
+        for assignor in assignors_db
+    ],
 )
 
 

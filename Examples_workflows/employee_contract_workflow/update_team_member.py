@@ -13,16 +13,19 @@ def preprocessing_date(date):
         date = date.strftime("%Y/%m/%d, %H:%M:%S")
     return date
 
+
 def unpreprocessing_date(date):
     date = date[0:10]
     date = date.replace("/", "-")
     return date
+
 
 # We use this method bellow to get a information of the stage that is running
 stage = aw.get_stage()
 team_id = stage["id"]
 email = stage["email"]
 name = stage["name"]
+
 
 # We need to get the old team member info before updating the table
 def get_team_info(team_id):
@@ -34,6 +37,7 @@ def get_team_info(team_id):
     params = [team_id]
     return run(sql, params)[0]
 
+
 old_team_info = get_team_info(team_id)
 print(unpreprocessing_date(old_team_info["birth_date"]))
 # Here we define a form to get some additional info from the team member
@@ -41,15 +45,54 @@ member_page = (
     Page()
     .display("Personal Data", size="large")
     .read("Full name", required=False, key="name", initial_value=old_team_info["name"])
-    .read_date("Birth date", required=False, key="birth_date", initial_value=unpreprocessing_date(old_team_info["birth_date"]))
-    .read_email("Email", required=False, key="email", initial_value=old_team_info["email"] )
-    .read("National ID number (RG)", required=False, key="identification_number", initial_value=old_team_info["identification_number"])
-    .read("ID number issued by", required=False, key="id_emited_by", initial_value=old_team_info["id_emited_by"])
-    .read("Country", required=False, key="country", initial_value=old_team_info["country"])
-    .read("Address (without number)", required=False, key="address", initial_value=old_team_info["address"])
-    .read("Address number", required=False, key="number_address", initial_value=old_team_info["number_address"])
-    .read("Address Complement", required=False, key="complement_address", initial_value=old_team_info["complement_address"])
-    .read("District", required=False, key="district", initial_value=old_team_info["district"])
+    .read_date(
+        "Birth date",
+        required=False,
+        key="birth_date",
+        initial_value=unpreprocessing_date(old_team_info["birth_date"]),
+    )
+    .read_email(
+        "Email", required=False, key="email", initial_value=old_team_info["email"]
+    )
+    .read(
+        "National ID number (RG)",
+        required=False,
+        key="identification_number",
+        initial_value=old_team_info["identification_number"],
+    )
+    .read(
+        "ID number issued by",
+        required=False,
+        key="id_emited_by",
+        initial_value=old_team_info["id_emited_by"],
+    )
+    .read(
+        "Country", required=False, key="country", initial_value=old_team_info["country"]
+    )
+    .read(
+        "Address (without number)",
+        required=False,
+        key="address",
+        initial_value=old_team_info["address"],
+    )
+    .read(
+        "Address number",
+        required=False,
+        key="number_address",
+        initial_value=old_team_info["number_address"],
+    )
+    .read(
+        "Address Complement",
+        required=False,
+        key="complement_address",
+        initial_value=old_team_info["complement_address"],
+    )
+    .read(
+        "District",
+        required=False,
+        key="district",
+        initial_value=old_team_info["district"],
+    )
     .read(
         "Zip code",
         mask="00000-000",
@@ -58,14 +101,25 @@ member_page = (
         key="zip_code",
         initial_value=old_team_info["zip_code"],
     )
-    .read("Shirt size", required=False, key="shirt_size", initial_value=old_team_info["shirt_size"])
+    .read(
+        "Shirt size",
+        required=False,
+        key="shirt_size",
+        initial_value=old_team_info["shirt_size"],
+    )
 )
 # Here we define a form to get bank account data from the team member
 bank_info_member_page = (
     Page()
     .display("Bank Account Data", size="large")
     .display("Please enter your bank account data.")
-    .read("Bank name", placeholder="Inter", required=False, key="bank_name", initial_value=old_team_info["bank_name"])
+    .read(
+        "Bank name",
+        placeholder="Inter",
+        required=False,
+        key="bank_name",
+        initial_value=old_team_info["bank_name"],
+    )
     .read(
         "Bank account number",
         placeholder="0000000-0",
@@ -74,7 +128,11 @@ bank_info_member_page = (
         initial_value=old_team_info["bank_account_number"],
     )
     .read(
-        "Bank branch code", placeholder="0001", required=False, key="bank_branch_code", initial_value=old_team_info["bank_branch_code"]
+        "Bank branch code",
+        placeholder="0001",
+        required=False,
+        key="bank_branch_code",
+        initial_value=old_team_info["bank_branch_code"],
     )
 )
 member = run_steps([member_page, bank_info_member_page])
