@@ -3,8 +3,6 @@ import abstra.workflows as aw
 from datetime import datetime
 from abstra.tables import update
 
-# Here we define a function to preprocess the data we want to insert into the database, if you are working with dates, you can use this function to convert the date to the format you want to insert into the database.
-
 
 def preprocessing_date(date):
     if date != None:
@@ -13,17 +11,16 @@ def preprocessing_date(date):
         date = date.strftime("%Y/%m/%d, %H:%M:%S")
     return date
 
-
+# security check
 user = get_user()
 if not user.email.endswith("@abstra.app"):
     display("Unauthorized access. Please contact admin@abstra.app.")
     exit()
 
-# We use this method bellow to get a information of the stage that is running
+# getting the info from the previous page
 stage = aw.get_stage()
 team_member, team_member_id, team_email = stage["name"], stage["id"], stage["email"]
 
-# Here we define a form to get some additional info from the team member
 member = (
     Page()
     .display("Team Additional Data", size="large")

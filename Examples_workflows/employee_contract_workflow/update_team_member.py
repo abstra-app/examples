@@ -5,7 +5,6 @@ from datetime import datetime
 from abstra.tables import update
 
 
-# Here we define a function to preprocess the data we want to insert into the database, if you are working with dates, you can use this function to convert the date to the format you want to insert into the database.
 def preprocessing_date(date):
     if date != None:
         date = datetime(date.year, date.month, date.day)
@@ -29,7 +28,7 @@ name = stage["name"]
 
 # We need to get the old team member info before updating the table
 def get_team_info(team_id):
-    sql = """SELECT name, birth_date, email,\
+    sql = """SELECT name, birth_date, taxpayer_id, email,\
           identification_number, id_emited_by,\
           country, address, number_address, complement_address,\
           district, zip_code, shirt_size, bank_name, bank_account_number,\
@@ -39,8 +38,7 @@ def get_team_info(team_id):
 
 
 old_team_info = get_team_info(team_id)
-print(unpreprocessing_date(old_team_info["birth_date"]))
-# Here we define a form to get some additional info from the team member
+# Define a form to get some additional info from the team member
 member_page = (
     Page()
     .display("Personal Data", size="large")
@@ -51,6 +49,7 @@ member_page = (
         key="birth_date",
         initial_value=unpreprocessing_date(old_team_info["birth_date"]),
     )
+    .read_cpf("Individual Taxpayer Registration (CPF)", key="taxpayer_id", initial_value=old_team_info["taxpayer_id"][0:3]+"."+old_team_info["taxpayer_id"][3:6]+"."+old_team_info["taxpayer_id"][6:9]+"-"+old_team_info["taxpayer_id"][9:11])
     .read_email(
         "Email", required=False, key="email", initial_value=old_team_info["email"]
     )
@@ -139,6 +138,7 @@ member = run_steps([member_page, bank_info_member_page])
 (
     name,
     birth_date,
+    taxpayer_id,
     email,
     identification_number,
     id_emited_by,
@@ -155,6 +155,7 @@ member = run_steps([member_page, bank_info_member_page])
 ) = (
     member["name"],
     member["birth_date"],
+    member["taxpayer_id"],
     member["email"],
     member["identification_number"],
     member["id_emited_by"],
@@ -169,9 +170,7 @@ member = run_steps([member_page, bank_info_member_page])
     member["bank_account_number"],
     member["bank_branch_code"],
 )
-print(name)
 # Insert personal data
-print(identification_number)
 result = update(
     "team",
     {
@@ -192,10 +191,7 @@ result = update(
     },
     {"id": team_id},
 )
-print(name)
-print(result)
 name, id, email = name, team_id, email
-# name, id, email = name, 4, email
 aw.next_stage(
     [
         {

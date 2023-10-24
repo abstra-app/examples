@@ -36,6 +36,8 @@ member_page = (
     .read("Shirt size", placeholder="M", key="shirt_size")
 )
 
+# Questions for the bank account data
+
 bank_info_member_page = (
     Page()
     .display("Bank Account Data", size="large")
@@ -47,14 +49,13 @@ bank_info_member_page = (
     .read("Bank branch code", placeholder="0001", key="bank_branch_code")
 )
 
+
 step_run = run_steps(
     [member_page, bank_info_member_page]
 )  # doing the forms in diferent steps
 
 member = step_run[0]
 bank_info_member = step_run[1]
-
-# updating the member dictionary with the bank info
 
 # assigning the answers to variables
 (
@@ -103,29 +104,18 @@ adding_member = insert(
     },
 )
 
-# # Insert bank account data
-# run('INSERT INTO "team_bank_account" (name, number, branch_code, team_id) VALUES($1, $2, $3, $4)',
-#             params=[bank_name, bank_account_number,
-#                     bank_branch_code, result[0]["id"]]
-#             )
-
-name, id, email = name, adding_member["id"], personal_email
-
+# Forwarding the data to the next stage
 aw.next_stage(
     [
         {
             "assignee": "example@example.com",
             "data": {
-                "id": id,
+                "id": adding_member["id"],
                 "name": name,
-                "email": email,
+                "email": personal_email,
                 "taxpayer_id": id_taxpayer,
             },
             "stage": "abstra-team-registration",
         }
     ]
 )
-
-# for you to test if the code is working
-# print(stage.data)
-# print(stage)

@@ -51,27 +51,6 @@
         "path": "update-team",
         "type": "form",
         "visible": false
-      },
-      {
-        "id": "71pu3fl9ogs",
-        "name": "New form",
-        "path": "71pu3fl9ogs",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "gy5szlbpud",
-        "name": "New form",
-        "path": "gy5szlbpud",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "ovvsr1ine4",
-        "name": "New form",
-        "path": "ovvsr1ine4",
-        "type": "form",
-        "visible": false
       }
     ],
     "root": null,
@@ -101,8 +80,8 @@
       "restart_button_text": null,
       "file": "team_registration.py",
       "workflow_position": [
-        -562.4826790411852,
-        38.79087717337919
+        -580.4236719731232,
+        24.626935385006988
       ],
       "transitions": [
         {
@@ -129,8 +108,8 @@
       "restart_button_text": null,
       "file": "team_registration_by_company.py",
       "workflow_position": [
-        -567.3915005779329,
-        219.69297258156664
+        -578.7226540086306,
+        180.9781983600162
       ],
       "transitions": [
         {
@@ -185,8 +164,8 @@
       "restart_button_text": null,
       "file": "contract_approval.py",
       "workflow_position": [
-        226.30138114396948,
-        225.8274188254353
+        220.63580442862065,
+        184.27985624621044
       ],
       "transitions": [
         {
@@ -225,8 +204,8 @@
       "restart_button_text": null,
       "file": "contract_review.py",
       "workflow_position": [
-        528.3855682343769,
-        55.301009705606134
+        534.051144949726,
+        30.750177272427777
       ],
       "transitions": [
         {
@@ -253,8 +232,8 @@
       "restart_button_text": null,
       "file": "update_team_member.py",
       "workflow_position": [
-        -9.144267452809345,
-        28.27001890060538
+        -10.088530238700855,
+        30.158544472388343
       ],
       "transitions": [
         {
@@ -268,89 +247,6 @@
           "target_type": "forms",
           "label": "",
           "id": "cfxpui7dtuc"
-        }
-      ]
-    },
-    {
-      "id": "71pu3fl9ogs",
-      "path": "71pu3fl9ogs",
-      "title": "New form",
-      "is_initial": true,
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "file": "new_form_71pu3fl9ogs.py",
-      "workflow_position": [
-        -0.4737713203551266,
-        -259.44613313946087
-      ],
-      "transitions": [
-        {
-          "target_path": "ovvsr1ine4",
-          "target_type": "forms",
-          "label": "",
-          "id": "w6iff1ipv3m"
-        },
-        {
-          "target_path": "gy5szlbpud",
-          "target_type": "forms",
-          "label": "",
-          "id": "hm1mkeak9lf"
-        }
-      ]
-    },
-    {
-      "id": "gy5szlbpud",
-      "path": "gy5szlbpud",
-      "title": "New form",
-      "is_initial": false,
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "file": "new_form_gy5szlbpud.py",
-      "workflow_position": [
-        263.01203590385853,
-        -256.70148931420863
-      ],
-      "transitions": []
-    },
-    {
-      "id": "ovvsr1ine4",
-      "path": "ovvsr1ine4",
-      "title": "New form",
-      "is_initial": false,
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "file": "new_form_ovvsr1ine4.py",
-      "workflow_position": [
-        3.6431944175228637,
-        -101.62911318745768
-      ],
-      "transitions": [
-        {
-          "target_path": "gy5szlbpud",
-          "target_type": "forms",
-          "label": "",
-          "id": "aknl1e4dhdm"
         }
       ]
     }
@@ -456,8 +352,8 @@
       "title": "Contract Signature",
       "is_initial": false,
       "workflow_position": [
-        691.6179055194598,
-        235.45781877243022
+        565.086692210002,
+        321.38573228855455
       ],
       "transitions": []
     }

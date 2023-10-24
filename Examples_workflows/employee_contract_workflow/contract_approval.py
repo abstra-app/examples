@@ -65,7 +65,6 @@ if contract_approval.action == "Reject":
                 }
             ]
         )
-    print(contract_reject["is_personal_data_problem"][0])
     if contract_reject["is_personal_data_problem"][0] == False:
         if contract_reject["contract"]:
             contract_filepath = contract_reject["contract"].file.name

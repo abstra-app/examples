@@ -14,10 +14,12 @@ user = get_user()
 if not user.email.endswith("@abstra.app"):
     display("Unauthorized access. Please contact admin@abstra.app.")
     exit()
+
 # In this code we are going to set a default document format with some tags to be filled
-# the tags are defined by {{tag_name}} and after the user fills the tags,
+# the tags are defined by {{tag_name}}
 # the document is going to be automatically filled with the user's data
 # the user can also upload a model of a document and fill it with the tags
+
 DATA_WORKSHEET = "Data"
 FILES_BASE_PATH = "/tmp/fill_my_docs"
 REGEX = r"\{\{(.*?)\}\}"
@@ -44,7 +46,6 @@ def transform_tags(tags):
 
 
 def create_new_doc_with_tags(tags_values_dict, filepath, filename):
-    print("filepath", filepath)
     doc = DocxTemplate(filepath)
     context = tags_values_dict
     try:
@@ -131,7 +132,6 @@ name = stage["name"]
 email = stage["email"]
 id_taxpayer = stage["id_taxpayer"]
 team_info = get_team_info(team_id)
-print("team_info", team_info)
 (
     salary,
     complement_address,
@@ -177,7 +177,6 @@ else:
         "Novembro",
         "Dezembro",
     ]
-    print(started_at)
     start_abstra_at = datetime.strptime(started_at, "%Y-%m-%dT%H:%M:%S.000Z")
     document_filename = "Contrato de Trabalho"
     contract = open(f"contract_models/individual_contract_ptbr.docx", "rb").read()
