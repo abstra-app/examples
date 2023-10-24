@@ -15,7 +15,7 @@ The first two forms are used to get the information about the employee one is fi
 
 The contract is created using the information from the previous forms.
 
-<video src="./images/Screencast from 24-10-2023 19:36:32.webm" controls="controls" style="width:100vw;">
+<video src="./images/Screencast from 24-10-2023 19-36-32.mp4" controls="controls" style="width:100vw;">
 </video>
 
 ## 3. Approval ✅
