@@ -11,29 +11,29 @@ display(
 
 # Here we are selecting the assignor form our db:
 
+def list_assignor():
+    sql = """
+        SELECT id, name, supplier FROM invoicecalculator;
+    """
+    return run(sql)
 
-def get_assignor():
-    sql = """SELECT name, monthly_interest_rate, credit_limit, supplier, notes,
+def get_assignor(id):
+    sql = """SELECT name, monthly_interest_rate, credit_limit, supplier, notes
                  FROM invoicecalculator 
                  WHERE id = $1"""
+    params = [id]
+    return run(sql,params)[0]
 
-    return run(sql)[0]
 
+assignors_db = list_assignor()
 
-assignors_db = get_assignor()
-
-assignors = [
-    {"label": f'{customer["name"]} ({customer["email"]})', "value": customer["id"]}
-    for customer in assignors_db
-]
 
 id_assignor = read_multiple_choice(
     "Please choose from the list of example assignors:",
     [
-        {"label": "McQueen's Auto Shop", "value": 1},
-        {"label": "Willy's Chocolate Factory", "value": 2},
-        {"label": "Dexter's Lab Gear", "value": 3},
-    ],
+    {"label": f'{assignor["name"]}', "value": assignor["id"]}
+    for assignor in assignors_db
+],
 )
 
 
@@ -71,7 +71,7 @@ elif id_assignor == 3:
 # get assignor info from db
 assignor = get_assignor(id_assignor)
 assignor_name = assignor["name"]
-monthly_interest_rate = assignor["monthly_interest_rate"]
+monthly_interest_rate = float(assignor["monthly_interest_rate"])
 monthly_interest_rate_display = str(monthly_interest_rate * 100) + "%"
 credit_limit = assignor["credit_limit"]
 
@@ -107,8 +107,8 @@ r = relativedelta.relativedelta(end_date, today_date)
 
 
 def table_supplier():
-    sql = """SELECT id_supplier, name, notes, risk_multiplier 
-             FROM Invoice_Calculator"""
+    sql = """SELECT id, supplier, name, notes, risk_multiplier 
+             FROM invoicecalculator"""
 
     return run(sql)
 
@@ -118,26 +118,24 @@ chosen_supplier = read_dropdown(
     "Choose a supplier from this list to calculate risk multiplier.",
     options=[
         {
-            "label": suppliers["name"],
+            "label": suppliers["supplier"],
             "value": suppliers["id"],
         }
         for suppliers in suppliers
     ],
 )
-value = chosen_supplier.value()
 
 
 # This form uses an environment variable. To make it work properly, add an API Key to your workspace's environment variables in the sidebar.
 def get_supplier(chosen_supplier):
     sql = """SELECT id, name, notes, risk_multiplier 
-           FROM Invoice_Calculator
-           WHERE id_supplier = value"""
+           FROM invoicecalculator
+           WHERE id = $1"""
     params = [chosen_supplier]
     return run(sql, params)[0]
 
 
 new_supplier = get_supplier(chosen_supplier)
-new_supplier = new_supplier.json()[0]
 risk_multiplier = str(new_supplier["risk_multiplier"])
 
 # calculate new interest rate

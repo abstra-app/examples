@@ -68,7 +68,5 @@ attachedFile = Attachment(
 )
 message.attachment = attachedFile
 
-sg = SendGridAPIClient(os.environ.get("SENDGRID_API_KEY"))
-response = sg.send(message)
 
 display("All your emails have been sent - check your inbox! See you next time.")

@@ -13,6 +13,11 @@ def preprocessing_date(date):
         date = date.strftime("%Y/%m/%d, %H:%M:%S")
     return date
 
+def unpreprocessing_date(date):
+    date = date[0:10]
+    date = date.replace("/", "-")
+    return date
+
 # We use this method bellow to get a information of the stage that is running
 stage = aw.get_stage()
 team_id = stage["id"]
@@ -21,65 +26,64 @@ name = stage["name"]
 
 # We need to get the old team member info before updating the table
 def get_team_info(team_id):
-    sql = "SELECT name, email, birth_date, phone_number, identification_number, id_emited_by, taxpayer_id, country, address, number_address, complement_address, district, zip_code, shirt_size, bank_name, bank_account_number, bank_branch_code FROM team WHERE id = $1;"
+    sql = """SELECT name, birth_date, email,\
+          identification_number, id_emited_by,\
+          country, address, number_address, complement_address,\
+          district, zip_code, shirt_size, bank_name, bank_account_number,\
+          bank_branch_code FROM team WHERE id = $1;"""
     params = [team_id]
     return run(sql, params)[0]
 
 old_team_info = get_team_info(team_id)
-
+print(unpreprocessing_date(old_team_info["birth_date"]))
 # Here we define a form to get some additional info from the team member
 member_page = (
     Page()
     .display("Personal Data", size="large")
-    .read("Full name", required=False, key="name")
-    .read_email("Email", required=False, key="email")
-    .read_date("Birth date", required=False, key="birth_date")
-    .read_phone("Phone Number", required=False, key="phone_number")
-    .read("National ID number (RG)", required=False, key="id_number")
-    .read("ID number issued by", required=False, key="id_emited_by")
-    .read_cpf(
-        "Individual Taxpayer Registration (CPF)", required=False, key="taxpayer_id"
-    )
-    .read("Country", required=False, key="country")
-    .read("Address (without number)", required=False, key="address")
-    .read("Address number", required=False, key="number_address")
-    .read("Address Complement", required=False, key="complement_address")
-    .read("District", required=False, key="district")
+    .read("Full name", required=False, key="name", initial_value=old_team_info["name"])
+    .read_date("Birth date", required=False, key="birth_date", initial_value=unpreprocessing_date(old_team_info["birth_date"]))
+    .read_email("Email", required=False, key="email", initial_value=old_team_info["email"] )
+    .read("National ID number (RG)", required=False, key="identification_number", initial_value=old_team_info["identification_number"])
+    .read("ID number issued by", required=False, key="id_emited_by", initial_value=old_team_info["id_emited_by"])
+    .read("Country", required=False, key="country", initial_value=old_team_info["country"])
+    .read("Address (without number)", required=False, key="address", initial_value=old_team_info["address"])
+    .read("Address number", required=False, key="number_address", initial_value=old_team_info["number_address"])
+    .read("Address Complement", required=False, key="complement_address", initial_value=old_team_info["complement_address"])
+    .read("District", required=False, key="district", initial_value=old_team_info["district"])
     .read(
         "Zip code",
         mask="00000-000",
         placeholder="00000-000",
         required=False,
         key="zip_code",
+        initial_value=old_team_info["zip_code"],
     )
-    .read("Shirt size", required=False, key="shirt_size")
+    .read("Shirt size", required=False, key="shirt_size", initial_value=old_team_info["shirt_size"])
 )
 # Here we define a form to get bank account data from the team member
 bank_info_member_page = (
     Page()
     .display("Bank Account Data", size="large")
     .display("Please enter your bank account data.")
-    .read("Bank name", placeholder="Inter", required=False, key="bank_name")
+    .read("Bank name", placeholder="Inter", required=False, key="bank_name", initial_value=old_team_info["bank_name"])
     .read(
         "Bank account number",
         placeholder="0000000-0",
         required=False,
         key="bank_account_number",
+        initial_value=old_team_info["bank_account_number"],
     )
     .read(
-        "Bank branch code", placeholder="0001", required=False, key="bank_branch_code"
+        "Bank branch code", placeholder="0001", required=False, key="bank_branch_code", initial_value=old_team_info["bank_branch_code"]
     )
 )
 member = run_steps([member_page, bank_info_member_page])
-print(member)
 (
     name,
-    email,
     birth_date,
-    phone_number,
-    id_number,
+    email,
+    identification_number,
     id_emited_by,
-    taxpayer_id,
     country,
     address,
     number_address,
@@ -92,12 +96,10 @@ print(member)
     bank_branch_code,
 ) = (
     member["name"],
-    member["email"],
     member["birth_date"],
-    member["phone_number"],
-    member["id_number"],
+    member["email"],
+    member["identification_number"],
     member["id_emited_by"],
-    member["taxpayer_id"],
     member["country"],
     member["address"],
     member["number_address"],
@@ -109,27 +111,16 @@ print(member)
     member["bank_account_number"],
     member["bank_branch_code"],
 )
-birth_date = preprocessing_date(birth_date)
-phone_number = phone_number.raw
-taxpayer_id = taxpayer_id.replace(".", "").replace("-", "")
+print(name)
 # Insert personal data
-
-for key in old_team_info.keys():
-    if (member[key] == "" or member[key] == "+"):
-        member[key] = old_team_info[key]
-
-
+print(identification_number)
 result = update(
     "team",
-    {"id": team_id},
     {
         "name": name,
         "email": email,
-        "birth_date": birth_date,
-        "phone_number": phone_number,
-        "identification_number": id_number,
+        "identification_number": identification_number,
         "id_emited_by": id_emited_by,
-        "taxpayer_id": taxpayer_id,
         "country": country,
         "address": address,
         "number_address": number_address,
@@ -141,8 +132,11 @@ result = update(
         "bank_account_number": bank_account_number,
         "bank_branch_code": bank_branch_code,
     },
+    {"id": team_id},
 )
-name, id, email, taxpayer_id = name, team_id, email, taxpayer_id
+print(name)
+print(result)
+name, id, email = name, team_id, email
 # name, id, email = name, 4, email
 aw.next_stage(
     [
@@ -152,7 +146,6 @@ aw.next_stage(
                 "id": team_id,
                 "name": name,
                 "email": email,
-                "taxpayer_id": taxpayer_id,
             },
             "stage": "send-contract",
         }

@@ -109,13 +109,6 @@
         "visible": true
       },
       {
-        "id": "send-customized-emails-from-spreadsheet",
-        "name": "Send customized emails from spreadsheet",
-        "path": "send-customized-emails-from-spreadsheet",
-        "type": "form",
-        "visible": true
-      },
-      {
         "id": "Simple-quiz",
         "name": "Simple quiz",
         "path": "Simple-quiz",
@@ -165,20 +158,6 @@
         "visible": true
       },
       {
-        "id": "virtual-class-timed-exam",
-        "name": "Virtual class timed exam",
-        "path": "virtual-class-timed-exam",
-        "type": "form",
-        "visible": true
-      },
-      {
-        "id": "recieve-new-entries-from-sheets",
-        "name": "Recieve new entries from sheets",
-        "path": "recieve-new-entries-from-sheets",
-        "type": "form",
-        "visible": true
-      },
-      {
         "id": "travel-registration",
         "name": "Travel registration",
         "path": "travel-registration",
@@ -196,6 +175,13 @@
         "id": "invoice-factoring-calculator",
         "name": "Invoice Factoring Calculator",
         "path": "invoice-factoring-calculator",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "new_form_q1pkINUSSD",
+        "name": "Untitled Form",
+        "path": "new_form_q1pkINUSSD",
         "type": "form",
         "visible": false
       }
@@ -401,27 +387,6 @@
       "transitions": []
     },
     {
-      "id": "send-customized-emails-from-spreadsheet",
-      "path": "send-customized-emails-from-spreadsheet",
-      "title": "Send customized emails from spreadsheet",
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "is_initial": true,
-      "file": "send_customized_emails_from_spreadsheet.real.py",
-      "workflow_position": [
-        0,
-        0
-      ],
-      "transitions": []
-    },
-    {
       "id": "sql-generator",
       "path": "sql-generator",
       "title": "Sql generator",
@@ -478,48 +443,6 @@
       "restart_button_text": null,
       "is_initial": true,
       "file": "spreadsheet_access.py",
-      "workflow_position": [
-        0,
-        0
-      ],
-      "transitions": []
-    },
-    {
-      "id": "virtual-class-timed-exam",
-      "path": "virtual-class-timed-exam",
-      "title": "Virtual class timed exam",
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "is_initial": true,
-      "file": "virtual_class_timed_exam.py",
-      "workflow_position": [
-        0,
-        0
-      ],
-      "transitions": []
-    },
-    {
-      "id": "recieve-new-entries-from-sheets",
-      "path": "recieve-new-entries-from-sheets",
-      "title": "Recieve new entries from sheets",
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "is_initial": true,
-      "file": "receive_new_entries_from_sheets.py",
       "workflow_position": [
         0,
         0
@@ -751,6 +674,27 @@
       "restart_button_text": null,
       "is_initial": true,
       "file": "invoice_factoring_calculator.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "Send-Customized-Emails",
+      "path": "Send-Customized-Emails",
+      "title": "Customized Emails",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "send_customized_emails_from_spreadsheet.real.py",
       "workflow_position": [
         0,
         0

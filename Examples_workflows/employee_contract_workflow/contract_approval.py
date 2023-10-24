@@ -14,7 +14,7 @@ taxpayer_id = stage["taxpayer_id"]
 # Now we create a function to render a new form if the user rejects the document
 def render(partial):
     if len(partial) != 0:
-        if partial["is_personal_data_problem"][0] == False:
+        if partial.get("is_personal_data_problem") == [False]:
             return Page().read_file(
                 "Upload your changed contract", required=False, key="contract"
             ).read_textarea(
@@ -40,7 +40,7 @@ if contract_approval.action == "Reject":
     contract_reject = (
         Page()
         .read_checklist(
-            "Does the contract have any personal data?",
+            "Does the contract have any personal data error?",
             [{"label":"Yes","value":True}, {"label":"No","value":False}],
             key="is_personal_data_problem",
             multiple=False,
@@ -61,7 +61,7 @@ if contract_approval.action == "Reject":
                 }
             ]
         )
-
+    print(contract_reject["is_personal_data_problem"][0])
     if contract_reject["is_personal_data_problem"][0] == False:
         if contract_reject["contract"]:
             contract_filepath = contract_reject["contract"].file.name

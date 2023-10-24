@@ -74,7 +74,6 @@ bank_info_member = step_run[1]
     shirt_size,
 ) = member.values()
 (bank_name, bank_account_number, bank_branch_code) = bank_info_member.values()
-
 birth_date = preprocessing_date(birth_date)
 phone_number = phone_number.raw
 id_taxpayer = id_taxpayer.replace(".", "").replace("-", "")
@@ -112,8 +111,6 @@ adding_member = insert(
 
 name, id, email = name, adding_member["id"], personal_email
 
-# name, id, email, id_taxpayer = name, 31, personal_email, id_taxpayer
-
 aw.next_stage(
     [
         {
@@ -122,7 +119,7 @@ aw.next_stage(
                 "id": id,
                 "name": name,
                 "email": email,
-                "id_taxpayer": id_taxpayer,
+                "taxpayer_id": id_taxpayer,
             },
             "stage": "abstra-team-registration",
         }

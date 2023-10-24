@@ -1,7 +1,6 @@
 from abstra.forms import *
 import abstra.workflows as aw
 import shutil
-import update_team_member as utm
 
 stage = aw.get_stage()
 output_filepath = stage["output_filepath"]
@@ -14,15 +13,8 @@ email = stage["email"]
 taxpayer_id = stage["taxpayer_id"]
 reject_reason = stage["reject_reason"]
 
-if comments == None:
-    comments = "There are no comments."
 
-if "personal_issues" in reject_reason:
-    pass
-
-
-if "contract_issues" in reject_reason:
-    contract_review = (
+contract_review = (
         Page()
         .display(f"Document Review - {document_filename}", size="large")
         .display(
@@ -35,12 +27,12 @@ if "contract_issues" in reject_reason:
         .run()
     )
 
-    contract = read_file("Upload your changed contract")
+contract = read_file("Upload your changed contract")
 
     # Copies file to destination directory
-    shutil.copy(contract.file.name, output_filepath)
+shutil.copy(contract.file.name, output_filepath)
 
-    aw.next_stage(
+aw.next_stage(
         [
             {
                 "assignee": email,
@@ -52,6 +44,8 @@ if "contract_issues" in reject_reason:
                     "document_filename": document_filename,
                     "taxpayer_id": taxpayer_id,
                 },
+                "stage": "contract-approval",
+
             }
         ]
     )

@@ -53,9 +53,23 @@
         "visible": false
       },
       {
-        "id": "2jtdb3x4ewy",
+        "id": "71pu3fl9ogs",
         "name": "New form",
-        "path": "2jtdb3x4ewy",
+        "path": "71pu3fl9ogs",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "gy5szlbpud",
+        "name": "New form",
+        "path": "gy5szlbpud",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "ovvsr1ine4",
+        "name": "New form",
+        "path": "ovvsr1ine4",
         "type": "form",
         "visible": false
       }
@@ -75,6 +89,7 @@
       "id": "team-registration",
       "path": "team-registration",
       "title": "Personal Information Registration",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -84,11 +99,10 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "team_registration.py",
       "workflow_position": [
-        -546.2097773849746,
-        51.31130458318222
+        -562.4826790411852,
+        38.79087717337919
       ],
       "transitions": [
         {
@@ -103,6 +117,7 @@
       "id": "abstra-team-registration",
       "path": "abstra-team-registration",
       "title": "Team Registration - By Abstra",
+      "is_initial": false,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -112,11 +127,10 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": false,
       "file": "team_registration_by_company.py",
       "workflow_position": [
-        -544.9654419531935,
-        232.30916353095412
+        -567.3915005779329,
+        219.69297258156664
       ],
       "transitions": [
         {
@@ -131,6 +145,7 @@
       "id": "send-contract",
       "path": "send-contract",
       "title": "Generate Contract",
+      "is_initial": false,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -140,11 +155,10 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": false,
       "file": "contract_generator.py",
       "workflow_position": [
-        -147.49825681669802,
-        232.50335629676238
+        -176.6017797529342,
+        185.2893356519379
       ],
       "transitions": [
         {
@@ -159,6 +173,7 @@
       "id": "contract-approval",
       "path": "contract-approval",
       "title": "Contract Approval",
+      "is_initial": false,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -168,11 +183,10 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": false,
       "file": "contract_approval.py",
       "workflow_position": [
-        232.87729518961578,
-        231.46784842566257
+        226.30138114396948,
+        225.8274188254353
       ],
       "transitions": [
         {
@@ -199,6 +213,7 @@
       "id": "contract-review",
       "path": "contract-review",
       "title": "Contract Review",
+      "is_initial": false,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -208,10 +223,9 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": false,
       "file": "contract_review.py",
       "workflow_position": [
-        529.3298310202683,
+        528.3855682343769,
         55.301009705606134
       ],
       "transitions": [
@@ -227,6 +241,7 @@
       "id": "update-team",
       "path": "update-team",
       "title": "Update Personal data",
+      "is_initial": false,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -236,11 +251,10 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": false,
       "file": "update_team_member.py",
       "workflow_position": [
-        14.482635467392356,
-        48.87125517721225
+        -9.144267452809345,
+        28.27001890060538
       ],
       "transitions": [
         {
@@ -254,6 +268,89 @@
           "target_type": "forms",
           "label": "",
           "id": "cfxpui7dtuc"
+        }
+      ]
+    },
+    {
+      "id": "71pu3fl9ogs",
+      "path": "71pu3fl9ogs",
+      "title": "New form",
+      "is_initial": true,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "new_form_71pu3fl9ogs.py",
+      "workflow_position": [
+        -0.4737713203551266,
+        -259.44613313946087
+      ],
+      "transitions": [
+        {
+          "target_path": "ovvsr1ine4",
+          "target_type": "forms",
+          "label": "",
+          "id": "w6iff1ipv3m"
+        },
+        {
+          "target_path": "gy5szlbpud",
+          "target_type": "forms",
+          "label": "",
+          "id": "hm1mkeak9lf"
+        }
+      ]
+    },
+    {
+      "id": "gy5szlbpud",
+      "path": "gy5szlbpud",
+      "title": "New form",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "new_form_gy5szlbpud.py",
+      "workflow_position": [
+        263.01203590385853,
+        -256.70148931420863
+      ],
+      "transitions": []
+    },
+    {
+      "id": "ovvsr1ine4",
+      "path": "ovvsr1ine4",
+      "title": "New form",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "new_form_ovvsr1ine4.py",
+      "workflow_position": [
+        3.6431944175228637,
+        -101.62911318745768
+      ],
+      "transitions": [
+        {
+          "target_path": "gy5szlbpud",
+          "target_type": "forms",
+          "label": "",
+          "id": "aknl1e4dhdm"
         }
       ]
     }
@@ -359,8 +456,8 @@
       "title": "Contract Signature",
       "is_initial": false,
       "workflow_position": [
-        693.5064310912428,
-        240.17913270188765
+        691.6179055194598,
+        235.45781877243022
       ],
       "transitions": []
     }
