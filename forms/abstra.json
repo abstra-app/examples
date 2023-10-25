@@ -1,0 +1,707 @@
+{
+  "version": "0.1",
+  "workspace": {
+    "name": "Untitled Workspace",
+    "sidebar": [
+      {
+        "id": "buying-intention-form",
+        "name": "Notify Buying intention",
+        "path": "buying-intention-form",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "cap-table-calculator",
+        "name": "Cap table calculator",
+        "path": "cap-table-calculator",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "certificate-generator",
+        "name": "Certificate generator ",
+        "path": "certificate-generator",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "create-hubspot-deals-from-apollo-leads",
+        "name": "Create Hubspot deals from apollo leads",
+        "path": "create-hubspot-deals-from-apollo-leads",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "create-invoice-from-CRM",
+        "name": "Create invoice from CRM",
+        "path": "create-invoice-from-CRM",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "customer-registration",
+        "name": "Customer registration",
+        "path": "customer-registration",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "error-handling",
+        "name": "Error handling",
+        "path": "error-handling",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "generate-documents-from-spreadsheet",
+        "name": "Generate documents from spreadsheets",
+        "path": "generate-documents-from-spreadsheet",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "hello-world",
+        "name": "Hello world",
+        "path": "hello-world",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "Investor-registration",
+        "name": "Investor registration",
+        "path": "Investor-registration",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "invoice-factoring-calculator ",
+        "name": "Invoice factoring calculator",
+        "path": "invoice-factoring-calculator ",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "online-exam",
+        "name": "Online exam",
+        "path": "online-exam",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "Purchase-request",
+        "name": "Purchase request",
+        "path": "Purchase-request",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "receivables",
+        "name": "Receivables",
+        "path": "receivables",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "self-check-in",
+        "name": "Self check-in",
+        "path": "self-check-in",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "Simple-quiz",
+        "name": "Simple quiz",
+        "path": "Simple-quiz",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "spreadsheet-access",
+        "name": "Spreadsheet access",
+        "path": "spreadsheet-access",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "sql-generator",
+        "name": "Sql generator",
+        "path": "sql-generator",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "sub-to-new-feature",
+        "name": "Subscribe to a new feature",
+        "path": "sub-to-new-feature",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "tax-calculator",
+        "name": "Tax calculator",
+        "path": "tax-calculator",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "team-registration",
+        "name": "team registration",
+        "path": "team-registration",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "travel-registration",
+        "name": "Travel registration",
+        "path": "travel-registration",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "travel-registration",
+        "name": "Travel registration",
+        "path": "travel-registration",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "Investor-registration",
+        "name": "Investor registration",
+        "path": "Investor-registration",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "invoice-factoring-calculator",
+        "name": "Invoice Factoring Calculator",
+        "path": "invoice-factoring-calculator",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "new_form_q1pkINUSSD",
+        "name": "Untitled Form",
+        "path": "new_form_q1pkINUSSD",
+        "type": "form",
+        "visible": false
+      }
+    ],
+    "root": null,
+    "theme": null,
+    "logo_url": null,
+    "brand_name": null,
+    "main_color": null,
+    "font_family": null,
+    "font_color": null
+  },
+  "jobs": [],
+  "hooks": [],
+  "forms": [
+    {
+      "id": "cap-table-calculator",
+      "path": "cap-table-calculator",
+      "title": "Cap table calculator",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "cap_table_calculator.py",
+      "workflow_position": [
+        -29.427792915531313,
+        -161.85286103542234
+      ],
+      "transitions": []
+    },
+    {
+      "id": "Simple-quiz",
+      "path": "Simple-quiz",
+      "title": "Simple quiz",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "simple_quiz.py",
+      "workflow_position": [
+        23.705722070844672,
+        156.9482288828338
+      ],
+      "transitions": []
+    },
+    {
+      "id": "self-check-in",
+      "path": "self-check-in",
+      "title": "Self check-in",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "self_check_in.py",
+      "workflow_position": [
+        0,
+        -0.8174386920981078
+      ],
+      "transitions": []
+    },
+    {
+      "id": "buying-intention-form",
+      "path": "buying-intention-form",
+      "title": "Notify Buying intention",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "buying_intention_form.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "customer-registration",
+      "path": "customer-registration",
+      "title": "Customer registration",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "customer_registration.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "error-handling",
+      "path": "error-handling",
+      "title": "Error handling",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "error_handling.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "online-exam",
+      "path": "online-exam",
+      "title": "Online exam",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "online_exam.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "tax-calculator",
+      "path": "tax-calculator",
+      "title": "Tax calculator",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "tax_calculator.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "create-invoice-from-CRM",
+      "path": "create-invoice-from-CRM",
+      "title": "Create invoice from CRM",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "create_invoice_from_CRM.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "sql-generator",
+      "path": "sql-generator",
+      "title": "Sql generator",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "sql_generator.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "sub-to-new-feature",
+      "path": "sub-to-new-feature",
+      "title": "Subscribe to a new feature",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "subscribe_to_a_new_feature.real.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "spreadsheet-access",
+      "path": "spreadsheet-access",
+      "title": "Spreadsheet access",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "spreadsheet_access.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "hello-world",
+      "path": "hello-world",
+      "title": "Hello world",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "hello_world.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "certificate-generator",
+      "path": "certificate-generator",
+      "title": "Certificate generator ",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "certificate_generator.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "generate-documents-from-spreadsheet",
+      "path": "generate-documents-from-spreadsheet",
+      "title": "Generate documents from spreadsheets",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "generate_documents_from_spreadsheet.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "create-hubspot-deals-from-apollo-leads",
+      "path": "create-hubspot-deals-from-apollo-leads",
+      "title": "Create Hubspot deals from apollo leads",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "create_hubspot_deals_from_apollo_leads.real.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "invoice-factoring-calculator ",
+      "path": "invoice-factoring-calculator ",
+      "title": "Invoice factoring calculator",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "invoice_factoring_calculator.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "receivables",
+      "path": "receivables",
+      "title": "Receivables",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "receivables.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "travel-registration",
+      "path": "travel-registration",
+      "title": "Travel registration",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "travel_registration.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "team-registration",
+      "path": "team-registration",
+      "title": "team registration",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "team_registration.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "Investor-registration",
+      "path": "Investor-registration",
+      "title": "Investor registration",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "investor_registration.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "Purchase-request",
+      "path": "Purchase-request",
+      "title": "Purchase request",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "purchase_request.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "invoice-factoring-calculator",
+      "path": "invoice-factoring-calculator",
+      "title": "Invoice Factoring Calculator",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "invoice_factoring_calculator.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "id": "Send-Customized-Emails",
+      "path": "Send-Customized-Emails",
+      "title": "Customized Emails",
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "is_initial": true,
+      "file": "send_customized_emails_from_spreadsheet.real.py",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    }
+  ],
+  "dashes": [],
+  "scripts": []
+}
