@@ -195,7 +195,32 @@
     "font_color": null
   },
   "jobs": [],
-  "hooks": [],
+  "hooks": [
+    {
+      "file": "../hooks/receive_new_entries_from_sheets.py",
+      "path": "receive_new_entries_from_sheets",
+      "title": "receive new entries from sheets",
+      "enabled": false,
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "file": "../hooks/send_stripe_payment_confirmation_to_slack.py",
+      "path": "send_stripe_payment_confirmation_to_slack",
+      "title": "Send stripe payment confirmation to slack",
+      "enabled": false,
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    }
+  ],
   "forms": [
     {
       "id": "cap-table-calculator",
@@ -379,7 +404,7 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "create_invoice_from_CRM.py",
+      "file": "create_invoice_from_crm.py",
       "workflow_position": [
         236.23978201634873,
         -85.83106267029973
