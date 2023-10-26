@@ -255,8 +255,8 @@
       "restart_button_text": null,
       "file": "self_check_in.py",
       "workflow_position": [
-        0,
-        -0.8174386920981078
+        -317.9836512261581,
+        -98.91008174386923
       ],
       "transitions": []
     },
@@ -276,8 +276,8 @@
       "restart_button_text": null,
       "file": "buying_intention_form.py",
       "workflow_position": [
-        0,
-        0
+        -348.22888283378745,
+        87.46594005449595
       ],
       "transitions": []
     },
@@ -297,8 +297,8 @@
       "restart_button_text": null,
       "file": "customer_registration.py",
       "workflow_position": [
-        0,
-        0
+        558.3106267029972,
+        116.89373297002726
       ],
       "transitions": []
     },
@@ -318,8 +318,8 @@
       "restart_button_text": null,
       "file": "error_handling.py",
       "workflow_position": [
-        0,
-        0
+        269.75476839237047,
+        -189.6457765667575
       ],
       "transitions": []
     },
@@ -339,8 +339,8 @@
       "restart_button_text": null,
       "file": "online_exam.py",
       "workflow_position": [
-        0,
-        0
+        246.8664850136239,
+        168.39237057220708
       ],
       "transitions": []
     },
@@ -360,8 +360,8 @@
       "restart_button_text": null,
       "file": "tax_calculator.py",
       "workflow_position": [
-        0,
-        0
+        -347.41144414168934,
+        -3.2697547683923744
       ],
       "transitions": []
     },
@@ -381,8 +381,8 @@
       "restart_button_text": null,
       "file": "create_invoice_from_CRM.py",
       "workflow_position": [
-        0,
-        0
+        236.23978201634873,
+        -85.83106267029973
       ],
       "transitions": []
     },
@@ -402,8 +402,8 @@
       "restart_button_text": null,
       "file": "sql_generator.py",
       "workflow_position": [
-        0,
-        0
+        -22.07084468664857,
+        -81.74386920980925
       ],
       "transitions": []
     },
@@ -423,8 +423,8 @@
       "restart_button_text": null,
       "file": "subscribe_to_a_new_feature.real.py",
       "workflow_position": [
-        0,
-        0
+        -222.34332425068118,
+        -281.19891008174386
       ],
       "transitions": []
     },
@@ -444,8 +444,8 @@
       "restart_button_text": null,
       "file": "spreadsheet_access.py",
       "workflow_position": [
-        0,
-        0
+        400.54495912806533,
+        68.6648501362398
       ],
       "transitions": []
     },
@@ -465,8 +465,8 @@
       "restart_button_text": null,
       "file": "hello_world.py",
       "workflow_position": [
-        0,
-        0
+        -19.618528610354247,
+        59.67302452316079
       ],
       "transitions": []
     },
@@ -486,8 +486,8 @@
       "restart_button_text": null,
       "file": "certificate_generator.py",
       "workflow_position": [
-        0,
-        0
+        -158.58310626702996,
+        202.72479564032693
       ],
       "transitions": []
     },
@@ -507,8 +507,8 @@
       "restart_button_text": null,
       "file": "generate_documents_from_spreadsheet.py",
       "workflow_position": [
-        0,
-        0
+        379.291553133515,
+        281.19891008174386
       ],
       "transitions": []
     },
@@ -528,8 +528,8 @@
       "restart_button_text": null,
       "file": "create_hubspot_deals_from_apollo_leads.real.py",
       "workflow_position": [
-        0,
-        0
+        550.1362397820164,
+        -166.7574931880109
       ],
       "transitions": []
     },
