@@ -1,8 +1,7 @@
-requirements.txt
+.env
 .cache
 __pypackages__/
 __pycache__/
-.env
 .venv
 env/
 venv/

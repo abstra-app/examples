@@ -8,154 +8,154 @@
         "name": "Notify Buying intention",
         "path": "buying-intention-form",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "cap-table-calculator",
         "name": "Cap table calculator",
         "path": "cap-table-calculator",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "certificate-generator",
         "name": "Certificate generator ",
         "path": "certificate-generator",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "create-hubspot-deals-from-apollo-leads",
         "name": "Create Hubspot deals from apollo leads",
         "path": "create-hubspot-deals-from-apollo-leads",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "create-invoice-from-CRM",
         "name": "Create invoice from CRM",
         "path": "create-invoice-from-CRM",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "customer-registration",
         "name": "Customer registration",
         "path": "customer-registration",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "error-handling",
         "name": "Error handling",
         "path": "error-handling",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "generate-documents-from-spreadsheet",
         "name": "Generate documents from spreadsheets",
         "path": "generate-documents-from-spreadsheet",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "hello-world",
         "name": "Hello world",
         "path": "hello-world",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "Investor-registration",
         "name": "Investor registration",
         "path": "Investor-registration",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "invoice-factoring-calculator ",
         "name": "Invoice factoring calculator",
         "path": "invoice-factoring-calculator ",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "online-exam",
         "name": "Online exam",
         "path": "online-exam",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "Purchase-request",
         "name": "Purchase request",
         "path": "Purchase-request",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "receivables",
         "name": "Receivables",
         "path": "receivables",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "self-check-in",
         "name": "Self check-in",
         "path": "self-check-in",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "Simple-quiz",
         "name": "Simple quiz",
         "path": "Simple-quiz",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "spreadsheet-access",
         "name": "Spreadsheet access",
         "path": "spreadsheet-access",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "sql-generator",
         "name": "Sql generator",
         "path": "sql-generator",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "sub-to-new-feature",
         "name": "Subscribe to a new feature",
         "path": "sub-to-new-feature",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "tax-calculator",
         "name": "Tax calculator",
         "path": "tax-calculator",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "team-registration",
         "name": "team registration",
         "path": "team-registration",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "travel-registration",
         "name": "Travel registration",
         "path": "travel-registration",
         "type": "form",
-        "visible": true
+        "visible": false
       },
       {
         "id": "travel-registration",
@@ -179,9 +179,9 @@
         "visible": false
       },
       {
-        "id": "new_form_q1pkINUSSD",
-        "name": "Untitled Form",
-        "path": "new_form_q1pkINUSSD",
+        "id": "Send-Customized-Emails",
+        "name": "Customized Emails",
+        "path": "Send-Customized-Emails",
         "type": "form",
         "visible": false
       }
@@ -201,6 +201,7 @@
       "id": "cap-table-calculator",
       "path": "cap-table-calculator",
       "title": "Cap table calculator",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -210,7 +211,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "cap_table_calculator.py",
       "workflow_position": [
         -29.427792915531313,
@@ -222,6 +222,7 @@
       "id": "Simple-quiz",
       "path": "Simple-quiz",
       "title": "Simple quiz",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -231,7 +232,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "simple_quiz.py",
       "workflow_position": [
         23.705722070844672,
@@ -243,6 +243,7 @@
       "id": "self-check-in",
       "path": "self-check-in",
       "title": "Self check-in",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -252,7 +253,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "self_check_in.py",
       "workflow_position": [
         0,
@@ -264,6 +264,7 @@
       "id": "buying-intention-form",
       "path": "buying-intention-form",
       "title": "Notify Buying intention",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -273,7 +274,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "buying_intention_form.py",
       "workflow_position": [
         0,
@@ -285,6 +285,7 @@
       "id": "customer-registration",
       "path": "customer-registration",
       "title": "Customer registration",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -294,7 +295,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "customer_registration.py",
       "workflow_position": [
         0,
@@ -306,6 +306,7 @@
       "id": "error-handling",
       "path": "error-handling",
       "title": "Error handling",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -315,7 +316,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "error_handling.py",
       "workflow_position": [
         0,
@@ -327,6 +327,7 @@
       "id": "online-exam",
       "path": "online-exam",
       "title": "Online exam",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -336,7 +337,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "online_exam.py",
       "workflow_position": [
         0,
@@ -348,6 +348,7 @@
       "id": "tax-calculator",
       "path": "tax-calculator",
       "title": "Tax calculator",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -357,7 +358,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "tax_calculator.py",
       "workflow_position": [
         0,
@@ -369,6 +369,7 @@
       "id": "create-invoice-from-CRM",
       "path": "create-invoice-from-CRM",
       "title": "Create invoice from CRM",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -378,7 +379,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "create_invoice_from_CRM.py",
       "workflow_position": [
         0,
@@ -390,6 +390,7 @@
       "id": "sql-generator",
       "path": "sql-generator",
       "title": "Sql generator",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -399,7 +400,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "sql_generator.py",
       "workflow_position": [
         0,
@@ -411,6 +411,7 @@
       "id": "sub-to-new-feature",
       "path": "sub-to-new-feature",
       "title": "Subscribe to a new feature",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -420,7 +421,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "subscribe_to_a_new_feature.real.py",
       "workflow_position": [
         0,
@@ -432,6 +432,7 @@
       "id": "spreadsheet-access",
       "path": "spreadsheet-access",
       "title": "Spreadsheet access",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -441,7 +442,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "spreadsheet_access.py",
       "workflow_position": [
         0,
@@ -453,6 +453,7 @@
       "id": "hello-world",
       "path": "hello-world",
       "title": "Hello world",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -462,7 +463,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "hello_world.py",
       "workflow_position": [
         0,
@@ -474,6 +474,7 @@
       "id": "certificate-generator",
       "path": "certificate-generator",
       "title": "Certificate generator ",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -483,7 +484,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "certificate_generator.py",
       "workflow_position": [
         0,
@@ -495,6 +495,7 @@
       "id": "generate-documents-from-spreadsheet",
       "path": "generate-documents-from-spreadsheet",
       "title": "Generate documents from spreadsheets",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -504,7 +505,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "generate_documents_from_spreadsheet.py",
       "workflow_position": [
         0,
@@ -516,6 +516,7 @@
       "id": "create-hubspot-deals-from-apollo-leads",
       "path": "create-hubspot-deals-from-apollo-leads",
       "title": "Create Hubspot deals from apollo leads",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -525,7 +526,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "create_hubspot_deals_from_apollo_leads.real.py",
       "workflow_position": [
         0,
@@ -537,6 +537,7 @@
       "id": "invoice-factoring-calculator ",
       "path": "invoice-factoring-calculator ",
       "title": "Invoice factoring calculator",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -546,7 +547,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "invoice_factoring_calculator.py",
       "workflow_position": [
         0,
@@ -558,6 +558,7 @@
       "id": "receivables",
       "path": "receivables",
       "title": "Receivables",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -567,7 +568,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "receivables.py",
       "workflow_position": [
         0,
@@ -579,6 +579,7 @@
       "id": "travel-registration",
       "path": "travel-registration",
       "title": "Travel registration",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -588,7 +589,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "travel_registration.py",
       "workflow_position": [
         0,
@@ -600,6 +600,7 @@
       "id": "team-registration",
       "path": "team-registration",
       "title": "team registration",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -609,7 +610,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "team_registration.py",
       "workflow_position": [
         0,
@@ -621,6 +621,7 @@
       "id": "Investor-registration",
       "path": "Investor-registration",
       "title": "Investor registration",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -630,7 +631,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "investor_registration.py",
       "workflow_position": [
         0,
@@ -642,6 +642,7 @@
       "id": "Purchase-request",
       "path": "Purchase-request",
       "title": "Purchase request",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -651,7 +652,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "purchase_request.py",
       "workflow_position": [
         0,
@@ -663,6 +663,7 @@
       "id": "invoice-factoring-calculator",
       "path": "invoice-factoring-calculator",
       "title": "Invoice Factoring Calculator",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -672,7 +673,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "invoice_factoring_calculator.py",
       "workflow_position": [
         0,
@@ -684,6 +684,7 @@
       "id": "Send-Customized-Emails",
       "path": "Send-Customized-Emails",
       "title": "Customized Emails",
+      "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -693,7 +694,6 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "is_initial": true,
       "file": "send_customized_emails_from_spreadsheet.real.py",
       "workflow_position": [
         0,
