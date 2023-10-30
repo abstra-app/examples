@@ -1,5 +1,5 @@
 ### Check out the tutorial on how to set up your Sheets connection:
-### https://www.abstracloud.com/tutorials/python-spreadsheet-integration
+### https://www.abstra.io/tutorials/python-spreadsheet-integration
 
 
 from abstra.hooks import get_request, send_json
@@ -15,7 +15,7 @@ else:
     name = values[1]
     email = values[2]
     className = values[3]
-
+    
     print(f"Name: {name}")
     print(f"Email: {email}")
     print(f"Class: {className}")

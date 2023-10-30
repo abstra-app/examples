@@ -1,0 +1,138 @@
+{
+    "tables": {
+        "name": "team",
+        "data": [],
+        "columns": [{
+                "name": "salary",
+                "type": "int4",
+                "unique": true,
+                "nullable?": false
+            },
+            {
+                "name": "salary",
+                "type": "int4",
+                "unique": true,
+                "nullable?": false
+            },
+            {
+                "name": "complement_address",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "shirt_size",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "position",
+                "type": "varchar",
+                "unique": true,
+                "nullable?": false
+            },
+            {
+                "name": "bank_account_number",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "id_emited_by",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "taxpayer_id",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "address",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "birth_date",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "zip_code",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "bank_name",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "email",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "number_address",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "phone_number",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "abstra_email",
+                "type": "varchar",
+                "unique": true,
+                "nullable?": false
+            },
+            {
+                "name": "name",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "bank_branch_code",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "started_at",
+                "type": "date",
+                "unique": true,
+                "nullable?": false
+            },
+            {
+                "name": "district",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "country",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            },
+            {
+                "name": "identification_number",
+                "type": "varchar",
+                "unique": false,
+                "nullable?": false
+            }]
+    }
+}
