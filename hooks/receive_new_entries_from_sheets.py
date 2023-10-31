@@ -6,18 +6,16 @@ from abstra.hooks import get_request, send_json
 import os
 
 body, query, headers = get_request()
+list_values = []
+for value in body.values():
+    list_values.append(value)
+print(list_values)
+name = list_values[0]
+email = list_values[1]
+className = list_values[2]
 
+print(f"Name: {name}")
+print(f"Email: {email}")
+print(f"Class: {className}")
 
-if headers["Api-Key"] != os.environ["API_KEY"]:
-    send_json(data={"ok": False}, status_code=403)
-else:
-    values = body["values"]
-    name = values[1]
-    email = values[2]
-    className = values[3]
-    
-    print(f"Name: {name}")
-    print(f"Email: {email}")
-    print(f"Class: {className}")
-
-    send_json(data={"received": values}, status_code=200)
+send_json(data={"received": list_values}, status_code=200)

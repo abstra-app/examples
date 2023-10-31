@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "workspace": {
+    "name": "Untitled Workspace",
+    "sidebar": [],
+    "root": null,
+    "theme": null,
+    "logo_url": null,
+    "brand_name": null,
+    "main_color": null,
+    "font_family": null,
+    "font_color": null
+  },
+  "jobs": [],
+  "hooks": [
+    {
+      "file": "receive_new_entries_from_sheets.py",
+      "path": "receive-new-entries-from-sheets",
+      "title": "Recieve new entries from sheets",
+      "enabled": false,
+      "workflow_position": [
+        0,
+        0
+      ],
+      "is_initial": true,
+      "transitions": []
+    }
+  ],
+  "forms": [],
+  "dashes": [],
+  "scripts": []
+}
