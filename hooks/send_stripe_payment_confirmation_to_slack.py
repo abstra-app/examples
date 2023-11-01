@@ -14,7 +14,7 @@ hook_secret = os.getenv("STRIPE_WEBHOOK_SECRET")
 slack_token = os.environ.get("SLACK_BOT_TOKEN")
 req_sig = f"{datetime.now()} - {uuid4()}"
 
-
+print(stripe.api_key)
 def slack_msg(message, channel):
     res = requests.post(
         "https://slack.com/api/chat.postMessage",
