@@ -1,6 +1,9 @@
 from abstra.forms import *
 import os
 import openai
+from dotenv import load_dotenv
+
+load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -17,7 +20,7 @@ ans = (
 
 response = openai.Completion.create(
     model="text-davinci-003",
-    prompt=ans["prompt"],
+    prompt="Give me a sql query example for the expecified word: " + ans["prompt"],
     temperature=0.3,
     max_tokens=100,
     top_p=1.0,

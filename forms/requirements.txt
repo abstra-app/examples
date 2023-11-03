@@ -27,3 +27,4 @@ tabulate
 unidecode
 xlrd
 black==23.1.0
+dotenv
