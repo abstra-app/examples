@@ -26,9 +26,9 @@
       "transitions": []
     },
     {
-      "file": "send_stripe_payment_confirmation_to_slack.py",
-      "path": "send_stripe_payment_confirmation_to_slack",
-      "title": "send_stripe_payment_confirmation_to_slack",
+      "file": "slack_bot.py",
+      "path": "slack-bot",
+      "title": "slack bot",
       "enabled": false,
       "workflow_position": [
         0,
