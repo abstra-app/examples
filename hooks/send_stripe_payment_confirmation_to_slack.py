@@ -7,8 +7,10 @@ from datetime import datetime
 import stripe
 import requests
 import abstra.hooks as ah
+from dotenv import load_dotenv
 
 # This hook uses environment variables. To make it work properly, add Stripe and Slack API Key and a Stripe Webhook secret to your workspace's environment variables in the sidebar.
+load_dotenv()
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 hook_secret = os.getenv("STRIPE_WEBHOOK_SECRET")
 slack_token = os.environ.get("SLACK_BOT_TOKEN")
@@ -31,7 +33,7 @@ try:
     payload, query, headers = ah.get_request()
     sig_header = headers.get("Stripe-Signature")
     event = stripe.Webhook.construct_event(payload, sig_header, hook_secret)
-
+    print(sig_header)
     if event["type"] != "payment_intent.succeeded":
         raise Exception("Unhandled event type {}".format(event["type"]))
     ah.send_response(f"[{req_sig}] Processing")
