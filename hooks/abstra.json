@@ -27,8 +27,8 @@
     },
     {
       "file": "send_stripe_payment_confirmation_to_slack.py",
-      "path": "send-stripe-payment-confirmation-to-slack ",
-      "title": "Send stripe payment confirmation to slack ",
+      "path": "send_stripe_payment_confirmation_to_slack",
+      "title": "send_stripe_payment_confirmation_to_slack",
       "enabled": false,
       "workflow_position": [
         0,
