@@ -34,22 +34,15 @@ try:
     # event_obj = event["data"]["object"]
     # amount_str = f"{event_obj['currency']} {event_obj['amount'] / 100}"
 
-    # # Get stripe customer email
-    # customer_email = stripe.Customer.retrieve(event_obj["customer"])["email"]
-    client.chat_postMessage(
-        channel="sa_planos",
-        text="Hello Medeiros from your app!"
-    )
+
     ah.send_response(f"[{payload}] deu bom")
     # # Get stripe customer email
     # customer_email = stripe.Customer.retrieve(event_obj["customer"])["email"]
     client.chat_postMessage(
         channel="sa_planos",
-        text="Hello Medeiros from your app!"
+        text="Hello sab from your app!"
     )
     ah.send_response(f"[{payload}] deu bom")
     # Send a message in slack when the event fires
 except Exception as e:
-    ah.send_response(f"[{payload}] Error", status_code=500)
-
     ah.send_response(f"[{payload}] Error", status_code=500)
