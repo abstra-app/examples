@@ -30,6 +30,13 @@
         "path": "qoeayyyujo",
         "type": "form",
         "visible": false
+      },
+      {
+        "id": "6cl42i2ltz",
+        "name": "Meeting Schedule",
+        "path": "6cl42i2ltz",
+        "type": "form",
+        "visible": false
       }
     ],
     "root": null,
@@ -43,13 +50,13 @@
   "jobs": [],
   "hooks": [
     {
-      "file": "new_hook_f4kao1nlcip.py",
+      "file": "slack_notification.py",
       "path": "f4kao1nlcip",
       "title": "Team Slack Notification ",
       "enabled": false,
       "workflow_position": [
-        894.4438035904569,
-        293.9560577855287
+        892.128393528155,
+        295.45190938896405
       ],
       "is_initial": false,
       "transitions": [
@@ -79,7 +86,7 @@
       "restart_button_text": null,
       "file": "client_registration.py",
       "workflow_position": [
-        131.54068633641577,
+        -117.81364936567681,
         304.34023350076495
       ],
       "transitions": [
@@ -186,19 +193,47 @@
           "id": "texhz3gjku"
         }
       ]
+    },
+    {
+      "id": "Meeting-Schedule",
+      "path": "Meeting-Schedule",
+      "title": "Meeting Schedule",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "Meeting_Schedule.py",
+      "workflow_position": [
+        629.9149425086998,
+        144.793619346479
+      ],
+      "transitions": [
+        {
+          "target_path": "f4kao1nlcip",
+          "target_type": "hooks",
+          "label": "",
+          "id": "wdt7qo2lkch"
+        }
+      ]
     }
   ],
   "dashes": [],
   "scripts": [
     {
       "id": "yslo0vh8lll",
-      "file": "new_script_yslo0vh8lll.py",
+      "file": "welcome_message.py",
       "path": "yslo0vh8lll",
       "title": "Welcome Email",
       "is_initial": false,
       "workflow_position": [
-        506.4118808361525,
-        436.1901297922757
+        412.188673175414,
+        442.26904641554904
       ],
       "transitions": [
         {
@@ -228,15 +263,15 @@
       "title": "Meeting arrangement notification ",
       "is_initial": false,
       "workflow_position": [
-        510.4645044156637,
-        199.70547655238758
+        285.346483756767,
+        150.52663443086158
       ],
       "transitions": [
         {
-          "target_path": "f4kao1nlcip",
-          "target_type": "hooks",
+          "target_path": "6cl42i2ltz",
+          "target_type": "forms",
           "label": "",
-          "id": "29h492wzv5p"
+          "id": "ejwujzdncod"
         }
       ]
     },

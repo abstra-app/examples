@@ -12,7 +12,7 @@ client = WebClient(token=slack_token)
 try:
     payload, query, headers = ah.get_request()
     client.chat_postMessage(
-        channel="sa_planos",
+        channel="YOUR_CHANNEL",
         text=f"Hello {payload['firstName']} {payload['lastName']} from your app!",
     )
     ah.send_response(f"[{payload}] deu bom")

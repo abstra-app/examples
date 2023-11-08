@@ -1,62 +1,57 @@
 from abstra.forms import *
-from abstra.tables import *
+import abstra.workflows as aw
 
-"""
-In this form we are going to register a new client
-"""
+'''
+This is the first stage of the workflow where we get the client data
+'''
+
+# Doing the form for the client
 client = (
     Page()
-    .read("Name")
-    .read_email("Email")
+    .read("Name",key="name")
+    .read_email("Email",key="email")
     .read_dropdown(
-        "Legal entity",
+        "Entity",
         [
-            {"label": "Physical", "value": "physical"},
-            {"label": "Juridical", "value": "juridical"},
+            {"label": "Bussiness", "value": "bussiness"},
+            {"label": "Personal", "value": "personal"},
         ],
+        key="entity"
     )
-    .read("Country")
+    .read("Country",key="country")
     .run("Send")
 )
 
+# Assigning the values to variables
 (
     name,
     email,
-    legal_entity,
+    entity,
     country,
 ) = client.values()
-
-
-insert(
-    "client_database",
-    {
-        "name": name,
-        "email": email,
-        "legal_entity": legal_entity,
-        "country": country,
-    },
-)
 
 display(
     "Registration Successful.",
     button_text="See you next time",
 )
 
-# Now we are going to redirect to a new stage of the workflow for the client
-new_stage = aw.next_stage(
+# Passing the variables to the next stage
+aw.next_stage(
     [
         {
-            "assignee": stage["email"],
-            "stage": "welcome_message",
+            "name" : name,
+            "assignee": email,
+            "stage": "welcome-message"
+        },
+        {
+            "assignee": "example@example.com",
+            "data": {
+                "name" : name,
+                "email": email,
+                "country": country,
+            },
+            "stage": "meeting-arrangement"
         }
     ]
 )
-# and there is also a new stage for the team member
-new_stage_member = aw.next_stage(
-    [
-        {
-            "assignee": "foo@company.co",
-            "stage": "meeting_arrangement",
-        }
-    ]
-)
+
