@@ -6,17 +6,20 @@ import abstra.workflows as aw
 
 # Getting the client email from the previous stage
 stage = aw.get_stage()
-customer_email = stage["email"]
-coustomer_name = stage["name"]
+custumer_email = stage.data.get("email")
+custumer_name = stage.data.get("name")
+churn_reason = stage.data.get("churn_reason")
+
+
 
 # Sending the CCO and CEO notification email
 gmail_user = "bot@gmail.com"
 gmail_password = "bot_password"
 
 sent_from = gmail_user
-to = ["CEO@gmail.com", "CCO@gmail.com"]  # Responsible team members emails
-subject = ""
-body = "Hi, you need to schedule a QBR meeting with the client."
+to = ["CEO@gmail.com", "CCO@gmail.com"] 
+subject = "New client"
+body = ""
 
 email_text = """\
 From: %s

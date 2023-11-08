@@ -78,3 +78,25 @@ insert(
         ],
     },
 )
+
+# now we are going to send the values of the survey to the next stage
+next_stage = aw.next_stage(
+    [
+        {
+            "assignee": "
+            ",
+            "data": {
+                "product": satisfaction_survey["How would you rate our products?"],
+                "prices": satisfaction_survey["How would you rate our prices?"],
+                "website": satisfaction_survey["How would you rate our website?"],
+                "customer_service": satisfaction_survey[
+                    "How would you rate our customer service?"
+                ],
+                "customer_support": satisfaction_survey[
+                    "How would you rate our customer support?"
+                ],
+            },
+            "stage": "satisfaction-survey",
+        }
+    ]
+)
