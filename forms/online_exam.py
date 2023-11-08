@@ -3,7 +3,7 @@ import datetime
 import pandas as pd
 import openpyxl
 
-#Here we are going to create a simple online exam using the abstra library
+# Here we are going to create a simple online exam using the abstra library
 start = (
     Page()
     .display("Let's start the Exam!")

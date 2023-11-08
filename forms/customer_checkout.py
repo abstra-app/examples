@@ -22,8 +22,8 @@ def checkout_session(price_data, customer, metadata):
         payment_intent_data={"setup_future_usage": "on_session"},
         mode="payment",
         customer=customer,
-        success_url=f"https://console.abstracloud.com/",
-        cancel_url=f"https://www.abstracloud.com/",
+        success_url=f"https://cloud.abstra.io/",
+        cancel_url=f"https://www.abstra.io/",
     )
     return session.url
 

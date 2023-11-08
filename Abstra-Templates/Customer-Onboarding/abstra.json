@@ -1,0 +1,263 @@
+{
+  "version": "0.1",
+  "workspace": {
+    "name": "Untitled Workspace",
+    "sidebar": [
+      {
+        "id": "zgz9af8gsul",
+        "name": "Satisfaction Survey",
+        "path": "zgz9af8gsul",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "bhxxqhpkor",
+        "name": "Churn Reasons ",
+        "path": "bhxxqhpkor",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "client-registration",
+        "name": "Client Registration",
+        "path": "client-registration",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "qoeayyyujo",
+        "name": "Outcome",
+        "path": "qoeayyyujo",
+        "type": "form",
+        "visible": false
+      }
+    ],
+    "root": null,
+    "theme": null,
+    "logo_url": null,
+    "brand_name": null,
+    "main_color": null,
+    "font_family": null,
+    "font_color": null
+  },
+  "jobs": [],
+  "hooks": [
+    {
+      "file": "new_hook_f4kao1nlcip.py",
+      "path": "f4kao1nlcip",
+      "title": "Team Slack Notification ",
+      "enabled": false,
+      "workflow_position": [
+        894.4438035904569,
+        293.9560577855287
+      ],
+      "is_initial": false,
+      "transitions": [
+        {
+          "target_path": "qoeayyyujo",
+          "target_type": "forms",
+          "label": "",
+          "id": "h3tyopgbiq9"
+        }
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "id": "client-registration",
+      "path": "client-registration",
+      "title": "Client Registration",
+      "is_initial": true,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "client_registration.py",
+      "workflow_position": [
+        131.54068633641577,
+        304.34023350076495
+      ],
+      "transitions": [
+        {
+          "target_path": "yslo0vh8lll",
+          "target_type": "scripts",
+          "label": "",
+          "id": "g99c1kwu45"
+        },
+        {
+          "target_path": "mkp5zxgvbe",
+          "target_type": "scripts",
+          "label": "",
+          "id": "hq9514pgbzo"
+        }
+      ]
+    },
+    {
+      "id": "zgz9af8gsul",
+      "path": "zgz9af8gsul",
+      "title": "Satisfaction Survey",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "new_form_zgz9af8gsul.py",
+      "workflow_position": [
+        1511.0966544479961,
+        136.9133344802423
+      ],
+      "transitions": [
+        {
+          "target_path": "zhhti8a9b2",
+          "target_type": "scripts",
+          "label": "",
+          "id": "2gxfco9y7tw"
+        }
+      ]
+    },
+    {
+      "id": "bhxxqhpkor",
+      "path": "bhxxqhpkor",
+      "title": "Churn Reasons ",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "new_form_bhxxqhpkor.py",
+      "workflow_position": [
+        1769.7302756315705,
+        435.8744150598277
+      ],
+      "transitions": [
+        {
+          "target_path": "o1vj6yma3g",
+          "target_type": "scripts",
+          "label": "",
+          "id": "eb05bmpytf"
+        }
+      ]
+    },
+    {
+      "id": "qoeayyyujo",
+      "path": "qoeayyyujo",
+      "title": "Outcome",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "outcome.py",
+      "workflow_position": [
+        1232.8924903757438,
+        294.4594797353138
+      ],
+      "transitions": [
+        {
+          "target_path": "zgz9af8gsul",
+          "target_type": "forms",
+          "label": "",
+          "id": "x3kvztxwefn"
+        },
+        {
+          "target_path": "bhxxqhpkor",
+          "target_type": "forms",
+          "label": "",
+          "id": "texhz3gjku"
+        }
+      ]
+    }
+  ],
+  "dashes": [],
+  "scripts": [
+    {
+      "id": "yslo0vh8lll",
+      "file": "new_script_yslo0vh8lll.py",
+      "path": "yslo0vh8lll",
+      "title": "Welcome Email",
+      "is_initial": false,
+      "workflow_position": [
+        506.4118808361525,
+        436.1901297922757
+      ],
+      "transitions": [
+        {
+          "target_path": "f4kao1nlcip",
+          "target_type": "hooks",
+          "label": "",
+          "id": "1v61j267l8b"
+        }
+      ]
+    },
+    {
+      "id": "o1vj6yma3g",
+      "file": "new_script_o1vj6yma3g.py",
+      "path": "o1vj6yma3g",
+      "title": "Notify CCO & CEO",
+      "is_initial": false,
+      "workflow_position": [
+        2275.7194094085917,
+        267.8280948297777
+      ],
+      "transitions": []
+    },
+    {
+      "id": "mkp5zxgvbe",
+      "file": "meeting_arrangement.py",
+      "path": "mkp5zxgvbe",
+      "title": "Meeting arrangement notification ",
+      "is_initial": false,
+      "workflow_position": [
+        510.4645044156637,
+        199.70547655238758
+      ],
+      "transitions": [
+        {
+          "target_path": "f4kao1nlcip",
+          "target_type": "hooks",
+          "label": "",
+          "id": "29h492wzv5p"
+        }
+      ]
+    },
+    {
+      "id": "zhhti8a9b2",
+      "file": "new_script_zhhti8a9b2.py",
+      "path": "zhhti8a9b2",
+      "title": "QBR Meeting Notification",
+      "is_initial": false,
+      "workflow_position": [
+        1950.3460690920672,
+        140.18293271822267
+      ],
+      "transitions": [
+        {
+          "target_path": "o1vj6yma3g",
+          "target_type": "scripts",
+          "label": "",
+          "id": "cvr6fcedurq"
+        }
+      ]
+    }
+  ]
+}

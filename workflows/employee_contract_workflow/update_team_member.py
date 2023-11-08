@@ -49,7 +49,17 @@ member_page = (
         key="birth_date",
         initial_value=unpreprocessing_date(old_team_info["birth_date"]),
     )
-    .read_cpf("Individual Taxpayer Registration (CPF)", key="taxpayer_id", initial_value=old_team_info["taxpayer_id"][0:3]+"."+old_team_info["taxpayer_id"][3:6]+"."+old_team_info["taxpayer_id"][6:9]+"-"+old_team_info["taxpayer_id"][9:11])
+    .read_cpf(
+        "Individual Taxpayer Registration (CPF)",
+        key="taxpayer_id",
+        initial_value=old_team_info["taxpayer_id"][0:3]
+        + "."
+        + old_team_info["taxpayer_id"][3:6]
+        + "."
+        + old_team_info["taxpayer_id"][6:9]
+        + "-"
+        + old_team_info["taxpayer_id"][9:11],
+    )
     .read_email(
         "Email", required=False, key="email", initial_value=old_team_info["email"]
     )
