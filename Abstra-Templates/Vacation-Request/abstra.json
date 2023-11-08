@@ -30,8 +30,8 @@
   "hooks": [],
   "forms": [
     {
-      "id": "hdmizstcrbq",
-      "path": "hdmizstcrbq",
+      "id": "vacation-request",
+      "path": "vacation-request",
       "title": "Vacation Request",
       "is_initial": true,
       "auto_start": false,
@@ -43,7 +43,7 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "new_form_hdmizstcrbq.py",
+      "file": "vacation_request.py",
       "workflow_position": [
         344.77030937623516,
         325.6487425029618
