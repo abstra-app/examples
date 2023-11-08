@@ -2,13 +2,20 @@
 Here we are going to send a email to the team member, aiming to arrange a meeting
 """
 import smtplib
+import abstra.workflows as aw
 
+# Getting the client email from the previous stage
+stage = aw.get_stage()
+customer_email = stage["email"]
+coustomer_name = stage["name"]
+
+# Sending the CCO and CEO notification email
 gmail_user = "bot@gmail.com"
 gmail_password = "bot_password"
 
 sent_from = gmail_user
-to = ["person_a@gmail.com", "person_b@gmail.com"]  # Responsible team members emails
-subject = "QBR meeting"
+to = ["CEO@gmail.com", "CCO@gmail.com"]  # Responsible team members emails
+subject = ""
 body = "Hi, you need to schedule a QBR meeting with the client."
 
 email_text = """\
