@@ -11,6 +11,7 @@ def preprocessing_date(date):
         date = date.strftime("%Y/%m/%d, %H:%M:%S")
     return date
 
+
 # security check
 user = get_user()
 if not user.email.endswith("@abstra.app"):

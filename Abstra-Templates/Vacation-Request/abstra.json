@@ -1,0 +1,122 @@
+{
+  "version": "0.1",
+  "workspace": {
+    "name": "Untitled Workspace",
+    "sidebar": [
+      {
+        "id": "hdmizstcrbq",
+        "name": "Vacation Request",
+        "path": "hdmizstcrbq",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "7toqgbcqy1t",
+        "name": "Vacation Approval",
+        "path": "7toqgbcqy1t",
+        "type": "form",
+        "visible": false
+      }
+    ],
+    "root": null,
+    "theme": null,
+    "logo_url": null,
+    "brand_name": null,
+    "main_color": null,
+    "font_family": null,
+    "font_color": null
+  },
+  "jobs": [],
+  "hooks": [],
+  "forms": [
+    {
+      "id": "hdmizstcrbq",
+      "path": "hdmizstcrbq",
+      "title": "Vacation Request",
+      "is_initial": true,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "new_form_hdmizstcrbq.py",
+      "workflow_position": [
+        344.77030937623516,
+        325.6487425029618
+      ],
+      "transitions": [
+        {
+          "target_path": "7toqgbcqy1t",
+          "target_type": "forms",
+          "label": "",
+          "id": "58wg0600ppf"
+        }
+      ]
+    },
+    {
+      "id": "7toqgbcqy1t",
+      "path": "7toqgbcqy1t",
+      "title": "Vacation Approval",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "new_form_7toqgbcqy1t.py",
+      "workflow_position": [
+        663.766369827274,
+        320.0913198470204
+      ],
+      "transitions": [
+        {
+          "target_path": "p79ze8kymxe",
+          "target_type": "scripts",
+          "label": "",
+          "id": "0cqod7bdw2sk"
+        },
+        {
+          "target_path": "11h122nauaa",
+          "target_type": "scripts",
+          "label": "",
+          "id": "96213u4z4fs"
+        }
+      ]
+    }
+  ],
+  "dashes": [],
+  "scripts": [
+    {
+      "id": "p79ze8kymxe",
+      "file": "new_script_p79ze8kymxe.py",
+      "path": "p79ze8kymxe",
+      "title": "Approval Message",
+      "is_initial": false,
+      "workflow_position": [
+        888.2862451273083,
+        195.60505235393205
+      ],
+      "transitions": []
+    },
+    {
+      "id": "11h122nauaa",
+      "file": "new_script_11h122nauaa.py",
+      "path": "11h122nauaa",
+      "title": "Reject Message",
+      "is_initial": false,
+      "workflow_position": [
+        892.7321832520615,
+        443.4661028089204
+      ],
+      "transitions": []
+    }
+  ]
+}
