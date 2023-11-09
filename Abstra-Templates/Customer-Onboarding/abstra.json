@@ -4,20 +4,6 @@
     "name": "Untitled Workspace",
     "sidebar": [
       {
-        "id": "zgz9af8gsul",
-        "name": "Satisfaction Survey",
-        "path": "zgz9af8gsul",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "bhxxqhpkor",
-        "name": "Churn Reasons ",
-        "path": "bhxxqhpkor",
-        "type": "form",
-        "visible": false
-      },
-      {
         "id": "client-registration",
         "name": "Client Registration",
         "path": "client-registration",
@@ -25,16 +11,23 @@
         "visible": false
       },
       {
-        "id": "qoeayyyujo",
-        "name": "Outcome",
-        "path": "qoeayyyujo",
+        "id": "Meeting-Schedule",
+        "name": "Meeting Schedule",
+        "path": "Meeting-Schedule",
         "type": "form",
         "visible": false
       },
       {
-        "id": "6cl42i2ltz",
-        "name": "Meeting Schedule",
-        "path": "6cl42i2ltz",
+        "id": "client-accept",
+        "name": "Client Accept",
+        "path": "client-accept",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "client-refused",
+        "name": "client refused",
+        "path": "client-refused",
         "type": "form",
         "visible": false
       }
@@ -51,22 +44,15 @@
   "hooks": [
     {
       "file": "slack_notification.py",
-      "path": "f4kao1nlcip",
-      "title": "Team Slack Notification ",
+      "path": "slack-notification",
+      "title": "Slack notification",
       "enabled": false,
       "workflow_position": [
-        892.128393528155,
-        295.45190938896405
+        574.4441318542823,
+        -40.89249593161361
       ],
       "is_initial": false,
-      "transitions": [
-        {
-          "target_path": "qoeayyyujo",
-          "target_type": "forms",
-          "label": "",
-          "id": "h3tyopgbiq9"
-        }
-      ]
+      "transitions": []
     }
   ],
   "forms": [
@@ -86,111 +72,15 @@
       "restart_button_text": null,
       "file": "client_registration.py",
       "workflow_position": [
-        -117.81364936567681,
-        304.34023350076495
+        -702.5442892314321,
+        -39.774815983107146
       ],
       "transitions": [
         {
-          "target_path": "yslo0vh8lll",
+          "target_path": "sv3488fiknd",
           "target_type": "scripts",
           "label": "",
-          "id": "g99c1kwu45"
-        },
-        {
-          "target_path": "mkp5zxgvbe",
-          "target_type": "scripts",
-          "label": "",
-          "id": "hq9514pgbzo"
-        }
-      ]
-    },
-    {
-      "id": "zgz9af8gsul",
-      "path": "zgz9af8gsul",
-      "title": "Satisfaction Survey",
-      "is_initial": false,
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "file": "new_form_zgz9af8gsul.py",
-      "workflow_position": [
-        1511.0966544479961,
-        136.9133344802423
-      ],
-      "transitions": [
-        {
-          "target_path": "zhhti8a9b2",
-          "target_type": "scripts",
-          "label": "",
-          "id": "2gxfco9y7tw"
-        }
-      ]
-    },
-    {
-      "id": "bhxxqhpkor",
-      "path": "bhxxqhpkor",
-      "title": "Churn Reasons ",
-      "is_initial": false,
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "file": "new_form_bhxxqhpkor.py",
-      "workflow_position": [
-        1769.7302756315705,
-        435.8744150598277
-      ],
-      "transitions": [
-        {
-          "target_path": "o1vj6yma3g",
-          "target_type": "scripts",
-          "label": "",
-          "id": "eb05bmpytf"
-        }
-      ]
-    },
-    {
-      "id": "qoeayyyujo",
-      "path": "qoeayyyujo",
-      "title": "Outcome",
-      "is_initial": false,
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "file": "outcome.py",
-      "workflow_position": [
-        1232.8924903757438,
-        294.4594797353138
-      ],
-      "transitions": [
-        {
-          "target_path": "zgz9af8gsul",
-          "target_type": "forms",
-          "label": "",
-          "id": "x3kvztxwefn"
-        },
-        {
-          "target_path": "bhxxqhpkor",
-          "target_type": "forms",
-          "label": "",
-          "id": "texhz3gjku"
+          "id": "bjns1xlffgl"
         }
       ]
     },
@@ -210,87 +100,92 @@
       "restart_button_text": null,
       "file": "Meeting_Schedule.py",
       "workflow_position": [
-        629.9149425086998,
-        144.793619346479
+        -30.568142914567147,
+        -37.8299529575292
       ],
       "transitions": [
         {
-          "target_path": "f4kao1nlcip",
-          "target_type": "hooks",
+          "target_path": "client-accept",
+          "target_type": "forms",
           "label": "",
-          "id": "wdt7qo2lkch"
+          "id": "nr1t6a854q"
         }
       ]
+    },
+    {
+      "id": "client-accept",
+      "path": "client-accept",
+      "title": "Client Accept",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "client_accept.py",
+      "workflow_position": [
+        281.12542831350675,
+        -39.81610393204721
+      ],
+      "transitions": [
+        {
+          "target_path": "client-refused",
+          "target_type": "forms",
+          "label": "",
+          "id": "to7nde58b6r"
+        },
+        {
+          "target_path": "slack-notification",
+          "target_type": "hooks",
+          "label": "",
+          "id": "p3zavncrgr"
+        }
+      ]
+    },
+    {
+      "id": "client-refused",
+      "path": "client-refused",
+      "title": "client refused",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "client-refused.py",
+      "workflow_position": [
+        282.54915424563967,
+        -176.79292414586183
+      ],
+      "transitions": []
     }
   ],
   "dashes": [],
   "scripts": [
     {
-      "id": "yslo0vh8lll",
-      "file": "welcome_message.py",
-      "path": "yslo0vh8lll",
-      "title": "Welcome Email",
-      "is_initial": false,
-      "workflow_position": [
-        412.188673175414,
-        442.26904641554904
-      ],
-      "transitions": [
-        {
-          "target_path": "f4kao1nlcip",
-          "target_type": "hooks",
-          "label": "",
-          "id": "1v61j267l8b"
-        }
-      ]
-    },
-    {
-      "id": "o1vj6yma3g",
-      "file": "new_script_o1vj6yma3g.py",
-      "path": "o1vj6yma3g",
-      "title": "Notify CCO & CEO",
-      "is_initial": false,
-      "workflow_position": [
-        2275.7194094085917,
-        267.8280948297777
-      ],
-      "transitions": []
-    },
-    {
-      "id": "mkp5zxgvbe",
+      "id": "sv3488fiknd",
       "file": "meeting_arrangement.py",
-      "path": "mkp5zxgvbe",
-      "title": "Meeting arrangement notification ",
+      "path": "sv3488fiknd",
+      "title": "Meeting Arrangement",
       "is_initial": false,
       "workflow_position": [
-        285.346483756767,
-        150.52663443086158
+        -376.9125866491022,
+        -35.63929202406888
       ],
       "transitions": [
         {
-          "target_path": "6cl42i2ltz",
+          "target_path": "Meeting-Schedule",
           "target_type": "forms",
           "label": "",
-          "id": "ejwujzdncod"
-        }
-      ]
-    },
-    {
-      "id": "zhhti8a9b2",
-      "file": "new_script_zhhti8a9b2.py",
-      "path": "zhhti8a9b2",
-      "title": "QBR Meeting Notification",
-      "is_initial": false,
-      "workflow_position": [
-        1950.3460690920672,
-        140.18293271822267
-      ],
-      "transitions": [
-        {
-          "target_path": "o1vj6yma3g",
-          "target_type": "scripts",
-          "label": "",
-          "id": "cvr6fcedurq"
+          "id": "6f4z7v7i87h"
         }
       ]
     }

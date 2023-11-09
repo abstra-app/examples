@@ -4,6 +4,10 @@ import abstra.workflows as aw
 '''
 This is the first stage of the workflow where we get the client data
 '''
+stage = aw.get_stage()
+email = stage["email"]
+name = stage["name"]
+country = stage["country"]
 
 # Doing the form for the client
 client = (
@@ -39,18 +43,13 @@ display(
 aw.next_stage(
     [
         {
-            "name" : name,
-            "assignee": email,
-            "stage": "welcome-message"
-        },
-        {
             "assignee": "example@example.com",
             "data": {
                 "name" : name,
                 "email": email,
                 "country": country,
             },
-            "stage": "meeting-arrangement"
+            "stage": "Meeting Arrangement"
         }
     ]
 )

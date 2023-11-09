@@ -1,3 +1,6 @@
+import abstra.workflows as aw
+from abstra.forms import *
+
 """
 Here we are going to send a email to the team member, aiming to arrange a meeting
 """
@@ -33,3 +36,24 @@ try:
     print("Email sent successfully!")
 except Exception as ex:
     print("Something went wrong….", ex)
+
+# Passing the variables to the next stage
+
+stage = aw.get_stage()
+email = stage["email"]
+name = stage["name"]
+country = stage["country"]
+
+aw.next_stage(
+    [
+        {
+            "assignee": "example@example.com",
+            "data": {
+                "name" : name,
+                "email": email,
+                "country": country,
+            },
+            "stage": "Meeting Schedule"
+        }
+    ]
+)
