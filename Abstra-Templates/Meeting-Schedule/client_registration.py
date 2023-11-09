@@ -4,6 +4,7 @@ import abstra.workflows as aw
 '''
 This is the first stage of the workflow where we get the client data
 '''
+
 stage = aw.get_stage()
 email = stage["email"]
 name = stage["name"]
@@ -54,3 +55,4 @@ aw.next_stage(
     ]
 )
 
+print("Hello")

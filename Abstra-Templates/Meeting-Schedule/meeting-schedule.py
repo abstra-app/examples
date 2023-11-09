@@ -35,6 +35,7 @@ display(
 )
 
 # Passing the variables to the next stage
+print("Hello")
 aw.next_stage(
     [
         {
@@ -43,11 +44,13 @@ aw.next_stage(
                 "name" : name,
                 "email": email,
                 "country": country,
-                "date": date,
-                "time": time,
+                "date_month": str(date.month),
+                "date_day": str(date.day),
+                "time_hour": str(time.hour),
+                "time_minute": str(time.minute),
             },
             "stage": "Client Accept"
         }
     ]
 )
-
+print("Hello")

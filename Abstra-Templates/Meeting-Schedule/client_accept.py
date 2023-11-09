@@ -7,7 +7,7 @@ Abstra forms are the simplest way to build user interfaces for your workflows.
 """
 
 def render(partial):
-    if partial.get("ans") != None and partial.get("ans") == "Yes":
+    if partial.get("ans") != None and partial.get("ans") == "No":
         return  (
             Page()
                 .read_date("When would you like to schedule the meeting?", key="new_date")
@@ -19,13 +19,15 @@ stage = aw.get_stage()
 email = stage["email"]
 name = stage["name"]
 country = stage["country"]
-date = stage["date"]
-time = stage["time"]
+date_month = stage["date_month"]
+date_day = stage["date_day"]
+time_hour = stage["time_hour"]
+time_minute = stage["time_minute"]
 
 client_confirmation = (
     Page()
-    .display("Can we schedule a meeting with you on " + str(time.hour) + ":" + str(time.minute) + " on " + str(date.day) + "/"+ str(date.month) + "?")
-    .read_multiple_choice("Yes or No?", ["Yes", "No"], key="ans")
+    .display("Can we schedule a meeting with you on " + time_hour + ":" + time_minute + " on " + date_day + "/"+ date_month + "?")
+    .read_multiple_choice("Is this alright?", ["Yes", "No"], key="ans")
     .reactive(render)
     .run()
 )
@@ -40,16 +42,20 @@ if ans == "Yes":
                     "name" : name,
                     "email": email,
                     "country": country,
-                    "date": date,
-                    "time": time,
+                    "date_month": date_month,
+                    "date_day": date_day,
+                    "time_hour": time_hour,
+                    "time_minute": time_minute,
                 },
-                "stage": "Slack notification"
+                "stage": "Slack Notification"
             }
         ]
     )
 else:
-    date = client_confirmation["new_date"]
-    time = client_confirmation["new_time"]
+    date_day = str(client_confirmation["new_date"].day)
+    date_month = str(client_confirmation["new_date"].month)
+    time_hour = str(client_confirmation["new_time"].hour)
+    time_minute = str(client_confirmation["new_time"].minute)
     aw.next_stage(
         [
             {
@@ -58,8 +64,10 @@ else:
                     "name" : name,
                     "email": email,
                     "country": country,
-                    "date": date,
-                    "time": time,
+                    "date_month": date_month,
+                    "date_day": date_day,
+                    "time_hour": time_hour,
+                    "time_minute": time_minute,
                 },
                 "stage": "Meeting Arrangement"
             }

@@ -1,59 +1,42 @@
-import abstra.workflows as aw
-from abstra.forms import *
-
-"""
-Here we are going to send a email to the team member, aiming to arrange a meeting
-"""
 import smtplib
-
-gmail_user = "bot@gmail.com"
-gmail_password = "bot_password"
-
-sent_from = gmail_user
-to = ["person_a@gmail.com", "person_b@gmail.com"]  # Responsible team members emails
-subject = "Meeting arrangement"
-body = "Hi, there is a new client to be attended."
-
-email_text = """\
-From: %s
-To: %s
-Subject: %s
-
-%s
-""" % (
-    sent_from,
-    ", ".join(to),
-    subject,
-    body,
-)
-
-try:
-    smtp_server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-    smtp_server.ehlo()
-    smtp_server.login(gmail_user, gmail_password)
-    smtp_server.sendmail(sent_from, to, email_text)
-    smtp_server.close()
-    print("Email sent successfully!")
-except Exception as ex:
-    print("Something went wrong….", ex)
-
-# Passing the variables to the next stage
+from email.mime.text import MIMEText
+import abstra.workflows as aw
 
 stage = aw.get_stage()
 email = stage["email"]
 name = stage["name"]
 country = stage["country"]
 
+subject = "Email Subject"
+body = "This is the body of the text message"
+sender = "sender@gmail.com"
+recipients = ["receiver@gmail.com"]
+password = ""
+
+
+def send_email(subject, body, sender, recipients, password):
+    msg = MIMEText(body)
+    msg['Subject'] = subject
+    msg['From'] = sender
+    msg['To'] = ', '.join(recipients)
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp_server:
+       smtp_server.login(sender, password)
+       smtp_server.sendmail(sender, recipients, msg.as_string())
+    print("Message sent!")
+
+
+send_email(subject, body, sender, recipients, password)
+
 aw.next_stage(
-    [
-        {
-            "assignee": "example@example.com",
-            "data": {
-                "name" : name,
-                "email": email,
-                "country": country,
-            },
-            "stage": "Meeting Schedule"
-        }
-    ]
-)
+        [
+            {
+                "assignee": "example@example.com",
+                "data": {
+                    "name" : name,
+                    "email": email,
+                    "country": country,
+                },
+                "stage": "Meeting Schedule"
+            }
+        ]
+    )

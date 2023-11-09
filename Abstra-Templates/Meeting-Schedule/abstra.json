@@ -36,15 +36,15 @@
   "jobs": [],
   "hooks": [
     {
-      "file": "client_accept.py",
-      "path": "client-accept",
+      "file": "slack-notification.py",
+      "path": "slack-notification",
       "title": "Slack Notification",
       "enabled": false,
       "workflow_position": [
-        203.49114334756632,
-        51.49663156734522
+        209.0762287273394,
+        38.46476568120772
       ],
-      "is_initial": true,
+      "is_initial": false,
       "transitions": []
     }
   ],
@@ -65,8 +65,8 @@
       "restart_button_text": null,
       "file": "client_registration.py",
       "workflow_position": [
-        -752.7092584221232,
-        225.50032905022
+        -751.7784108588278,
+        222.70778636033333
       ],
       "transitions": [
         {
@@ -93,8 +93,8 @@
       "restart_button_text": null,
       "file": "meeting-schedule.py",
       "workflow_position": [
-        -122.44478158545962,
-        222.4407017414947
+        -124.30647671205077,
+        219.6481590516081
       ],
       "transitions": [
         {
@@ -122,9 +122,22 @@
       "file": "client_accept.py",
       "workflow_position": [
         -119.42372887073327,
-        39.26207093508398
+        40.1929184983795
       ],
-      "transitions": []
+      "transitions": [
+        {
+          "target_path": "slack-notification",
+          "target_type": "hooks",
+          "label": "",
+          "id": "9xe8t3b6ywf"
+        },
+        {
+          "target_path": "af7coac2td4",
+          "target_type": "scripts",
+          "label": "",
+          "id": "2wxfk90rulw"
+        }
+      ]
     }
   ],
   "dashes": [],
