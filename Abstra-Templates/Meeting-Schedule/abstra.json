@@ -11,23 +11,16 @@
         "visible": false
       },
       {
-        "id": "Meeting-Schedule",
+        "id": "meeting-schedule",
         "name": "Meeting Schedule",
-        "path": "Meeting-Schedule",
+        "path": "meeting-schedule",
         "type": "form",
         "visible": false
       },
       {
-        "id": "client-accept",
+        "id": "client_accept",
         "name": "Client Accept",
-        "path": "client-accept",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "client-refused",
-        "name": "client refused",
-        "path": "client-refused",
+        "path": "client_accept",
         "type": "form",
         "visible": false
       }
@@ -43,15 +36,15 @@
   "jobs": [],
   "hooks": [
     {
-      "file": "slack_notification.py",
-      "path": "slack-notification",
-      "title": "Slack notification",
+      "file": "client_accept.py",
+      "path": "client-accept",
+      "title": "Slack Notification",
       "enabled": false,
       "workflow_position": [
-        574.4441318542823,
-        -40.89249593161361
+        203.49114334756632,
+        51.49663156734522
       ],
-      "is_initial": false,
+      "is_initial": true,
       "transitions": []
     }
   ],
@@ -72,21 +65,21 @@
       "restart_button_text": null,
       "file": "client_registration.py",
       "workflow_position": [
-        -702.5442892314321,
-        -39.774815983107146
+        -752.7092584221232,
+        225.50032905022
       ],
       "transitions": [
         {
-          "target_path": "sv3488fiknd",
+          "target_path": "af7coac2td4",
           "target_type": "scripts",
           "label": "",
-          "id": "bjns1xlffgl"
+          "id": "2vvssqqrbdy"
         }
       ]
     },
     {
-      "id": "Meeting-Schedule",
-      "path": "Meeting-Schedule",
+      "id": "meeting-schedule",
+      "path": "meeting-schedule",
       "title": "Meeting Schedule",
       "is_initial": false,
       "auto_start": false,
@@ -98,23 +91,23 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "Meeting_Schedule.py",
+      "file": "meeting-schedule.py",
       "workflow_position": [
-        -30.568142914567147,
-        -37.8299529575292
+        -122.44478158545962,
+        222.4407017414947
       ],
       "transitions": [
         {
-          "target_path": "client-accept",
+          "target_path": "client_accept",
           "target_type": "forms",
           "label": "",
-          "id": "nr1t6a854q"
+          "id": "wocm3n2x0u"
         }
       ]
     },
     {
-      "id": "client-accept",
-      "path": "client-accept",
+      "id": "client_accept",
+      "path": "client_accept",
       "title": "Client Accept",
       "is_initial": false,
       "auto_start": false,
@@ -128,42 +121,8 @@
       "restart_button_text": null,
       "file": "client_accept.py",
       "workflow_position": [
-        281.12542831350675,
-        -39.81610393204721
-      ],
-      "transitions": [
-        {
-          "target_path": "client-refused",
-          "target_type": "forms",
-          "label": "",
-          "id": "to7nde58b6r"
-        },
-        {
-          "target_path": "slack-notification",
-          "target_type": "hooks",
-          "label": "",
-          "id": "p3zavncrgr"
-        }
-      ]
-    },
-    {
-      "id": "client-refused",
-      "path": "client-refused",
-      "title": "client refused",
-      "is_initial": false,
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "file": "client-refused.py",
-      "workflow_position": [
-        282.54915424563967,
-        -176.79292414586183
+        -119.42372887073327,
+        39.26207093508398
       ],
       "transitions": []
     }
@@ -171,21 +130,21 @@
   "dashes": [],
   "scripts": [
     {
-      "id": "sv3488fiknd",
+      "id": "af7coac2td4",
       "file": "meeting_arrangement.py",
-      "path": "sv3488fiknd",
+      "path": "af7coac2td4",
       "title": "Meeting Arrangement",
       "is_initial": false,
       "workflow_position": [
-        -376.9125866491022,
-        -35.63929202406888
+        -427.7627823463942,
+        222.44070174149476
       ],
       "transitions": [
         {
-          "target_path": "Meeting-Schedule",
+          "target_path": "meeting-schedule",
           "target_type": "forms",
           "label": "",
-          "id": "6f4z7v7i87h"
+          "id": "3loqyjf5jna"
         }
       ]
     }

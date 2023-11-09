@@ -7,13 +7,6 @@ This is the first stage of the workflow where we get the client data
 '''
 
 
-def preprocessing_date(date):
-    if date != None:
-        date = datetime(date.year, date.month, date.day)
-        date = date.replace(tzinfo=None)
-        date = date.strftime("%Y/%m/%d, %H:%M:%S")
-    return date
-
 stage = aw.get_stage()
 email = stage["email"]
 name = stage["name"]
@@ -25,17 +18,20 @@ meeting = (
     .display("A new client is interested in our services. Please fill the form below to schedule a meeting.")
     .display("His name is " + name + " and his email is " + email + ". He is from " + country + ".")
     .read_date("When would you like to schedule the meeting?", key="date")
+    .read_time("What time would you like to schedule the meeting?", key="time")
     .run("Send")
 )
 
 # Assigning the values to variables
 (
-    date
+    date,
+    time
 ) = meeting.values()
-date = preprocessing_date(date)
+print(date)
+print(time)
 display(
-    "Scheduled a meeting with " + name + " on " + date + ".",
-    button_text="Go catch the client :)",
+    "Scheduled a meeting with " + name + " on " + str(date.day) + "/"+ str(date.month) + " at " + str(time.hour) + ":" + str(time.minute) + ".",
+    button_text="Go catch the client :)"
 )
 
 # Passing the variables to the next stage
@@ -48,6 +44,7 @@ aw.next_stage(
                 "email": email,
                 "country": country,
                 "date": date,
+                "time": time,
             },
             "stage": "Client Accept"
         }
