@@ -11,13 +11,12 @@ custumer_name = stage.data.get("name")
 churn_reason = stage.data.get("churn_reason")
 
 
-
 # Sending the CCO and CEO notification email
 gmail_user = "bot@gmail.com"
 gmail_password = "bot_password"
 
 sent_from = gmail_user
-to = ["CEO@gmail.com", "CCO@gmail.com"] 
+to = ["CEO@gmail.com", "CCO@gmail.com"]
 subject = "New client"
 body = ""
 

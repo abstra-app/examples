@@ -19,8 +19,7 @@ try:
     client.chat_postMessage(
         channel="YOUR_CHANNEL",
         text=f"Hey team, the {name} ({email}) from {country} is interested in our services. We are going to contact him soon. :tada:",
-)
+    )
     ah.send_response(f"[{payload}] Ok")
 except Exception as e:
     ah.send_response(f"[{payload}] Error", status_code=500)
-

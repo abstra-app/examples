@@ -1,8 +1,6 @@
 .abstra
-
 .git
 .gitignore
-
 __pycache__
 .venv
 .env

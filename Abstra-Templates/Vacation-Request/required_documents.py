@@ -6,17 +6,18 @@ import smtplib
 
 # Here we get the client email from the previous stage
 stage = aw.get_stage()
-customer_email = stage["email"]
-coustomer_name = stage["name"]
+email = stage["email"]
+name = stage["name"]
+documents = stage["documents"]
 
 # Now we send the email
 gmail_user = "bot@gmail.com"
 gmail_password = "bot_password"
 
 sent_from = gmail_user
-to = [customer_email]  # Client email
-subject = "Welcome to our company!"
-body = f"Hi {coustomer_name}, welcome to our company! We are very happy to have you here. We are going to contact you soon to arrange a meeting."
+to = email # Client email
+subject = "Subject"
+body = f"Hi {name}, the required documents are: {documents} "
 
 email_text = """\
 From: %s
@@ -40,3 +41,4 @@ try:
     print("Email sent successfully!")
 except Exception as ex:
     print("Something went wrong….", ex)
+

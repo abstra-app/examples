@@ -49,11 +49,11 @@ aw.next_stage(
         {
             "assignee": "example@example.com",
             "data": {
-                "name" : name,
+                "name": name,
                 "email": email,
                 "country": country,
             },
-            "stage": "Meeting Schedule"
+            "stage": "Meeting Schedule",
         }
     ]
 )

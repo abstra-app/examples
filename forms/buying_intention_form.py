@@ -30,7 +30,7 @@ company = read("Company name")
 This is the quickest way you can avoid sending messages
 when someone on your company tests your script.
 """
-if '@abstra.app' not in email:
+if "@abstra.app" not in email:
     res = client.chat_postMessage(
         channel="sa_planos",
         text="Someone is interested in the "

@@ -1,9 +1,9 @@
 from abstra.forms import *
 import abstra.workflows as aw
 
-'''
+"""
 This is the first stage of the workflow where we get the client data
-'''
+"""
 stage = aw.get_stage()
 email = stage["email"]
 name = stage["name"]
@@ -12,17 +12,17 @@ country = stage["country"]
 # Doing the form for the client
 client = (
     Page()
-    .read("Name",key="name")
-    .read_email("Email",key="email")
+    .read("Name", key="name")
+    .read_email("Email", key="email")
     .read_dropdown(
         "Entity",
         [
             {"label": "Bussiness", "value": "bussiness"},
             {"label": "Personal", "value": "personal"},
         ],
-        key="entity"
+        key="entity",
     )
-    .read("Country",key="country")
+    .read("Country", key="country")
     .run("Send")
 )
 
@@ -45,12 +45,11 @@ aw.next_stage(
         {
             "assignee": "example@example.com",
             "data": {
-                "name" : name,
+                "name": name,
                 "email": email,
                 "country": country,
             },
-            "stage": "Meeting Arrangement"
+            "stage": "Meeting Arrangement",
         }
     ]
 )
-

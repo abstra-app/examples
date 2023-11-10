@@ -19,15 +19,8 @@
       },
       {
         "id": "client-accept",
-        "name": "Client Accept",
+        "name": "Cl",
         "path": "client-accept",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "client-refused",
-        "name": "client refused",
-        "path": "client-refused",
         "type": "form",
         "visible": false
       }
@@ -48,8 +41,8 @@
       "title": "Slack notification",
       "enabled": false,
       "workflow_position": [
-        574.4441318542823,
-        -40.89249593161361
+        400.56281125690055,
+        -33.129212520728856
       ],
       "is_initial": false,
       "transitions": []
@@ -72,8 +65,8 @@
       "restart_button_text": null,
       "file": "client_registration.py",
       "workflow_position": [
-        -702.5442892314321,
-        -39.774815983107146
+        -734.9094344596479,
+        -34.79556287107397
       ],
       "transitions": [
         {
@@ -100,8 +93,8 @@
       "restart_button_text": null,
       "file": "Meeting_Schedule.py",
       "workflow_position": [
-        -30.568142914567147,
-        -37.8299529575292
+        -109.18764859098007,
+        136.21137476935064
       ],
       "transitions": [
         {
@@ -115,7 +108,7 @@
     {
       "id": "client-accept",
       "path": "client-accept",
-      "title": "Client Accept",
+      "title": "Cl",
       "is_initial": false,
       "auto_start": false,
       "allow_restart": false,
@@ -128,44 +121,23 @@
       "restart_button_text": null,
       "file": "client_accept.py",
       "workflow_position": [
-        281.12542831350675,
-        -39.81610393204721
+        95.64824989027045,
+        -31.102410985989252
       ],
       "transitions": [
-        {
-          "target_path": "client-refused",
-          "target_type": "forms",
-          "label": "",
-          "id": "to7nde58b6r"
-        },
         {
           "target_path": "slack-notification",
           "target_type": "hooks",
           "label": "",
           "id": "p3zavncrgr"
+        },
+        {
+          "target_path": "sv3488fiknd",
+          "target_type": "scripts",
+          "label": "",
+          "id": "9r1c4rua02q"
         }
       ]
-    },
-    {
-      "id": "client-refused",
-      "path": "client-refused",
-      "title": "client refused",
-      "is_initial": false,
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "file": "client-refused.py",
-      "workflow_position": [
-        282.54915424563967,
-        -176.79292414586183
-      ],
-      "transitions": []
     }
   ],
   "dashes": [],
@@ -177,8 +149,8 @@
       "title": "Meeting Arrangement",
       "is_initial": false,
       "workflow_position": [
-        -376.9125866491022,
-        -35.63929202406888
+        -350.7715078109279,
+        -33.14966546805226
       ],
       "transitions": [
         {

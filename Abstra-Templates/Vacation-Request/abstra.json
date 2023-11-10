@@ -4,16 +4,37 @@
     "name": "Untitled Workspace",
     "sidebar": [
       {
-        "id": "hdmizstcrbq",
+        "id": "vacation-request",
         "name": "Vacation Request",
-        "path": "hdmizstcrbq",
+        "path": "vacation-request",
         "type": "form",
         "visible": false
       },
       {
-        "id": "7toqgbcqy1t",
+        "id": "vacation-approval",
         "name": "Vacation Approval",
-        "path": "7toqgbcqy1t",
+        "path": "vacation-approval",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "n9ld7s301jf",
+        "name": "Document Submission ",
+        "path": "n9ld7s301jf",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "u6vg70m07o",
+        "name": "Document update",
+        "path": "u6vg70m07o",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "document-analisis",
+        "name": "Document Analisis",
+        "path": "document-analisis",
         "type": "form",
         "visible": false
       }
@@ -45,12 +66,12 @@
       "restart_button_text": null,
       "file": "vacation_request.py",
       "workflow_position": [
-        344.77030937623516,
-        325.6487425029618
+        313.64997742602765,
+        321.91430266893695
       ],
       "transitions": [
         {
-          "target_path": "7toqgbcqy1t",
+          "target_path": "vacation-approval",
           "target_type": "forms",
           "label": "",
           "id": "58wg0600ppf"
@@ -58,8 +79,8 @@
       ]
     },
     {
-      "id": "7toqgbcqy1t",
-      "path": "7toqgbcqy1t",
+      "id": "vacation-approval",
+      "path": "vacation-approval",
       "title": "Vacation Approval",
       "is_initial": false,
       "auto_start": false,
@@ -71,10 +92,10 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "new_form_7toqgbcqy1t.py",
+      "file": "vacation_approval.py",
       "workflow_position": [
-        663.766369827274,
-        320.0913198470204
+        653.5312384303168,
+        322.58094640303705
       ],
       "transitions": [
         {
@@ -90,21 +111,118 @@
           "id": "96213u4z4fs"
         }
       ]
+    },
+    {
+      "id": "n9ld7s301jf",
+      "path": "n9ld7s301jf",
+      "title": "Document Submission ",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "document_submission.py",
+      "workflow_position": [
+        1344.086251026409,
+        321.40279749843864
+      ],
+      "transitions": [
+        {
+          "target_path": "document-analisis",
+          "target_type": "forms",
+          "label": "",
+          "id": "95cqday3a3f"
+        }
+      ]
+    },
+    {
+      "id": "document-analisis",
+      "path": "document-analisis",
+      "title": "Document Analisis",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "document_analisis.py",
+      "workflow_position": [
+        1680.1858360886495,
+        317.6683576644137
+      ],
+      "transitions": [
+        {
+          "target_path": "aa6hx1rvj6q",
+          "target_type": "scripts",
+          "label": "",
+          "id": "yw64433g3i"
+        },
+        {
+          "target_path": "l5j7akgdcoc",
+          "target_type": "scripts",
+          "label": "",
+          "id": "jfwry3fhjd"
+        }
+      ]
+    },
+    {
+      "id": "u6vg70m07o",
+      "path": "u6vg70m07o",
+      "title": "Document update",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "document_update.py",
+      "workflow_position": [
+        1482.2605248853297,
+        148.37375185528515
+      ],
+      "transitions": [
+        {
+          "target_path": "document-analisis",
+          "target_type": "forms",
+          "label": "",
+          "id": "ajq4humrxlu"
+        }
+      ]
     }
   ],
   "dashes": [],
   "scripts": [
     {
       "id": "p79ze8kymxe",
-      "file": "new_script_p79ze8kymxe.py",
+      "file": "required_documents.py",
       "path": "p79ze8kymxe",
-      "title": "Approval Message",
+      "title": "Required documents",
       "is_initial": false,
       "workflow_position": [
-        888.2862451273083,
-        195.60505235393205
+        1016.5020127621632,
+        320.08638015476186
       ],
-      "transitions": []
+      "transitions": [
+        {
+          "target_path": "n9ld7s301jf",
+          "target_type": "forms",
+          "label": "",
+          "id": "zqlykp2mg6a"
+        }
+      ]
     },
     {
       "id": "11h122nauaa",
@@ -113,8 +231,39 @@
       "title": "Reject Message",
       "is_initial": false,
       "workflow_position": [
-        892.7321832520615,
-        443.4661028089204
+        653.3130961151319,
+        501.4190765295291
+      ],
+      "transitions": []
+    },
+    {
+      "id": "aa6hx1rvj6q",
+      "file": "document_rejection.py",
+      "path": "aa6hx1rvj6q",
+      "title": "Document Rejection ",
+      "is_initial": false,
+      "workflow_position": [
+        1886.8248402380268,
+        145.88412529926865
+      ],
+      "transitions": [
+        {
+          "target_path": "u6vg70m07o",
+          "target_type": "forms",
+          "label": "",
+          "id": "2tfw5hx0sy1"
+        }
+      ]
+    },
+    {
+      "id": "l5j7akgdcoc",
+      "file": "vacation_approved.py",
+      "path": "l5j7akgdcoc",
+      "title": "Vacation Approved",
+      "is_initial": false,
+      "workflow_position": [
+        2058.348952466158,
+        311.1841711373582
       ],
       "transitions": []
     }
