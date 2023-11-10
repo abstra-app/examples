@@ -11,16 +11,22 @@
         "visible": false
       },
       {
-        "id": "Meeting-Schedule",
+        "id": "meeting-schedule",
         "name": "Meeting Schedule",
-        "path": "Meeting-Schedule",
+        "path": "meeting-schedule",
         "type": "form",
         "visible": false
       },
       {
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/abstra.json
         "id": "client-accept",
         "name": "Cl",
         "path": "client-accept",
+=======
+        "id": "client_accept",
+        "name": "Client Accept",
+        "path": "client_accept",
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/abstra.json
         "type": "form",
         "visible": false
       }
@@ -36,13 +42,18 @@
   "jobs": [],
   "hooks": [
     {
-      "file": "slack_notification.py",
+      "file": "slack-notification.py",
       "path": "slack-notification",
-      "title": "Slack notification",
+      "title": "Slack Notification",
       "enabled": false,
       "workflow_position": [
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/abstra.json
         400.56281125690055,
         -33.129212520728856
+=======
+        209.0762287273394,
+        38.46476568120772
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/abstra.json
       ],
       "is_initial": false,
       "transitions": []
@@ -65,21 +76,26 @@
       "restart_button_text": null,
       "file": "client_registration.py",
       "workflow_position": [
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/abstra.json
         -734.9094344596479,
         -34.79556287107397
+=======
+        -751.7784108588278,
+        222.70778636033333
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/abstra.json
       ],
       "transitions": [
         {
-          "target_path": "sv3488fiknd",
+          "target_path": "af7coac2td4",
           "target_type": "scripts",
           "label": "",
-          "id": "bjns1xlffgl"
+          "id": "2vvssqqrbdy"
         }
       ]
     },
     {
-      "id": "Meeting-Schedule",
-      "path": "Meeting-Schedule",
+      "id": "meeting-schedule",
+      "path": "meeting-schedule",
       "title": "Meeting Schedule",
       "is_initial": false,
       "auto_start": false,
@@ -91,24 +107,35 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "Meeting_Schedule.py",
+      "file": "meeting-schedule.py",
       "workflow_position": [
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/abstra.json
         -109.18764859098007,
         136.21137476935064
+=======
+        -124.30647671205077,
+        219.6481590516081
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/abstra.json
       ],
       "transitions": [
         {
-          "target_path": "client-accept",
+          "target_path": "client_accept",
           "target_type": "forms",
           "label": "",
-          "id": "nr1t6a854q"
+          "id": "wocm3n2x0u"
         }
       ]
     },
     {
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/abstra.json
       "id": "client-accept",
       "path": "client-accept",
       "title": "Cl",
+=======
+      "id": "client_accept",
+      "path": "client_accept",
+      "title": "Client Accept",
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/abstra.json
       "is_initial": false,
       "auto_start": false,
       "allow_restart": false,
@@ -121,14 +148,20 @@
       "restart_button_text": null,
       "file": "client_accept.py",
       "workflow_position": [
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/abstra.json
         95.64824989027045,
         -31.102410985989252
+=======
+        -119.42372887073327,
+        40.1929184983795
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/abstra.json
       ],
       "transitions": [
         {
           "target_path": "slack-notification",
           "target_type": "hooks",
           "label": "",
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/abstra.json
           "id": "p3zavncrgr"
         },
         {
@@ -136,6 +169,15 @@
           "target_type": "scripts",
           "label": "",
           "id": "9r1c4rua02q"
+=======
+          "id": "9xe8t3b6ywf"
+        },
+        {
+          "target_path": "af7coac2td4",
+          "target_type": "scripts",
+          "label": "",
+          "id": "2wxfk90rulw"
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/abstra.json
         }
       ]
     }
@@ -143,21 +185,26 @@
   "dashes": [],
   "scripts": [
     {
-      "id": "sv3488fiknd",
+      "id": "af7coac2td4",
       "file": "meeting_arrangement.py",
-      "path": "sv3488fiknd",
+      "path": "af7coac2td4",
       "title": "Meeting Arrangement",
       "is_initial": false,
       "workflow_position": [
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/abstra.json
         -350.7715078109279,
         -33.14966546805226
+=======
+        -427.7627823463942,
+        222.44070174149476
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/abstra.json
       ],
       "transitions": [
         {
-          "target_path": "Meeting-Schedule",
+          "target_path": "meeting-schedule",
           "target_type": "forms",
           "label": "",
-          "id": "6f4z7v7i87h"
+          "id": "3loqyjf5jna"
         }
       ]
     }

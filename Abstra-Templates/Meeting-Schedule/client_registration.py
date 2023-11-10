@@ -3,7 +3,12 @@ import abstra.workflows as aw
 
 """
 This is the first stage of the workflow where we get the client data
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/client_registration.py
 """
+=======
+'''
+
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/client_registration.py
 stage = aw.get_stage()
 email = stage["email"]
 name = stage["name"]
@@ -53,3 +58,8 @@ aw.next_stage(
         }
     ]
 )
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/client_registration.py
+=======
+
+print("Hello")
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/client_registration.py

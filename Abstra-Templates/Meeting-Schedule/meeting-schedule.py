@@ -7,6 +7,7 @@ This is the first stage of the workflow where we get the client data
 """
 
 
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/Meeting_Schedule.py
 def preprocessing_date(date):
     if date != None:
         date = datetime(date.year, date.month, date.day)
@@ -15,6 +16,8 @@ def preprocessing_date(date):
     return date
 
 
+=======
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/meeting-schedule.py
 stage = aw.get_stage()
 email = stage["email"]
 name = stage["name"]
@@ -36,18 +39,29 @@ meeting = (
         + "."
     )
     .read_date("When would you like to schedule the meeting?", key="date")
+    .read_time("What time would you like to schedule the meeting?", key="time")
     .run("Send")
 )
 
 # Assigning the values to variables
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/Meeting_Schedule.py
 (date) = meeting.values()
 date = preprocessing_date(date)
+=======
+(
+    date,
+    time
+) = meeting.values()
+print(date)
+print(time)
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/meeting-schedule.py
 display(
-    "Scheduled a meeting with " + name + " on " + date + ".",
-    button_text="Go catch the client :)",
+    "Scheduled a meeting with " + name + " on " + str(date.day) + "/"+ str(date.month) + " at " + str(time.hour) + ":" + str(time.minute) + ".",
+    button_text="Go catch the client :)"
 )
 
 # Passing the variables to the next stage
+print("Hello")
 aw.next_stage(
     [
         {
@@ -56,9 +70,16 @@ aw.next_stage(
                 "name": name,
                 "email": email,
                 "country": country,
-                "date": date,
+                "date_month": str(date.month),
+                "date_day": str(date.day),
+                "time_hour": str(time.hour),
+                "time_minute": str(time.minute),
             },
             "stage": "Client Accept",
         }
     ]
 )
+<<<<<<< HEAD:Abstra-Templates/Customer-Onboarding/Meeting_Schedule.py
+=======
+print("Hello")
+>>>>>>> 164968c77c5b510c836944e991e8596e7e4e990e:Abstra-Templates/Meeting-Schedule/meeting-schedule.py
