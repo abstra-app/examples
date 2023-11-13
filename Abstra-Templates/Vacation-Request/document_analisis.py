@@ -4,11 +4,12 @@ from abstra.workflows import *
 """
 Abstra forms are the simplest way to build user interfaces for your workflows.
 """
-
+# Getting info from other stages
 stage = get_stage()
 path = stage["path"]
 NewPath = stage["newpath"]
 
+# Now we are going to display the updated document if it exists
 display("Analyse the submitted documents:")
 
 if NewPath == None:
