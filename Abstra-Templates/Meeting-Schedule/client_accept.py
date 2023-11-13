@@ -23,7 +23,7 @@ date_month = stage["date_month"]
 date_day = stage["date_day"]
 time_hour = stage["time_hour"]
 time_minute = stage["time_minute"]
-
+print(name)
 client_confirmation = (
     Page()
     .display("Can we schedule a meeting with you on " + time_hour + ":" + time_minute + " on " + date_day + "/"+ date_month + "?")
@@ -33,25 +33,8 @@ client_confirmation = (
 )
 ans = client_confirmation["ans"]
 print(ans)
-if ans == "Yes":
-    aw.next_stage(
-        [
-            {
-                "assignee": "example@example.com",
-                "data": {
-                    "name" : name,
-                    "email": email,
-                    "country": country,
-                    "date_month": date_month,
-                    "date_day": date_day,
-                    "time_hour": time_hour,
-                    "time_minute": time_minute,
-                },
-                "stage": "Slack Notification"
-            }
-        ]
-    )
-else:
+
+if ans == "No":
     date_day = str(client_confirmation["new_date"].day)
     date_month = str(client_confirmation["new_date"].month)
     time_hour = str(client_confirmation["new_time"].hour)
@@ -61,9 +44,6 @@ else:
             {
                 "assignee": "example@example.com",
                 "data": {
-                    "name" : name,
-                    "email": email,
-                    "country": country,
                     "date_month": date_month,
                     "date_day": date_day,
                     "time_hour": time_hour,

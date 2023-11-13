@@ -3,3 +3,6 @@ pandas==1.5.3
 numpy==1.26.0
 telepot==12.7
 ```
+slack-sdk==3.22.0
+python-dotenv==1.0.0
+requests==2.31.0

@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "workspace": {
+    "name": "Untitled Workspace",
+    "sidebar": [],
+    "root": null,
+    "theme": null,
+    "logo_url": null,
+    "brand_name": null,
+    "main_color": null,
+    "font_family": null,
+    "font_color": null
+  },
+  "jobs": [
+    {
+      "file": "send_kpis_to_slack.py",
+      "identifier": "VFemlVooX7",
+      "title": "Send Kpis to Slack",
+      "schedule": "0 * * * *",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    },
+    {
+      "file": "get_daily_headlines_via_telegram.py",
+      "identifier": "R5C2rliXVb",
+      "title": "Daily Headlines to telegram",
+      "schedule": "0 * * * *",
+      "workflow_position": [
+        0,
+        0
+      ],
+      "transitions": []
+    }
+  ],
+  "hooks": [],
+  "forms": [],
+  "dashes": [],
+  "scripts": []
+}

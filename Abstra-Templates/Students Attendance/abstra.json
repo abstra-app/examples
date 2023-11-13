@@ -4,44 +4,23 @@
     "name": "Untitled Workspace",
     "sidebar": [
       {
-        "id": "uump60km1q",
-        "name": "New form",
-        "path": "uump60km1q",
+        "id": "skip-class",
+        "name": "Skip Class",
+        "path": "skip-class",
         "type": "form",
         "visible": false
       },
       {
-        "id": "ffo71a8o297",
-        "name": "New form",
-        "path": "ffo71a8o297",
+        "id": "jusficative",
+        "name": "Jusficative",
+        "path": "jusficative",
         "type": "form",
         "visible": false
       },
       {
-        "id": "9guq86u39n8",
-        "name": "New form",
-        "path": "9guq86u39n8",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "idqq7zzpa7t",
-        "name": "New form",
-        "path": "idqq7zzpa7t",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "er4h3amo0i",
-        "name": "New form",
-        "path": "er4h3amo0i",
-        "type": "form",
-        "visible": false
-      },
-      {
-        "id": "fen6uffg3x6",
-        "name": "New form",
-        "path": "fen6uffg3x6",
+        "id": "justificative-verification",
+        "name": "Justificative Verification",
+        "path": "justificative-verification",
         "type": "form",
         "visible": false
       }
@@ -58,9 +37,9 @@
   "hooks": [],
   "forms": [
     {
-      "id": "uump60km1q",
-      "path": "uump60km1q",
-      "title": "New form",
+      "id": "skip-class",
+      "path": "skip-class",
+      "title": "Skip Class",
       "is_initial": true,
       "auto_start": false,
       "allow_restart": false,
@@ -71,24 +50,24 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "new_form_uump60km1q.py",
+      "file": "skip_class.py",
       "workflow_position": [
-        198.9012345679012,
-        290.92592592592587
+        130.01851488403184,
+        633.4778292186818
       ],
       "transitions": [
         {
-          "target_path": "ffo71a8o297",
+          "target_path": "jusficative",
           "target_type": "forms",
           "label": "",
-          "id": "cw59bv44ac"
+          "id": "1wu5fnxfwqt"
         }
       ]
     },
     {
-      "id": "ffo71a8o297",
-      "path": "ffo71a8o297",
-      "title": "New form",
+      "id": "jusficative",
+      "path": "jusficative",
+      "title": "Jusficative",
       "is_initial": false,
       "auto_start": false,
       "allow_restart": false,
@@ -99,18 +78,25 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "new_form_ffo71a8o297.py",
+      "file": "jusficative.py",
       "workflow_position": [
-        485.320987654321,
-        290.9259259259259
+        462.8062045697789,
+        637.5639994582381
       ],
-      "transitions": []
+      "transitions": [
+        {
+          "target_path": "justificative-verification",
+          "target_type": "forms",
+          "label": "",
+          "id": "m1ame9u5c4f"
+        }
+      ]
     },
     {
-      "id": "9guq86u39n8",
-      "path": "9guq86u39n8",
-      "title": "New form",
-      "is_initial": true,
+      "id": "justificative-verification",
+      "path": "justificative-verification",
+      "title": "Justificative Verification",
+      "is_initial": false,
       "auto_start": false,
       "allow_restart": false,
       "end_message": null,
@@ -120,77 +106,34 @@
       "timeout_message": null,
       "start_button_text": null,
       "restart_button_text": null,
-      "file": "new_form_9guq86u39n8.py",
+      "file": "justificative_verification.py",
       "workflow_position": [
-        810.0123456790124,
-        281.0493827160493
+        799.0951527266353,
+        642.5416441621335
       ],
-      "transitions": []
-    },
-    {
-      "id": "idqq7zzpa7t",
-      "path": "idqq7zzpa7t",
-      "title": "New form",
-      "is_initial": true,
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "file": "new_form_idqq7zzpa7t.py",
-      "workflow_position": [
-        1287.7901234567898,
-        278.58024691358025
-      ],
-      "transitions": []
-    },
-    {
-      "id": "er4h3amo0i",
-      "path": "er4h3amo0i",
-      "title": "New form",
-      "is_initial": true,
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "file": "new_form_er4h3amo0i.py",
-      "workflow_position": [
-        1116.185185185185,
-        131.66666666666666
-      ],
-      "transitions": []
-    },
-    {
-      "id": "fen6uffg3x6",
-      "path": "fen6uffg3x6",
-      "title": "New form",
-      "is_initial": true,
-      "auto_start": false,
-      "allow_restart": false,
-      "end_message": null,
-      "start_message": null,
-      "error_message": null,
-      "welcome_title": null,
-      "timeout_message": null,
-      "start_button_text": null,
-      "restart_button_text": null,
-      "file": "new_form_fen6uffg3x6.py",
-      "workflow_position": [
-        858.1604938271605,
-        146.48148148148147
-      ],
-      "transitions": []
+      "transitions": [
+        {
+          "target_path": "3ldly96eg03",
+          "target_type": "scripts",
+          "label": "",
+          "id": "rvmsknl40is"
+        }
+      ]
     }
   ],
   "dashes": [],
-  "scripts": []
+  "scripts": [
+    {
+      "id": "3ldly96eg03",
+      "file": "notify_student.py",
+      "path": "3ldly96eg03",
+      "title": "Notify Student",
+      "is_initial": false,
+      "workflow_position": [
+        1141.0569843707515,
+        643.3263687614138
+      ],
+      "transitions": []
+    }
+  ]
 }
