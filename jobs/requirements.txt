@@ -1,3 +1,5 @@
 psycopg2==2.9.9
 pandas==1.5.3
 numpy==1.26.0
+telepot==12.7
+```
