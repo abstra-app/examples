@@ -8,7 +8,7 @@ Abstra forms are the simplest way to build user interfaces for your workflows.
 
 def render(partial):
     if partial.get("reason") and partial.get("reason") == "other":
-        return Page().read("Please specify:", key="other")
+        return Page().read("Please specify:",required=True ,key="other")
 
 
 motivation = (

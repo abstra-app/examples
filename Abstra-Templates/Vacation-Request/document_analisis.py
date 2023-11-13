@@ -6,11 +6,16 @@ Abstra forms are the simplest way to build user interfaces for your workflows.
 """
 
 stage = get_stage()
-doc = stage["doc"]
+path = stage["path"]
+NewPath = stage["newpath"]
 
 display("Analyse the submitted documents:")
 
-display_file(doc, download_text="Download")
+if NewPath == None:
+    display_file(path, download_text="Download")
+else:
+    display_file(NewPath, download_text="Download")
+
 
 def render(partial):
     if partial.get("analisis") and partial.get("analisis") == "no":
@@ -36,10 +41,9 @@ if analisis.get("analisis") == "no":
             {
                 "data": {
                     "analisis": analisis.get("analisis"),
-                    "doc": doc,
                     "correction": analisis.get("correction"),
                 },
-                "stage": "document-rejection",
+                "stage": "Document Rejection",
             }
         ]
     )

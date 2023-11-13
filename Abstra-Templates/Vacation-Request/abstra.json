@@ -94,8 +94,8 @@
       "restart_button_text": null,
       "file": "vacation_approval.py",
       "workflow_position": [
-        653.5312384303168,
-        322.58094640303705
+        647.5161697838248,
+        321.07717924141406
       ],
       "transitions": [
         {
@@ -128,8 +128,8 @@
       "restart_button_text": null,
       "file": "document_submission.py",
       "workflow_position": [
-        1344.086251026409,
-        321.40279749843864
+        1345.7267242936339,
+        312.0446431785864
       ],
       "transitions": [
         {
@@ -156,8 +156,8 @@
       "restart_button_text": null,
       "file": "document_analisis.py",
       "workflow_position": [
-        1680.1858360886495,
-        317.6683576644137
+        1675.6745346037806,
+        310.1495218562987
       ],
       "transitions": [
         {
@@ -212,8 +212,8 @@
       "title": "Required documents",
       "is_initial": false,
       "workflow_position": [
-        1016.5020127621632,
-        320.08638015476186
+        989.4342038529493,
+        317.0788458315159
       ],
       "transitions": [
         {
@@ -240,7 +240,7 @@
       "id": "aa6hx1rvj6q",
       "file": "document_rejection.py",
       "path": "aa6hx1rvj6q",
-      "title": "Document Rejection ",
+      "title": "Document Rejection",
       "is_initial": false,
       "workflow_position": [
         1886.8248402380268,

@@ -72,11 +72,11 @@ if reason == "other":
 
 def render(partial):
     if partial.get("approval") and partial.get("approval") == "no":
-        return Page().read("Please specify:", key="specify")
+        return Page().read("Please specify:",required=True, key="specify")
 
 def another(partial):
     if partial.get("approval") and partial.get("approval") == "yes":
-        return Page().read("Required Documents:", key="documents")
+        return Page().read("Required Documents:",required=True, key="documents")
     
 approvation = (
     Page()

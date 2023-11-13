@@ -28,13 +28,13 @@
   },
   "jobs": [
     {
-      "file": "new_job_3ahe8n9ygi6.py",
-      "identifier": "3ahe8n9ygi6",
-      "title": "After 2 days the email still in the list",
+      "file": "new_job_3pa7OMfzhg.py",
+      "identifier": "JK5rgX0rBX",
+      "title": "Untitled Job",
       "schedule": "0 * * * *",
       "workflow_position": [
-        959,
-        288
+        0,
+        0
       ],
       "transitions": []
     }
