@@ -1,4 +1,4 @@
-import abstra.forms as hf
+import abstra.forms as af
 import json
 import os
 from datetime import date
@@ -47,7 +47,7 @@ class Invoice:
 #         security_token=os.environ["SALESFORCE_API_KEY"])
 
 inputData = (
-    hf.Page()
+    af.Page()
     .read("Please insert the product id", key="productId")
     .read_multiple_choice("Which color ?", ["Red", "Blue", "Brown"], key="colorType")
     .run("Send")
@@ -97,4 +97,4 @@ f.close()
 
 zip_fname = make_archive(f"/tmp/{receiptTag}", "zip", f"/tmp/{receiptTag}")
 f = open(zip_fname, "rb")
-hf.display_file(f)
+af.display_file(f)
