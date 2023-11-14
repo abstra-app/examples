@@ -7,8 +7,11 @@ import os
 import requests
 import pandas as pd
 from datetime import datetime, timedelta
+from slack_sdk import WebClient
+from dotenv import load_dotenv
 
-# get KPIs from Metabase
+# get environment variables
+load_dotenv()
 
 # This form uses an environment variable. To make it work properly, add a Metabase API Key to your workspace's environment variables in the sidebar.
 metabase_token = os.environ.get("METABASE_TOKEN")
@@ -33,14 +36,9 @@ message = pd.DataFrame.to_markdown(df_week)
 
 # This form uses an environment variable. To make it work properly, add a Slack API Key to your workspace's environment variables in the sidebar.
 slack_token = os.environ.get("SLACK_TOKEN")
+client = WebClient(token=slack_token)
 
-res = requests.post(
-    'https://slack.com/api/chat.postMessage',
-    json={
-        'channel': 'general',
-        'text': 'New users this week:\n' + message
-    },
-    headers={
-        'Authorization': 'Bearer ' + slack_token,
-        'Content-type': 'application/json; charset=utf-8'
-    })
+client.chat_postMessage(
+        channel="sa_planos",
+        text=f"New users this week:\n {message}",
+    )
