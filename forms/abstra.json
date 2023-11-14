@@ -184,6 +184,20 @@
         "path": "Send-Customized-Emails",
         "type": "form",
         "visible": false
+      },
+      {
+        "id": "generate-script-with-ai",
+        "name": "Generate sript with AI",
+        "path": "generate-script-with-ai",
+        "type": "form",
+        "visible": false
+      },
+      {
+        "id": "new_form_2rh6fKiPXy",
+        "name": "A teste",
+        "path": "new_form_2rh6fKiPXy",
+        "type": "form",
+        "visible": false
       }
     ],
     "root": null,
