@@ -1,23 +1,38 @@
-import abstra.forms as af
+from abstra.forms import *
 import abstra.workflows as aw
 
 """
 Abstra forms are the simplest way to build user interfaces for your workflows.
 """
 
-name = af.read("Hello there! What is your name?")
-af.display(f"Hello {name}!")
+def render(partial):
+    if partial.get("ans") != None and partial.get("ans") == "Yes":
+        return  (
+            Page()
+                .read("Please insert the justificative", key="justificative")
+        )
 
 
-# You can save and get information from the workflow context
 stage = aw.get_stage()
-stage["name"] = name
-
-ans = af.read_multiple_choice("Are you familiar with Abstra?", ["Yes", "No"])
-
+class_skipped = stage["class_skipped"]
+student = (  
+    Page()
+    .read_multiple_choice(f"You missed {class_skipped} classes,do tou have a justificative? ", ["Yes", "No"], key="ans")
+    .reactive(render)
+    .run()
+)
+ans = student["ans"]
 if ans == "Yes":
-    af.display("Great! Have fun!")
-else:
-    af.display_link(
-        "https://docs.abstra.io/forms/overview", link_text="Check out the docs!"
+    justificative = student["justificative"]
+    aw.next_stage(
+        [
+            {
+                "data": {
+                    "justificative" : justificative,
+                    "id": stage["id"],
+                    "class_skipped": class_skipped,
+                },
+                "stage": "justificative-verification",
+            }
+        ]
     )

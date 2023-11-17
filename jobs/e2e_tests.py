@@ -1,22 +1,28 @@
-import os, unittest, requests, slack_sdk
-from e2e.tests import TestExamples
+import os, unittest
+# from e2e.tests import TestExamples
 from datetime import datetime
+from dotenv import load_dotenv
+from slack_sdk import WebClient
+
+# This hook uses environment variables.
+load_dotenv()
 
 now = lambda: str(datetime.timestamp(datetime.now())).split(".")[0]
 folder_name = now()
 os.environ["FOLDER_NAME"] = folder_name
-
+channel_name = os.environ.get("SLACK_CHANNEL_NAME")
+slack_token = os.environ.get("SLACK_BOT_TOKEN")
 
 def slack_msg(msg, files=[]):
     slack_token = os.environ.get("SLACK_BOT_TOKEN")
-    client = slack_sdk.WebClient(token=slack_token)
+    client = WebClient(token=slack_token)
 
     if files:
         for file in files:
             upload = client.files_upload(file=file, filename=file.split("/")[1])
             msg = msg + "\n" + upload["file"]["permalink"]
 
-    client.chat_postMessage(channel="Your Channel", text=msg)
+    client.chat_postMessage(channel=channel_name, text=msg)
 
 
 program = unittest.main(exit=False)

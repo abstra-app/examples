@@ -5,7 +5,11 @@ import abstra.workflows as aw
 """
 Abstra forms are the simplest way to build user interfaces for your workflows.
 """
-
+# def delete_data():
+#     sql = """DELETE FROM skipped_classes;"""
+#     params = []
+#     return run(sql, params)     
+# delete_data()
 # The professor will insert the information of the student that is skipping class
 student = (
     Page()
@@ -18,19 +22,28 @@ student = (
     classes_skipped,
 ) = student.values()
 
-# You can save and get information from the workflow context
-stage = aw.get_stage()
-stage["name"] = name
-stage["classes_skipped"] = classes_skipped
 
 def get_student_info():
-    sql = """SELECT name, unjustified FROM skipped_classes;"""
+    sql = """SELECT name, unjustified FROM skippeds_classes;"""
     params = []
     return run(sql, params)
 all_student = get_student_info()
 print(all_student)
 for student in all_student:
     if student["name"] == name:
-        update("skipped_classes",{"unjustified": student["unjustified"] + classes_skipped}, {"name": name})
-        exit()
-insert("skipped_classes", {"name": name, "justified": 0, "unjustified": classes_skipped}) 
+        update("skippeds_classes",{"unjustified": student["unjustified"] + classes_skipped}, {"name": name})
+inserting = insert("skippeds_classes", {"name": name, "unjustified": classes_skipped, "justified": 0}) 
+
+# You can save and get information from the workflow context
+aw.next_stage(
+    [
+        {
+            "assignee": "example@example.com",
+            "data": {
+                "id": inserting["id"],
+                "class_skipped": classes_skipped,
+            },
+            "stage": 'jusficative',
+        }
+    ]
+)

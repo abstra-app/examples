@@ -1,23 +1,28 @@
-import abstra.forms as af
+from abstra.forms import *
 import abstra.workflows as aw
-
-"""
-Abstra forms are the simplest way to build user interfaces for your workflows.
-"""
-
-name = af.read("Hello there! What is your name?")
-af.display(f"Hello {name}!")
+from abstra.tables import update,run
 
 
-# You can save and get information from the workflow context
 stage = aw.get_stage()
-stage["name"] = name
+justificative = stage["justificative"]
+class_skipped = stage["class_skipped"]
+id = stage["id"]
 
-ans = af.read_multiple_choice("Are you familiar with Abstra?", ["Yes", "No"])
+def get_student_info(id):
+    sql = """SELECT unjustified, justified FROM skippeds_classes WHERE id = $1;"""
+    params = [id]
+    return run(sql, params)[0]
+all_student = get_student_info(id)
+print(all_student)
+justified = all_student["justified"]
+unjustified = all_student["unjustified"]
 
+
+supervisor = (
+    Page()
+    .read_multiple_choice(f"The student has a justificative:\n{justificative}\n, do you aprove it? ", ["Yes", "No"], key="ans")
+    .run()
+)
+ans = supervisor["ans"]
 if ans == "Yes":
-    af.display("Great! Have fun!")
-else:
-    af.display_link(
-        "https://docs.abstra.io/forms/overview", link_text="Check out the docs!"
-    )
+    update("skippeds_classes",{"justified": justified + class_skipped,"unjustified": unjustified - class_skipped},{"id": id})
