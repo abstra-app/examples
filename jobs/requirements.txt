@@ -6,3 +6,5 @@ telepot==12.7
 slack-sdk==3.22.0
 python-dotenv==1.0.0
 requests==2.31.0
+abstra==1.17.17
+beautifulsoup4==4.12.2

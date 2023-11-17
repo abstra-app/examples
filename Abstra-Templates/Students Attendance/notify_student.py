@@ -1,17 +1,23 @@
+import os
+import abstra.hooks as ah
 import abstra.workflows as aw
+from dotenv import load_dotenv
+from slack_sdk import WebClient
 
-"""
-Abstra scripts are the simplest way to run code in your workflows.
-"""
+# This hook uses environment variables.
+load_dotenv()
 
-
-def sum(a, b):
-    return a, b
-
-
-# You can save and get information from the workflow context
 stage = aw.get_stage()
-
-stage["result"] = sum(2, 3)
-
-print(f"Script ran!")
+ans = stage["ans"]
+slack_token = os.environ.get("SLACK_BOT_TOKEN")
+client = WebClient(token=slack_token)
+if ans == "Yes":
+    client.chat_postMessage(
+        channel="sa_planos",
+        text=f"Hey your justificative was approved! :tada:",
+    )
+else:
+    client.chat_postMessage(
+        channel="sa_planos",
+        text=f"Your justificative was not approved! :cry:",
+    )

@@ -26,3 +26,14 @@ supervisor = (
 ans = supervisor["ans"]
 if ans == "Yes":
     update("skippeds_classes",{"justified": justified + class_skipped,"unjustified": unjustified - class_skipped},{"id": id})
+aw.next_stage(
+    [
+        {
+            "assignee": "example@example.com",
+            "data": {
+                "ans": ans,
+            },
+            "stage": 'Notify Student',
+        }
+    ]
+)
