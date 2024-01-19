@@ -15,6 +15,6 @@ try:
         channel="YOUR_CHANNEL",
         text=f"Hello {payload['firstName']} {payload['lastName']} from your app!",
     )
-    ah.send_response(f"[{payload}] deu bom")
+    ah.send_response(f"[{payload}] Successful")
 except Exception as e:
     ah.send_response(f"[{payload}] Error", status_code=500)
