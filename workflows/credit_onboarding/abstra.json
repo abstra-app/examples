@@ -1,0 +1,208 @@
+{
+  "workspace": {
+    "id": null,
+    "name": "Untitled Workspace",
+    "theme": "#f9f9f9",
+    "logo_url": "logo.png",
+    "brand_name": "Credit Requests",
+    "main_color": "#0023FF",
+    "font_color": null,
+    "font_family": "Inter",
+    "sidebar": [
+      {
+        "id": "order-request-form",
+        "name": "Order request form",
+        "path": "order-request-form",
+        "type": "form",
+        "visible": false
+      }
+    ]
+  },
+  "visualization": [],
+  "jobs": [],
+  "hooks": [],
+  "forms": [
+    {
+      "id": "sjwgs1v",
+      "path": "order-request-form",
+      "title": "Order request form",
+      "is_initial": true,
+      "auto_start": true,
+      "allow_restart": false,
+      "end_message": "",
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "order_request_form.py",
+      "workflow_position": [
+        -495.96128921678525,
+        -6.976191032314148
+      ],
+      "transitions": [
+        {
+          "target_id": "38a7lgt",
+          "target_type": "scripts",
+          "type": "forms:finished",
+          "id": "npdfozm",
+          "condition_value": null
+        }
+      ],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
+    },
+    {
+      "id": "ghw9tnr",
+      "path": "avaliacao-manual",
+      "title": "Manual review",
+      "is_initial": false,
+      "auto_start": true,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "manual_review.py",
+      "workflow_position": [
+        747.980343031676,
+        332.94062523175563
+      ],
+      "transitions": [
+        {
+          "target_id": "wu5q957",
+          "target_type": "conditions",
+          "type": "forms:finished",
+          "id": "idrhvv6",
+          "condition_value": null
+        }
+      ],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
+    }
+  ],
+  "scripts": [
+    {
+      "id": "38a7lgt",
+      "file": "credit_engine.py",
+      "title": "Credit engine",
+      "is_initial": false,
+      "workflow_position": [
+        -21.516466301152263,
+        -9.228763364173403
+      ],
+      "transitions": [
+        {
+          "target_id": "3q5z75h",
+          "target_type": "conditions",
+          "type": "scripts:finished",
+          "id": "codl8b3",
+          "condition_value": null
+        }
+      ]
+    },
+    {
+      "id": "3v0sim3",
+      "file": "automatic_review.py",
+      "title": "Automatic review",
+      "is_initial": false,
+      "workflow_position": [
+        742.9116684583314,
+        -301.51229084557326
+      ],
+      "transitions": [
+        {
+          "target_id": "wu5q957",
+          "target_type": "conditions",
+          "type": "scripts:finished",
+          "id": "3qrrazy",
+          "condition_value": null
+        }
+      ]
+    },
+    {
+      "id": "o9t6hqu",
+      "file": "internal_notification.py",
+      "title": "Internal notification",
+      "is_initial": false,
+      "workflow_position": [
+        1449.9245064045638,
+        322.9532944691653
+      ],
+      "transitions": []
+    },
+    {
+      "id": "8wmhiw2",
+      "file": "approval_email.py",
+      "title": "Approval email",
+      "is_initial": false,
+      "workflow_position": [
+        1437.9654417219867,
+        -309.5427547615571
+      ],
+      "transitions": []
+    }
+  ],
+  "iterators": [],
+  "conditions": [
+    {
+      "id": "3q5z75h",
+      "title": "Policy",
+      "variable_name": "score",
+      "workflow_position": [
+        419.7356788709259,
+        -11.319859231601697
+      ],
+      "transitions": [
+        {
+          "target_id": "3v0sim3",
+          "target_type": "scripts",
+          "type": "conditions:patternMatched",
+          "id": "n3tqsuu",
+          "condition_value": "high"
+        },
+        {
+          "target_id": "ghw9tnr",
+          "target_type": "forms",
+          "type": "conditions:patternMatched",
+          "id": "zynkj4i",
+          "condition_value": "low"
+        }
+      ]
+    },
+    {
+      "id": "wu5q957",
+      "title": "Result",
+      "variable_name": "result",
+      "workflow_position": [
+        1062.9761368937448,
+        2.0342768127167687
+      ],
+      "transitions": [
+        {
+          "target_id": "o9t6hqu",
+          "target_type": "scripts",
+          "type": "conditions:patternMatched",
+          "id": "kj53whe",
+          "condition_value": "rejected"
+        },
+        {
+          "target_id": "8wmhiw2",
+          "target_type": "scripts",
+          "type": "conditions:patternMatched",
+          "id": "uqama2r",
+          "condition_value": "approved"
+        }
+      ]
+    }
+  ],
+  "version": "4.0"
+}
