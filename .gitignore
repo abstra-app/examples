@@ -1,12 +1,13 @@
 .venv
 .vscode
 migrate.md
-*.abstra
-*.DS_Store
-*.env
+.abstra
+.DS_Store
+.env
 .tests
 .examples_workflow.pycach
 examples_forms/aa.py
 migrate.md
 __pycache__
 Abstra-Templates.md
+.backup
