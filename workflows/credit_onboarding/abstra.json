@@ -57,7 +57,7 @@
     },
     {
       "id": "ghw9tnr",
-      "path": "avaliacao-manual",
+      "path": "manual-review",
       "title": "Manual review",
       "is_initial": false,
       "auto_start": true,
