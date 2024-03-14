@@ -1,7 +1,13 @@
 {
-  "version": "0.1",
   "workspace": {
+    "id": null,
     "name": "Untitled Workspace",
+    "theme": "https://images.unsplash.com/photo-1469050624972-f03b8678e363?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&h=500&q=60",
+    "logo_url": null,
+    "brand_name": null,
+    "main_color": "#84599A",
+    "font_color": null,
+    "font_family": null,
     "sidebar": [
       {
         "id": "buying-intention-form",
@@ -191,23 +197,10 @@
         "path": "generate-script-with-ai",
         "type": "form",
         "visible": false
-      },
-      {
-        "id": "new_form_2rh6fKiPXy",
-        "name": "A teste",
-        "path": "new_form_2rh6fKiPXy",
-        "type": "form",
-        "visible": false
       }
-    ],
-    "root": null,
-    "theme": "https://images.unsplash.com/photo-1469050624972-f03b8678e363?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&h=500&q=60",
-    "logo_url": null,
-    "brand_name": null,
-    "main_color": "#84599A",
-    "font_family": null,
-    "font_color": null
+    ]
   },
+  "visualization": [],
   "jobs": [],
   "hooks": [],
   "forms": [
@@ -230,7 +223,11 @@
         -29.427792915531313,
         -161.85286103542234
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "Simple-quiz",
@@ -251,7 +248,11 @@
         23.705722070844672,
         156.9482288828338
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "self-check-in",
@@ -272,7 +273,11 @@
         -317.9836512261581,
         -98.91008174386923
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "buying-intention-form",
@@ -293,7 +298,11 @@
         -348.22888283378745,
         87.46594005449595
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "customer-registration",
@@ -314,7 +323,11 @@
         558.3106267029972,
         116.89373297002726
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "error-handling",
@@ -335,7 +348,11 @@
         269.75476839237047,
         -189.6457765667575
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "online-exam",
@@ -356,7 +373,11 @@
         246.8664850136239,
         168.39237057220708
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "tax-calculator",
@@ -377,7 +398,11 @@
         -347.41144414168934,
         -3.2697547683923744
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "create-invoice-from-CRM",
@@ -398,7 +423,11 @@
         236.23978201634873,
         -85.83106267029973
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "sql-generator",
@@ -419,7 +448,11 @@
         -22.07084468664857,
         -81.74386920980925
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "sub-to-new-feature",
@@ -440,7 +473,11 @@
         -222.34332425068118,
         -281.19891008174386
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "spreadsheet-access",
@@ -461,7 +498,11 @@
         400.54495912806533,
         68.6648501362398
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "hello-world",
@@ -482,7 +523,11 @@
         -19.618528610354247,
         59.67302452316079
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "certificate-generator",
@@ -503,7 +548,11 @@
         -158.58310626702996,
         202.72479564032693
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "generate-documents-from-spreadsheet",
@@ -524,7 +573,11 @@
         379.291553133515,
         281.19891008174386
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "create-hubspot-deals-from-apollo-leads",
@@ -545,7 +598,11 @@
         550.1362397820164,
         -166.7574931880109
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "invoice-factoring-calculator ",
@@ -563,10 +620,14 @@
       "restart_button_text": null,
       "file": "invoice_factoring_calculator.py",
       "workflow_position": [
-        0,
-        0
+        0.0,
+        0.0
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "receivables",
@@ -584,10 +645,14 @@
       "restart_button_text": null,
       "file": "receivables.py",
       "workflow_position": [
-        0,
-        0
+        0.0,
+        0.0
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "travel-registration",
@@ -605,10 +670,14 @@
       "restart_button_text": null,
       "file": "travel_registration.py",
       "workflow_position": [
-        0,
-        0
+        0.0,
+        0.0
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "team-registration",
@@ -626,10 +695,14 @@
       "restart_button_text": null,
       "file": "team_registration.py",
       "workflow_position": [
-        0,
-        0
+        0.0,
+        0.0
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "Investor-registration",
@@ -647,10 +720,14 @@
       "restart_button_text": null,
       "file": "investor_registration.py",
       "workflow_position": [
-        0,
-        0
+        0.0,
+        0.0
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "Purchase-request",
@@ -668,10 +745,14 @@
       "restart_button_text": null,
       "file": "purchase_request.py",
       "workflow_position": [
-        0,
-        0
+        0.0,
+        0.0
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "invoice-factoring-calculator",
@@ -689,10 +770,14 @@
       "restart_button_text": null,
       "file": "invoice_factoring_calculator.py",
       "workflow_position": [
-        0,
-        0
+        0.0,
+        0.0
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "Send-Customized-Emails",
@@ -710,10 +795,14 @@
       "restart_button_text": null,
       "file": "send_customized_emails_from_spreadsheet.real.py",
       "workflow_position": [
-        0,
-        0
+        0.0,
+        0.0
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     },
     {
       "id": "generate-script-with-ai",
@@ -731,12 +820,18 @@
       "restart_button_text": null,
       "file": "generate_script_with_ai.py",
       "workflow_position": [
-        0,
-        0
+        0.0,
+        0.0
       ],
-      "transitions": []
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
     }
   ],
-  "dashes": [],
-  "scripts": []
+  "scripts": [],
+  "iterators": [],
+  "conditions": [],
+  "version": "4.0"
 }
