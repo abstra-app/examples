@@ -1,0 +1,8 @@
+.venv
+.vscode
+.abstra
+.DS_Store
+.env
+.tests
+__pycache__
+.backup

@@ -1,0 +1,140 @@
+{
+  "workspace": {
+    "id": null,
+    "name": "Untitled Workspace",
+    "theme": null,
+    "logo_url": null,
+    "brand_name": null,
+    "main_color": null,
+    "font_color": null,
+    "font_family": null,
+    "sidebar": [
+      {
+        "id": "6778b66b-9144-49d4-bd35-2d1a65b82b07",
+        "name": "Data Visualization",
+        "path": "visualization",
+        "type": "form",
+        "visible": true
+      },
+      {
+        "id": "a184552d-e0b0-4db3-b32c-2513236fdd1a",
+        "name": "Data Ingestion",
+        "path": "ingestion",
+        "type": "form",
+        "visible": true
+      }
+    ]
+  },
+  "visualization": [],
+  "jobs": [],
+  "hooks": [],
+  "forms": [
+    {
+      "id": "a184552d-e0b0-4db3-b32c-2513236fdd1a",
+      "path": "ingestion",
+      "title": "Data Ingestion",
+      "is_initial": true,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "data_ingestion.py",
+      "workflow_position": [
+        982.953125,
+        1029.0
+      ],
+      "transitions": [
+        {
+          "target_id": "23c390ee-27e9-41fe-9601-d60c17b5d68d",
+          "target_type": "scripts",
+          "type": "forms:finished",
+          "id": "cnua4b6",
+          "condition_value": null
+        }
+      ],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
+    },
+    {
+      "id": "074a0fc9-de01-413d-bf3a-113f075c329e",
+      "path": "confirmation",
+      "title": "Confirmation",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "confirmation.py",
+      "workflow_position": [
+        1719.953125,
+        1029.0
+      ],
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee",
+        "enabled": true
+      }
+    },
+    {
+      "id": "6778b66b-9144-49d4-bd35-2d1a65b82b07",
+      "path": "visualization",
+      "title": "Data Visualization",
+      "is_initial": true,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "data_visualization.py",
+      "workflow_position": [
+        989.953125,
+        1159.0
+      ],
+      "transitions": [],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      }
+    }
+  ],
+  "scripts": [
+    {
+      "id": "23c390ee-27e9-41fe-9601-d60c17b5d68d",
+      "file": "data_processing.py",
+      "title": "Data Processing",
+      "is_initial": false,
+      "workflow_position": [
+        1348.953125,
+        1027.0
+      ],
+      "transitions": [
+        {
+          "target_id": "074a0fc9-de01-413d-bf3a-113f075c329e",
+          "target_type": "forms",
+          "type": "scripts:finished",
+          "id": "znuky8m",
+          "condition_value": null
+        }
+      ]
+    }
+  ],
+  "iterators": [],
+  "conditions": [],
+  "version": "4.0"
+}
