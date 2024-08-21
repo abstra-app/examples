@@ -29,27 +29,28 @@ def tax_calculator(value, cofins, csll, irpj, pis):
 invoice_data = (
     Page()
     .display("Hello! Fill in the data below:")
-    .read("Invoice value without taxes (BRL)")
-    .read("Cofins (%)")
-    .read("Csll (%)")
-    .read("Irpj (%)")
-    .read("Pis (%)")
+    .read_currency("Invoice value without taxes", currency='BRL', key="amount")
+    .read_number("Cofins (%)", key="cofins")
+    .read_number("Csll (%)", key="csll")
+    .read_number("Irpj (%)", key="irpj")
+    .read_number("Pis (%)", key="pis")
     .run("Send")
 )
 
+amount = invoice_data["amount"]
+cofins  = invoice_data["cofins"]
+csll  = invoice_data["csll"] 
+irpj  = invoice_data["irpj"]
+pis = invoice_data["pis"]
 
-amount_brl, cofins_brl, csll_brl, irpj_brl, pis_brl = [
-    float(x) for x in invoice_data.values()
-]
-
-cofins, csll, irpj, pis, invoice_value = tax_calculator(
-    amount_brl, cofins_brl, csll_brl, irpj_brl, pis_brl
+cofins_brl, csll_brl, irpj_brl, pis_brl, invoice_value_brl = tax_calculator(
+    amount, cofins, csll, irpj, pis
 )
 
-Page().display("Invoice value with taxes: R$ {}".format(invoice_value)).display(
-    "Cofins: R$ {}".format(cofins)
-).display("Csll: R$ {}".format(csll)).display("Irpj: R$ {}".format(irpj)).display(
-    "Pis: R$ {}".format(pis)
-).run(
-    "Ok, got it!"
-)
+Page()\
+    .display(f"Invoice value with taxes: R$ {invoice_value_brl:.02f}")\
+    .display(f"Cofins: R$ {cofins_brl:.02f}")\
+    .display(f"Csll: R$ {csll_brl:.02f}")\
+    .display(f"Irpj: R$ {irpj_brl:.02f}")\
+    .display(f"Pis: R$ {pis_brl:.02f}")\
+    .run("Ok, got it!")
